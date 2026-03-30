@@ -1432,15 +1432,19 @@
 <p><strong>Bước 3:</strong> Với mỗi prompt, thay thế các phần trong <code>[DẤU NGOẶC VUÔNG]</code> bằng thông tin thực tế từ dự án của bạn (hoặc dùng một dự án mẫu nếu chưa có dự án thực).</p>
 <p><strong>Bước 4:</strong> Chạy thử từng prompt đã điền vào AI và xem output. Ghi chú lại những gì cần điều chỉnh.</p>
 <hr />
-<p><strong>PROMPT 1 — Test Case Generation:</strong></p>
+<blockquote>
+<p><strong>🎯 Chú ý theo role:</strong> Bạn không cần dùng tất cả 6 prompt. Hãy ưu tiên những prompt phù hợp với công việc hằng ngày của bạn — cột <em>"Dành cho"</em> giúp bạn chọn nhanh.</p>
+</blockquote>
+<hr />
+<p><strong>PROMPT 1 — Test Case Generation</strong> <em>(Dành cho: Mọi role)</em></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>[ROLE] Bạn là Senior QA Engineer với kinh nghiệm test [DOMAIN DỰ ÁN CỦA BẠN].
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>[CONTEXT] Hệ thống: [MÔ TẢ HỆ THỐNG]. User chính: [AI LÀ USER].
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>[CONTEXT] Hệ thống: [MÔ TẢ HỆ THỐNG]. User chính: [MÔ TẢ USER].
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>[TASK] Tạo test case cho tính năng: [TÊN TÍNH NĂNG]
 <a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>Bao gồm: happy path, negative cases, boundary values, edge cases.
 <a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>[FORMAT] Bảng Markdown: STT | Loại | Tên test case | Precondition | Steps | Expected | Priority (P1/P2/P3)
 </code></pre></div>
 <hr />
-<p><strong>PROMPT 2 — Bug Report Enhancement:</strong></p>
+<p><strong>PROMPT 2 — Bug Report Enhancement</strong> <em>(Dành cho: Manual Tester, QA Lead)</em></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Tôi có bug report sau đây còn sơ sài:
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>---
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>[PASTE BUG REPORT VÀO ĐÂY]
@@ -1453,7 +1457,7 @@
 <a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>5. Gợi ý: Attachments/evidence cần có
 </code></pre></div>
 <hr />
-<p><strong>PROMPT 3 — API Test Creation (Chain-of-Thought):</strong></p>
+<p><strong>PROMPT 3 — API Test Creation</strong> <em>(Dành cho: Automation Engineer, Manual Tester dùng Postman)</em></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Hãy suy nghĩ từng bước để tạo Postman test collection cho API sau:
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>[PASTE API SPEC / ENDPOINT VÀO ĐÂY]
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
@@ -1463,7 +1467,7 @@
 <a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>Bước 4: Thêm assertions cho mỗi test case
 </code></pre></div>
 <hr />
-<p><strong>PROMPT 4 — Risk Analysis (Role Prompting):</strong></p>
+<p><strong>PROMPT 4 — Sprint Risk Analysis</strong> <em>(Dành cho: QA Lead, QA Manager)</em></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Đóng vai QA Lead với 8 năm kinh nghiệm, hãy đánh giá rủi ro của sprint sau trước khi release:
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>---
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>[PASTE SPRINT NOTES / CHANGELOGS]
@@ -1473,16 +1477,54 @@
 <a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>- Các tính năng có thể bị ảnh hưởng ngoài ý muốn
 <a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>- Đề xuất: Nên test gì trước nếu ít thời gian
 </code></pre></div>
+<hr />
+<p><strong>PROMPT 5 — Acceptance Criteria Review</strong> <em>(Dành cho: Manual Tester, BA, QA Lead)</em></p>
+<blockquote>
+<p>Xu hướng 2025: AI đang được dùng để phát hiện AC mơ hồ ngay từ giai đoạn grooming — trước khi dev viết một dòng code. Đây là một trong những ứng dụng có ROI cao nhất của AI trong QA.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>[ROLE] Bạn là QA Engineer có kinh nghiệm đánh giá chất lượng requirement.
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>[CONTEXT] Dự án: [MÔ TẢ NGẮN]. Giai đoạn: Pre-development / Sprint grooming.
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>[TASK] Review Acceptance Criteria sau và chỉ ra:
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>1. AC nào chưa testable (không đo lường được, mơ hồ)?
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>2. Edge case quan trọng nào đang bị bỏ sót?
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>3. Business rule nào có thể hiểu nhiều cách — cần làm rõ với BA/PO?
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>4. Viết lại các AC yếu theo format Given/When/Then rõ ràng hơn.
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>AC cần review:
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>---
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>[PASTE ACCEPTANCE CRITERIA VÀO ĐÂY]
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>---
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>[FORMAT] Bảng: AC gốc | Vấn đề phát hiện | Đề xuất cải thiện
+</code></pre></div>
+<hr />
+<p><strong>PROMPT 6 — Test Execution Report</strong> <em>(Dành cho: Manual Tester, QA Lead, QA Manager)</em></p>
+<blockquote>
+<p>Thay vì viết báo cáo sprint test thủ công mỗi lần, dùng prompt này để tạo draft trong 2 phút — sau đó chỉ cần review và điều chỉnh.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>[ROLE] Bạn là QA Engineer tổng hợp kết quả kiểm thử cuối sprint.
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>[CONTEXT] Dự án: [TÊN DỰ ÁN]. Sprint: [SỐ SPRINT]. Ngày: [NGÀY].
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>[TASK] Tạo Test Execution Report từ dữ liệu sau:
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>---
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>[PASTE KẾT QUẢ TEST: tổng số TC, số pass/fail/blocked, danh sách bug chính, tính năng đã test/chưa test]
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>---
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>Report cần bao gồm:
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>1. Executive Summary: tổng số TC, pass rate, trạng thái tổng thể
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>2. Top 3 rủi ro còn lại chưa được giải quyết trước khi release
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>3. Đề xuất: ✅ Go / ⚠️ Conditional Go / ❌ No-go — kèm lý do rõ ràng
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>4. Action items cụ thể cho team (dev, PM, QA)
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>[FORMAT] Markdown, có thể paste thẳng vào Confluence, Notion, hoặc email cho stakeholder
+</code></pre></div>
 <p><strong>✅ Kết quả mong đợi:</strong></p>
 <blockquote>
-<p>Bạn có một file ghi chú chứa 4 prompt đã được cá nhân hóa cho dự án của mình. Khi chạy thử, output của mỗi prompt sẽ liên quan trực tiếp đến ngữ cảnh bạn đã điền vào — không còn chung chung nữa. Prompt Library này là tài sản bạn sẽ dùng lại hằng ngày.</p>
+<p>Bạn có một file ghi chú chứa ít nhất 3 prompt đã được cá nhân hóa cho dự án và role của mình. Khi chạy thử, output của mỗi prompt phải liên quan trực tiếp đến ngữ cảnh bạn điền vào — không còn chung chung. Đây là tài sản bạn sẽ dùng lại hằng ngày và liên tục cải tiến theo kinh nghiệm thực tế.</p>
 </blockquote>
 <p><strong>❓ Tự kiểm tra:</strong>
+- [ ] Bạn đã chọn ít nhất 3 prompt phù hợp với role của mình chưa?
 - [ ] Mỗi prompt có đủ 4 thành phần (Role, Context, Task, Format)?
 - [ ] Bạn có sử dụng ít nhất 2 trong 4 kỹ thuật đã học?
-- [ ] Output AI trả về có đúng với nhu cầu thực tế của bạn không?
-- [ ] Bạn đã thử "cải tiến" prompt sau khi thấy output chưa đủ?</p>
-<p>💡 <strong>Gợi ý khi bị kẹt:</strong> Nếu chưa có dự án thực tế, hãy dùng: domain = "e-commerce", hệ thống = "ứng dụng mua sắm online", user = "khách hàng phổ thông". Điều quan trọng là luyện tập điền context — không phải tính chính xác của dữ liệu mẫu.</p>
+- [ ] Output AI trả về có đúng với nhu cầu thực tế không — hay vẫn còn chung chung?
+- [ ] Bạn đã thử chỉnh sửa prompt ít nhất 1 lần sau khi thấy output chưa đủ?</p>
+<p>💡 <strong>Gợi ý khi bị kẹt:</strong> Nếu chưa có dự án thực tế, dùng: domain = "e-commerce", hệ thống = "ứng dụng mua sắm online", user = "khách hàng phổ thông". Điều quan trọng là luyện tập điền đủ 4 thành phần — không phải tính chính xác của dữ liệu mẫu. Prompt Library tốt nhất là cái bạn tự chỉnh từ template, không phải copy nguyên xi.</p>
 <hr />
 <h3 id="bai-tap-22-prompt-battle-ca-nhan">🛠️ Bài tập 2.2 — Prompt Battle cá nhân</h3>
 <blockquote>
@@ -1575,7 +1617,7 @@
 <h3 id="tinh-huong-thuc-te-prompt-qua-chung-output-vo-dung">💡 TÌNH HUỐNG THỰC TẾ: "Prompt quá chung, output vô dụng"</h3>
 <p><strong>Bối cảnh:</strong>
 Trung là Manual Tester mới học dùng AI. Anh nhập prompt:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Tạo test case cho hệ thống
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>Tạo test case cho hệ thống
 </code></pre></div>
 <p>AI trả về 10 test case rất chung chung, không liên quan đến dự án ngân hàng của anh. Trung bực bội, nghĩ rằng <em>"AI không tốt cho việc này"</em>.</p>
 <p><strong>Bài tập:</strong> Ghi lại câu trả lời của bạn vào notes — không có đáp án duy nhất, miễn là bạn có thể giải thích lý do.</p>
@@ -1593,21 +1635,21 @@ Trung là Manual Tester mới học dùng AI. Anh nhập prompt:</p>
 <p>Một prompt hiếm khi là đủ. Bài tập này luyện kỹ năng tiếp nối cuộc hội thoại để làm giàu dần kết quả.</p>
 <p><strong>Bước 1:</strong> Mở một cuộc hội thoại mới với AI.</p>
 <p><strong>Bước 2:</strong> Gửi lần lượt 5 prompt sau (mỗi prompt trong cùng một cuộc hội thoại — đừng mở tab mới):</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>Turn 1: &quot;Tạo test case cơ bản cho tính năng Tìm kiếm sản phẩm&quot;
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Turn 1: &quot;Tạo test case cơ bản cho tính năng Tìm kiếm sản phẩm&quot;
 </code></pre></div>
 → Đọc output, sau đó gửi tiếp:</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>Turn 2: &quot;Hãy mở rộng thêm 3 edge case mà bạn chưa nêu&quot;
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>Turn 2: &quot;Hãy mở rộng thêm 3 edge case mà bạn chưa nêu&quot;
 </code></pre></div>
 → Đọc output, sau đó gửi tiếp:</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Turn 3: &quot;Viết lại test case số [X] chi tiết hơn,
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>          bao gồm precondition và test data cụ thể&quot;
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>Turn 3: &quot;Viết lại test case số [X] chi tiết hơn,
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>          bao gồm precondition và test data cụ thể&quot;
 </code></pre></div>
 <em>(Thay [X] bằng số thứ tự của test case bạn thấy quan trọng nhất)</em></p>
 <p>→ Đọc output, sau đó gửi tiếp:</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>Turn 4: &quot;Xếp hạng các test case này theo mức độ rủi ro từ cao xuống thấp&quot;
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>Turn 4: &quot;Xếp hạng các test case này theo mức độ rủi ro từ cao xuống thấp&quot;
 </code></pre></div>
 → Đọc output, sau đó gửi tiếp:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>Turn 5: &quot;Tạo Gherkin (Given/When/Then) cho 3 test case quan trọng nhất&quot;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>Turn 5: &quot;Tạo Gherkin (Given/When/Then) cho 3 test case quan trọng nhất&quot;
 </code></pre></div>
 <p><strong>Bước 3:</strong> Đọc output cuối cùng (Turn 5). So sánh với output Turn 1. Ghi lại nhận xét vào notes.</p>
 <p><strong>✅ Kết quả mong đợi:</strong></p>
@@ -1625,19 +1667,19 @@ Trung là Manual Tester mới học dùng AI. Anh nhập prompt:</p>
 <p>Dưới đây là các prompt kém. Nhiệm vụ của bạn: phân tích vấn đề và viết lại prompt tốt hơn. Ghi câu trả lời vào notes.</p>
 <hr />
 <p><strong>Prompt kém 1:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>Tạo test
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>Tạo test
 </code></pre></div>
 - Vấn đề: <code>_______________</code>
 - Prompt tốt hơn: <code>_______________</code></p>
 <hr />
 <p><strong>Prompt kém 2:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>Hãy giúp tôi test ứng dụng mobile
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>Hãy giúp tôi test ứng dụng mobile
 </code></pre></div>
 - Vấn đề: <code>_______________</code>
 - Prompt tốt hơn: <code>_______________</code></p>
 <hr />
 <p><strong>Prompt kém 3:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>Viết code Selenium cho tôi
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>Viết code Selenium cho tôi
 </code></pre></div>
 - Vấn đề: <code>_______________</code>
 - Prompt tốt hơn: <code>_______________</code></p>
@@ -1653,18 +1695,18 @@ Trung là Manual Tester mới học dùng AI. Anh nhập prompt:</p>
 </ol>
 <hr />
 <h2 id="cheat-sheet">🗒️ Cheat Sheet</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>Template chuẩn:
-<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>  [Đóng vai X] [Bối cảnh Y] [Làm việc Z] [Trả về định dạng W]
-<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>
-<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>Zero-shot : Đưa yêu cầu thẳng, không cần ví dụ
-<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>Few-shot  : &quot;Đây là 2 ví dụ... bây giờ làm tương tự cho...&quot;
-<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>CoT       : &quot;Hãy suy nghĩ từng bước trước khi trả lời...&quot;
-<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>Role      : &quot;Đóng vai [vai trò cụ thể] với [X] năm kinh nghiệm...&quot;
-<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>
-<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>Fix output:
-<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>  → Thêm context
-<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>  → Cho ví dụ mẫu (few-shot)
-<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a>  → Yêu cầu chi tiết hơn trong followup
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>Template chuẩn:
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>  [Đóng vai X] [Bối cảnh Y] [Làm việc Z] [Trả về định dạng W]
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>Zero-shot : Đưa yêu cầu thẳng, không cần ví dụ
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>Few-shot  : &quot;Đây là 2 ví dụ... bây giờ làm tương tự cho...&quot;
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>CoT       : &quot;Hãy suy nghĩ từng bước trước khi trả lời...&quot;
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>Role      : &quot;Đóng vai [vai trò cụ thể] với [X] năm kinh nghiệm...&quot;
+<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>
+<a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>Fix output:
+<a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a>  → Thêm context
+<a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a>  → Cho ví dụ mẫu (few-shot)
+<a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a>  → Yêu cầu chi tiết hơn trong followup
 </code></pre></div>
 <hr />
 <h2 id="bai-tap-ve-nha">📚 Bài tập về nhà</h2>
