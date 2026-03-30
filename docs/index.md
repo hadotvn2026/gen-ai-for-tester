@@ -75,66 +75,72 @@ Ba nguyên tắc này xuất hiện xuyên suốt mọi session. Khi AI cho outp
 
 ### 👩‍🔬 Manual Tester
 
+> Bạn cần tốc độ + chất lượng output hàng sprint — không cần viết code.
+
 | | |
 |---|---|
-| **Mục tiêu** | Tăng tốc viết test case, bug report chuyên nghiệp, xác định regression scope thông minh |
-| **Bạn sẽ đạt được** | ✅ Viết test case nhanh gấp 3–5× với AI · ✅ Bug report chuẩn format không cần sửa lại · ✅ Tự tạo Prompt Library cá nhân dùng lại mỗi sprint · ✅ Phân tích regression scope thay vì đoán mò |
-| **Kỹ năng đạt được** | Prompt Library cá nhân · Context Card cho dự án · AI-assisted bug report · Test Execution Report tự động |
+| **Kết quả sau khóa học** | ✅ Viết test case nhanh gấp 3–5× bằng AI prompt · ✅ Bug report chuẩn format, không cần sửa lại · ✅ Phân tích regression scope có căn cứ, không phải đoán mò · ✅ Tự động hóa Test Execution Report mỗi sprint |
+| **Artifact bạn tự tạo** | Prompt Library cá nhân · Context Card cho dự án · AI-assisted bug report template |
 | **Công cụ chính** | ChatGPT · Claude.ai · NotebookLM |
 | **Lộ trình** | [S1](./sessions/session-01-mindset.md) → [S2](./sessions/session-02-technique.md) *(Prompt 1,2,5,6)* → [S3](./sessions/session-03-context.md) → [S4](./sessions/session-04-skill-building.md) *(Bước 1–4)* |
 | **Có thể bỏ qua** | S4 Bước 5 (chạy code), phần lab kỹ thuật trong S5–S6 |
 
 ### ⚙️ QA Automation Engineer
 
+> Bạn cần tốc độ viết & debug script — AI là pair programmer, không thay thế bạn.
+
 | | |
 |---|---|
-| **Mục tiêu** | Viết và debug script nhanh hơn, tạo test data thông minh, xây AI-assisted framework |
-| **Bạn sẽ đạt được** | ✅ AI pair programming thực chiến với GitHub Copilot · ✅ Generate POM từ UI description · ✅ Tự debug flaky test bằng AI trong vòng phút · ✅ Thiết kế QA Agent đơn giản tự động hóa regression check |
-| **Kỹ năng đạt được** | AI pair programming với Copilot · POM generation · Flaky test analysis · QA Agent đơn giản |
+| **Kết quả sau khóa học** | ✅ AI pair programming thực chiến với GitHub Copilot · ✅ Generate POM từ UI description trong vài phút · ✅ Debug flaky test bằng AI — không mất giờ đoán nguyên nhân · ✅ Thiết kế QA Agent tự động hóa regression check |
+| **Artifact bạn tự tạo** | Playwright test suite từ AI pair programming · POM template · Flaky test debug checklist · QA Agent design doc |
 | **Công cụ chính** | GitHub Copilot · VS Code · Claude.ai · Node.js (Playwright) |
 | **Lộ trình** | [S1](./sessions/session-01-mindset.md) → [S2](./sessions/session-02-technique.md) → [S3](./sessions/session-03-context.md) → [S4](./sessions/session-04-skill-building.md) → [S5](./sessions/session-05-ai-agent.md) → [S6](./sessions/session-06-agentic-ai.md) |
 | **Có thể bỏ qua** | Không — tất cả đều relevant |
 
 ### 📋 Business Analyst
 
+> Bạn cần shift-left quality — bắt bug requirement trước khi dev bắt đầu code.
+
 | | |
 |---|---|
-| **Mục tiêu** | Review AC tự động, phát hiện gap requirement, viết Gherkin scenarios từ mô tả nghiệp vụ |
-| **Bạn sẽ đạt được** | ✅ Phát hiện missing AC trước khi dev bắt đầu code · ✅ Convert meeting notes thành User Story có cấu trúc · ✅ Generate Gherkin scenarios từ mô tả nghiệp vụ · ✅ Inject context chuẩn cho QA team tiếp nhận |
-| **Kỹ năng đạt được** | AC Review Prompt · User Story từ meeting notes · Gherkin generation · Context injection cho QA |
+| **Kết quả sau khóa học** | ✅ Phát hiện missing AC trước khi dev bắt đầu code · ✅ Convert meeting notes thành User Story có cấu trúc · ✅ Generate Gherkin scenarios từ mô tả nghiệp vụ · ✅ Chuẩn hóa handoff context từ BA sang QA team |
+| **Artifact bạn tự tạo** | AC Review Prompt · User Story template từ meeting notes · Gherkin scenario generator · Context injection template cho QA |
 | **Công cụ chính** | ChatGPT · Claude.ai · NotebookLM |
 | **Lộ trình** | [S1](./sessions/session-01-mindset.md) → [S2](./sessions/session-02-technique.md) *(Prompt 1,5)* → [S3](./sessions/session-03-context.md) → [S6](./sessions/session-06-agentic-ai.md) *(phần 1.4)* |
 | **Có thể bỏ qua** | S4 Bước 4–5, phần technical lab trong S5 |
 
 ### 🎯 Product Owner
 
+> Bạn cần hiểu AI đủ để đặt kỳ vọng đúng — không bị "AI washing" từ team hay vendor.
+
 | | |
 |---|---|
-| **Mục tiêu** | Hiểu AI risk, đặt kỳ vọng đúng với team, nắm governance khi team áp dụng AI |
-| **Bạn sẽ đạt được** | ✅ Hiểu AI làm được gì và không làm được gì — không bị "AI washing" · ✅ Đặt câu hỏi đúng khi team đề xuất dùng AI · ✅ Nhận diện data privacy risk khi team dùng AI tools · ✅ Nắm luồng từ requirement đến AI-generated test |
-| **Kỹ năng đạt được** | AI risk framework · Data privacy checklist · Hiểu luồng từ requirement đến AI-generated test |
+| **Kết quả sau khóa học** | ✅ Biết AI làm được gì và không làm được gì trong QA workflow · ✅ Đặt câu hỏi đúng khi team đề xuất dùng AI · ✅ Nhận diện data privacy risk khi team dùng AI tools · ✅ Nắm luồng từ requirement đến AI-generated test |
+| **Artifact bạn tự tạo** | AI risk checklist · Data privacy framework · Questions bank khi review AI proposal của team |
 | **Công cụ chính** | ChatGPT · Claude.ai · NotebookLM |
 | **Lộ trình** | [S1](./sessions/session-01-mindset.md) → [S6](./sessions/session-06-agentic-ai.md) *(phần 1.4)* → [S2](./sessions/session-02-technique.md) *(đọc nhanh)* → [S3](./sessions/session-03-context.md) |
 | **Có thể bỏ qua** | Lab kỹ thuật trong S4–S5 |
 
 ### 🏆 QA Lead
 
+> Bạn cần chuẩn hóa — AI workflow nhất quán cho cả team, không phải từng cá nhân tự mò.
+
 | | |
 |---|---|
-| **Mục tiêu** | Chuẩn hóa AI workflow cho team, xây quality gate cho AI-generated artifacts, onboard team member |
-| **Bạn sẽ đạt được** | ✅ Shared Prompt Library dùng chung cho cả team · ✅ Quality gate checklist để review AI-generated test case · ✅ Template Context Card chuẩn cho từng dự án · ✅ Phác thảo QA Team Agent phù hợp với quy trình hiện tại |
-| **Kỹ năng đạt được** | Team Prompt Library · Shared Context Card · Quality gate checklist · QA Team Agent design |
+| **Kết quả sau khóa học** | ✅ Xây Shared Prompt Library dùng chung toàn team · ✅ Thiết lập quality gate để review AI-generated artifacts · ✅ Chuẩn hóa Context Card cho từng dự án · ✅ Phác thảo QA Team Agent phù hợp quy trình hiện tại |
+| **Artifact bạn tự tạo** | Team Prompt Library · Shared Context Card template · Quality gate checklist · QA Team Agent design doc |
 | **Công cụ chính** | Claude.ai (Projects) · GitHub Copilot · VS Code · Antigravity |
 | **Lộ trình** | Toàn bộ 6 sessions — cần đủ để hiểu từng bước team đang làm |
 | **Có thể bỏ qua** | Không |
 
 ### 📊 QA Manager
 
+> Bạn cần business case rõ ràng — adoption roadmap, ROI thực tế và governance trước khi scale.
+
 | | |
 |---|---|
-| **Mục tiêu** | Adoption roadmap, đo ROI, quản lý rủi ro tổ chức, thuyết phục stakeholder |
-| **Bạn sẽ đạt được** | ✅ AI maturity self-assessment cho team hiện tại · ✅ KPI framework để đo ROI thực tế · ✅ Tiêu chí đánh giá vendor AI tool · ✅ Draft governance policy cho tổ chức khi scale AI adoption |
-| **Kỹ năng đạt được** | AI maturity self-assessment · KPI framework · Vendor evaluation criteria · Governance policy |
+| **Kết quả sau khóa học** | ✅ Tự đánh giá AI maturity của team hiện tại · ✅ Xây KPI framework đo ROI thực tế · ✅ Đánh giá và lựa chọn AI vendor với tiêu chí rõ ràng · ✅ Draft governance policy khi tổ chức scale AI adoption |
+| **Artifact bạn tự tạo** | AI maturity self-assessment scorecard · KPI tracking template · Vendor evaluation criteria · Governance policy draft |
 | **Công cụ chính** | ChatGPT · Claude.ai · NotebookLM |
 | **Lộ trình** | [S1](./sessions/session-01-mindset.md) → [S6](./sessions/session-06-agentic-ai.md) → [S2](./sessions/session-02-technique.md) → [S3](./sessions/session-03-context.md) |
 | **Có thể bỏ qua** | Lab kỹ thuật trong S4–S5 *(đọc overview là đủ)* |
