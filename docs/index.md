@@ -1,12 +1,12 @@
 # 🤖 Generative AI for Testers
 
-> Khóa học tự học thực hành — ứng dụng AI vào kiểm thử phần mềm theo đúng workflow thực tế của bạn
+> Khóa học thực hành 2 ngày — ứng dụng AI vào kiểm thử phần mềm theo đúng workflow thực tế của bạn
 
 ![Sessions](https://img.shields.io/badge/Sessions-6-purple)
-![Duration](https://img.shields.io/badge/Duration-3h%2Fsession-teal)
+![Duration](https://img.shields.io/badge/Duration-2%20Sundays%20×%206hr-teal)
 ![Language](https://img.shields.io/badge/Language-Tiếng%20Việt-blue)
 ![Level](https://img.shields.io/badge/Level-Beginner%20→%20Advanced-orange)
-![Format](https://img.shields.io/badge/Format-Self--Study-green)
+![Format](https://img.shields.io/badge/Format-Self--Study%20%2B%20Live-green)
 
 ---
 
@@ -21,9 +21,31 @@ Khóa học **Generative AI for Testers** được thiết kế dành cho tất 
 - **QA Lead** — chuẩn hóa AI workflow cho team, xây dựng quality gate
 - **QA Manager** — lộ trình adoption, đo ROI, quản lý rủi ro tổ chức
 
-**Phương pháp học:** 40% lý thuyết · 60% thực hành · Tự học theo tốc độ của bạn
+**Phương pháp học:** 40% lý thuyết · 60% thực hành · Kết hợp live 2 ngày + tự học mở rộng
 
 > **💡 Không cần biết code để bắt đầu.** Mỗi session đều có hướng dẫn riêng cho từng role — kể cả những bài tập kỹ thuật cũng có lối đi cho người không lập trình.
+
+---
+
+## 🗓️ Lịch học 2 ngày
+
+> Khóa học diễn ra **2 buổi Chủ nhật**, mỗi ngày 6 giờ chia thành **buổi sáng** và **buổi chiều** (3hr/buổi). Nội dung self-study đầy đủ vẫn có trong từng session link bên dưới để bạn ôn lại sau.
+
+### Chủ nhật 1 — Nền tảng AI cho Testing
+
+| Buổi | Thời gian | Nội dung | Session |
+|------|-----------|----------|---------|
+| ☀️ Sáng | 8:30 – 11:30 | **Mindset** — AI là Co-Pilot của bạn + **Technique** (Prompt 1–3) | [S1](./sessions/session-01-mindset.md) + [S2 đầu](./sessions/session-02-technique.md) |
+| 🌤️ Chiều | 13:00 – 16:00 | **Technique** (Prompt 4–6 theo role) + **Context** — Biến AI hiểu dự án | [S2 tiếp](./sessions/session-02-technique.md) + [S3](./sessions/session-03-context.md) |
+
+### Chủ nhật 2 — Ứng dụng AI Thực Chiến
+
+| Buổi | Thời gian | Nội dung | Session |
+|------|-----------|----------|---------|
+| ☀️ Sáng | 8:30 – 11:30 | **Skill Building** — Automation với AI (cả coder và non-coder path) | [S4](./sessions/session-04-skill-building.md) |
+| 🌤️ Chiều | 13:00 – 16:00 | **AI Agent** + **Agentic AI** — Capstone Project theo role | [S5](./sessions/session-05-ai-agent.md) + [S6](./sessions/session-06-agentic-ai.md) |
+
+> **💡 Sau khóa học:** Mỗi session có nội dung self-study đầy đủ (~3hr) để bạn thực hành sâu hơn theo tốc độ riêng.
 
 ---
 
@@ -56,6 +78,7 @@ Ba nguyên tắc này xuất hiện xuyên suốt mọi session. Khi AI cho outp
 | | |
 |---|---|
 | **Mục tiêu** | Tăng tốc viết test case, bug report chuyên nghiệp, xác định regression scope thông minh |
+| **Bạn sẽ đạt được** | ✅ Viết test case nhanh gấp 3–5× với AI · ✅ Bug report chuẩn format không cần sửa lại · ✅ Tự tạo Prompt Library cá nhân dùng lại mỗi sprint · ✅ Phân tích regression scope thay vì đoán mò |
 | **Kỹ năng đạt được** | Prompt Library cá nhân · Context Card cho dự án · AI-assisted bug report · Test Execution Report tự động |
 | **Công cụ chính** | ChatGPT · Claude.ai · NotebookLM |
 | **Lộ trình** | [S1](./sessions/session-01-mindset.md) → [S2](./sessions/session-02-technique.md) *(Prompt 1,2,5,6)* → [S3](./sessions/session-03-context.md) → [S4](./sessions/session-04-skill-building.md) *(Bước 1–4)* |
@@ -66,6 +89,7 @@ Ba nguyên tắc này xuất hiện xuyên suốt mọi session. Khi AI cho outp
 | | |
 |---|---|
 | **Mục tiêu** | Viết và debug script nhanh hơn, tạo test data thông minh, xây AI-assisted framework |
+| **Bạn sẽ đạt được** | ✅ AI pair programming thực chiến với GitHub Copilot · ✅ Generate POM từ UI description · ✅ Tự debug flaky test bằng AI trong vòng phút · ✅ Thiết kế QA Agent đơn giản tự động hóa regression check |
 | **Kỹ năng đạt được** | AI pair programming với Copilot · POM generation · Flaky test analysis · QA Agent đơn giản |
 | **Công cụ chính** | GitHub Copilot · VS Code · Claude.ai · Node.js (Playwright) |
 | **Lộ trình** | [S1](./sessions/session-01-mindset.md) → [S2](./sessions/session-02-technique.md) → [S3](./sessions/session-03-context.md) → [S4](./sessions/session-04-skill-building.md) → [S5](./sessions/session-05-ai-agent.md) → [S6](./sessions/session-06-agentic-ai.md) |
@@ -76,6 +100,7 @@ Ba nguyên tắc này xuất hiện xuyên suốt mọi session. Khi AI cho outp
 | | |
 |---|---|
 | **Mục tiêu** | Review AC tự động, phát hiện gap requirement, viết Gherkin scenarios từ mô tả nghiệp vụ |
+| **Bạn sẽ đạt được** | ✅ Phát hiện missing AC trước khi dev bắt đầu code · ✅ Convert meeting notes thành User Story có cấu trúc · ✅ Generate Gherkin scenarios từ mô tả nghiệp vụ · ✅ Inject context chuẩn cho QA team tiếp nhận |
 | **Kỹ năng đạt được** | AC Review Prompt · User Story từ meeting notes · Gherkin generation · Context injection cho QA |
 | **Công cụ chính** | ChatGPT · Claude.ai · NotebookLM |
 | **Lộ trình** | [S1](./sessions/session-01-mindset.md) → [S2](./sessions/session-02-technique.md) *(Prompt 1,5)* → [S3](./sessions/session-03-context.md) → [S6](./sessions/session-06-agentic-ai.md) *(phần 1.4)* |
@@ -86,6 +111,7 @@ Ba nguyên tắc này xuất hiện xuyên suốt mọi session. Khi AI cho outp
 | | |
 |---|---|
 | **Mục tiêu** | Hiểu AI risk, đặt kỳ vọng đúng với team, nắm governance khi team áp dụng AI |
+| **Bạn sẽ đạt được** | ✅ Hiểu AI làm được gì và không làm được gì — không bị "AI washing" · ✅ Đặt câu hỏi đúng khi team đề xuất dùng AI · ✅ Nhận diện data privacy risk khi team dùng AI tools · ✅ Nắm luồng từ requirement đến AI-generated test |
 | **Kỹ năng đạt được** | AI risk framework · Data privacy checklist · Hiểu luồng từ requirement đến AI-generated test |
 | **Công cụ chính** | ChatGPT · Claude.ai · NotebookLM |
 | **Lộ trình** | [S1](./sessions/session-01-mindset.md) → [S6](./sessions/session-06-agentic-ai.md) *(phần 1.4)* → [S2](./sessions/session-02-technique.md) *(đọc nhanh)* → [S3](./sessions/session-03-context.md) |
@@ -96,6 +122,7 @@ Ba nguyên tắc này xuất hiện xuyên suốt mọi session. Khi AI cho outp
 | | |
 |---|---|
 | **Mục tiêu** | Chuẩn hóa AI workflow cho team, xây quality gate cho AI-generated artifacts, onboard team member |
+| **Bạn sẽ đạt được** | ✅ Shared Prompt Library dùng chung cho cả team · ✅ Quality gate checklist để review AI-generated test case · ✅ Template Context Card chuẩn cho từng dự án · ✅ Phác thảo QA Team Agent phù hợp với quy trình hiện tại |
 | **Kỹ năng đạt được** | Team Prompt Library · Shared Context Card · Quality gate checklist · QA Team Agent design |
 | **Công cụ chính** | Claude.ai (Projects) · GitHub Copilot · VS Code · Antigravity |
 | **Lộ trình** | Toàn bộ 6 sessions — cần đủ để hiểu từng bước team đang làm |
@@ -106,6 +133,7 @@ Ba nguyên tắc này xuất hiện xuyên suốt mọi session. Khi AI cho outp
 | | |
 |---|---|
 | **Mục tiêu** | Adoption roadmap, đo ROI, quản lý rủi ro tổ chức, thuyết phục stakeholder |
+| **Bạn sẽ đạt được** | ✅ AI maturity self-assessment cho team hiện tại · ✅ KPI framework để đo ROI thực tế · ✅ Tiêu chí đánh giá vendor AI tool · ✅ Draft governance policy cho tổ chức khi scale AI adoption |
 | **Kỹ năng đạt được** | AI maturity self-assessment · KPI framework · Vendor evaluation criteria · Governance policy |
 | **Công cụ chính** | ChatGPT · Claude.ai · NotebookLM |
 | **Lộ trình** | [S1](./sessions/session-01-mindset.md) → [S6](./sessions/session-06-agentic-ai.md) → [S2](./sessions/session-02-technique.md) → [S3](./sessions/session-03-context.md) |
@@ -168,6 +196,82 @@ npx playwright test
 ```
 
 > 💡 **Gợi ý:** Nếu gặp lỗi permission trên macOS/Linux, thêm `sudo` trước lệnh npm. Trên Windows, chạy terminal với quyền Administrator.
+
+---
+
+## 💡 Ứng dụng AI trong phát triển nghề nghiệp
+
+Ngoài kiểm thử phần mềm, AI còn là công cụ mạnh để **đầu tư vào bản thân**. Dưới đây là một số ứng dụng thực tế bạn có thể làm ngay sau khóa học.
+
+### 📄 Review CV & Job Description
+
+AI có thể đóng vai HR chuyên nghiệp, giúp bạn nhận feedback trước khi nộp đơn thật.
+
+```
+[ROLE] Bạn là Senior Recruiter tại công ty công nghệ với 10 năm kinh nghiệm tuyển dụng QA/Testing.
+
+[TASK] Hãy review CV dưới đây theo Job Description này:
+- JD: [dán nội dung JD vào đây]
+- CV: [dán nội dung CV vào đây]
+
+[FORMAT] Phân tích theo 3 phần:
+1. Điểm mạnh — CV đang match tốt với JD ở chỗ nào?
+2. Điểm yếu / thiếu sót — JD yêu cầu gì mà CV chưa thể hiện?
+3. Gợi ý cụ thể — Viết lại 2–3 bullet point để tăng match rate
+```
+
+**Công cụ:** ChatGPT · Claude.ai · [Resume.io](https://resume.io) (AI-powered CV builder)
+
+---
+
+### 🎤 Tạo Mock Interview cá nhân hóa
+
+AI có thể tạo bộ câu hỏi phỏng vấn sát với JD thực tế và phản hồi câu trả lời của bạn.
+
+```
+[ROLE] Bạn là Hiring Manager tại [TÊN CÔNG TY / LOẠI CÔNG TY].
+
+[CONTEXT]
+- Vị trí: [VD: QA Automation Engineer, 3–5 năm kinh nghiệm]
+- Tech stack: [VD: Playwright, TypeScript, CI/CD, Jira]
+- Phong cách phỏng vấn: [competency-based / technical deep-dive / case-study]
+
+[TASK] Tạo 10 câu hỏi phỏng vấn sát với JD này, mix giữa:
+- 4 câu technical (tool, framework, process)
+- 3 câu behavioral (STAR method)
+- 3 câu situational (how would you handle...)
+
+Sau đó đóng vai interviewer: tôi sẽ trả lời từng câu, bạn cho feedback theo tiêu chí:
+Rõ ràng / Có ví dụ cụ thể / Liên quan đến vị trí.
+```
+
+**Mở rộng:** Sau mỗi câu trả lời, hỏi AI: *"Câu trả lời của tôi đạt mấy điểm / 10? Tôi cần cải thiện gì?"*
+
+---
+
+### 🗺️ Lộ trình phát triển kỹ năng
+
+AI giúp bạn xây kế hoạch học có cấu trúc, không bị lạc lối giữa hàng trăm resource trên mạng.
+
+```
+[ROLE] Bạn là Career Coach chuyên về lĩnh vực Software Testing & QA.
+
+[CONTEXT]
+- Tôi hiện là: [VD: Manual Tester, 2 năm kinh nghiệm, không biết code]
+- Mục tiêu trong 6 tháng: [VD: chuyển sang QA Automation, kiếm được job Playwright]
+- Thời gian học: [VD: 1–2 tiếng/ngày, buổi tối và cuối tuần]
+- Điểm mạnh hiện tại: [VD: test case, Jira, regression testing]
+
+[TASK] Hãy tạo lộ trình học 6 tháng theo từng tháng, gồm:
+- Kỹ năng cần đạt
+- Resource cụ thể (tên khóa học, tên sách, YouTube channel)
+- Milestone để tự đánh giá tiến độ
+- Cảnh báo các "bẫy" thường gặp khi tự học automation
+
+[FORMAT] Timeline rõ ràng theo tháng, action item cụ thể có thể làm ngay hôm nay.
+```
+
+> **💡 Tips:** Dùng Claude.ai Projects để lưu context career của bạn — mỗi lần chat mới AI vẫn nhớ mục tiêu và tiến độ, không cần kể lại từ đầu.
 
 ---
 
