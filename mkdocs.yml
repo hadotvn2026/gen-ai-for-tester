@@ -1,6 +1,6 @@
 site_name: Generative AI for Testers
 site_description: Khóa học thực hành ứng dụng AI trong kiểm thử phần mềm
-site_author: QA Automation Trainer
+site_author: Ha Do
 site_url: https://hadotvn2026.github.io/gen-ai-for-tester/
 
 theme:
@@ -8,13 +8,13 @@ theme:
   language: vi
   palette:
     - scheme: default
-      primary: deep purple
+      primary: blue
       accent: teal
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
     - scheme: slate
-      primary: deep purple
+      primary: blue
       accent: teal
       toggle:
         icon: material/brightness-4
