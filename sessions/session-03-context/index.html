@@ -1,0 +1,1588 @@
+
+<!doctype html>
+<html lang="vi" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Khóa học thực hành ứng dụng AI trong kiểm thử phần mềm">
+      
+      
+        <meta name="author" content="QA Automation Trainer">
+      
+      
+        <link rel="canonical" href="https://hadotvn2026.github.io/gen-ai-for-tester/sessions/session-03-context/">
+      
+      
+        <link rel="prev" href="../session-02-technique/">
+      
+      
+        <link rel="next" href="../session-04-skill-building/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Session 3 — Context - Generative AI for Testers</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#session-3-context-bien-ai-hieu-du-an-cua-ban" class="md-skip">
+          Bỏ qua
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Đầu trang">
+    <a href="../.." title="Generative AI for Testers" class="md-header__button md-logo" aria-label="Generative AI for Testers" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Generative AI for Testers
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Session 3 — Context
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Tìm kiếm" placeholder="Tìm kiếm" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Tìm kiếm">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Xoá" aria-label="Xoá" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Tổng quan
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../session-01-mindset/" class="md-tabs__link">
+          
+  
+  
+  Sessions
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../resources/prompt-library/" class="md-tabs__link">
+          
+  
+  
+  Resources
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Thanh điều hướng" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Generative AI for Testers" class="md-nav__button md-logo" aria-label="Generative AI for Testers" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Generative AI for Testers
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tổng quan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sessions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sessions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../session-01-mindset/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Session 1 — Mindset
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../session-02-technique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Session 2 — Technique
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Session 3 — Context
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Session 3 — Context
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Mục lục">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Mục lục
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#muc-tieu-buoi-hoc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Mục tiêu buổi học
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phan-1-ly-thuyet-60-phut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PHẦN 1 — LÝ THUYẾT (60 phút)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PHẦN 1 — LÝ THUYẾT (60 phút)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-tai-sao-context-la-nguyen-tac-quan-trong-nhat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Tại sao Context là nguyên tắc quan trọng nhất?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quy-tac-gigo-garbage-in-garbage-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quy tắc GIGO (Garbage In, Garbage Out)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-nam-loai-context-can-cung-cap-cho-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Năm loại Context cần cung cấp cho AI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-rag-va-fine-tuning-giai-thich-cho-non-tech" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 RAG và Fine-tuning — Giải thích cho non-tech
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phan-2-thuc-hanh-120-phut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PHẦN 2 — THỰC HÀNH (120 phút)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PHẦN 2 — THỰC HÀNH (120 phút)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lab-31-context-injection-voi-tai-lieu-thuc-te-40-phut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔬 Lab 3.1 — Context Injection với tài liệu thực tế (40 phút)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hands-on-checkpoint-3-so-sanh-chat-luong-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ HANDS-ON CHECKPOINT 3: So sánh chất lượng output
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lab-32-domain-specific-test-data-40-phut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔬 Lab 3.2 — Domain-Specific Test Data (40 phút)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tinh-huong-thuc-te-3-tai-lieu-qua-dai-ai-quen-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 TÌNH HUỐNG THỰC TẾ 3: "Tài liệu quá dài, AI quên context"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lab-33-xay-dung-context-card-ca-nhan-20-phut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔬 Lab 3.3 — Xây dựng Context Card cá nhân (20 phút)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phan-3-kiem-tra-hieu-bai-20-phut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PHẦN 3 — KIỂM TRA HIỂU BÀI (20 phút)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PHẦN 3 — KIỂM TRA HIỂU BÀI (20 phút)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scenario-based-assessment-context-detective" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 SCENARIO-BASED ASSESSMENT: "Context Detective"
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recap-5-iem-chinh-session-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 RECAP — 5 điểm chính Session 3
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-reference-cheat-sheet-session-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🗒️ QUICK REFERENCE — Cheat Sheet Session 3
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bai-tap-ve-nha" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 Bài tập về nhà
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../session-04-skill-building/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Session 4 — Skill Building
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../session-05-ai-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Session 5 — AI Agent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../session-06-agentic-ai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Session 6 — Agentic AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Resources
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/prompt-library/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prompt Library
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/cheat-sheets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cheat Sheets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Mục lục">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Mục lục
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#muc-tieu-buoi-hoc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Mục tiêu buổi học
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phan-1-ly-thuyet-60-phut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PHẦN 1 — LÝ THUYẾT (60 phút)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PHẦN 1 — LÝ THUYẾT (60 phút)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-tai-sao-context-la-nguyen-tac-quan-trong-nhat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Tại sao Context là nguyên tắc quan trọng nhất?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quy-tac-gigo-garbage-in-garbage-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quy tắc GIGO (Garbage In, Garbage Out)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-nam-loai-context-can-cung-cap-cho-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Năm loại Context cần cung cấp cho AI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-rag-va-fine-tuning-giai-thich-cho-non-tech" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 RAG và Fine-tuning — Giải thích cho non-tech
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phan-2-thuc-hanh-120-phut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PHẦN 2 — THỰC HÀNH (120 phút)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PHẦN 2 — THỰC HÀNH (120 phút)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lab-31-context-injection-voi-tai-lieu-thuc-te-40-phut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔬 Lab 3.1 — Context Injection với tài liệu thực tế (40 phút)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hands-on-checkpoint-3-so-sanh-chat-luong-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ HANDS-ON CHECKPOINT 3: So sánh chất lượng output
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lab-32-domain-specific-test-data-40-phut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔬 Lab 3.2 — Domain-Specific Test Data (40 phút)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tinh-huong-thuc-te-3-tai-lieu-qua-dai-ai-quen-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 TÌNH HUỐNG THỰC TẾ 3: "Tài liệu quá dài, AI quên context"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lab-33-xay-dung-context-card-ca-nhan-20-phut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔬 Lab 3.3 — Xây dựng Context Card cá nhân (20 phút)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phan-3-kiem-tra-hieu-bai-20-phut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PHẦN 3 — KIỂM TRA HIỂU BÀI (20 phút)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PHẦN 3 — KIỂM TRA HIỂU BÀI (20 phút)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scenario-based-assessment-context-detective" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 SCENARIO-BASED ASSESSMENT: "Context Detective"
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recap-5-iem-chinh-session-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 RECAP — 5 điểm chính Session 3
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-reference-cheat-sheet-session-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🗒️ QUICK REFERENCE — Cheat Sheet Session 3
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bai-tap-ve-nha" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 Bài tập về nhà
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="session-3-context-bien-ai-hieu-du-an-cua-ban">Session 3 — Context: Biến AI hiểu dự án của bạn</h1>
+<blockquote>
+<p><strong>Nguyên tắc:</strong> 🔴 CONTEXT<br />
+<strong>Thời lượng:</strong> 3 giờ · Lý thuyết: 60 phút · Thực hành: 120 phút · Kiểm tra: 20 phút<br />
+<strong>Prerequisite:</strong> <a href="../session-02-technique/">Session 2 — Technique</a></p>
+</blockquote>
+<hr />
+<h2 id="muc-tieu-buoi-hoc">🎯 Mục tiêu buổi học</h2>
+<p>Sau session này, học viên có thể:</p>
+<ul>
+<li>[ ] Giải thích tại sao Context là "mảnh ghép cuối" để AI cho output có giá trị</li>
+<li>[ ] Áp dụng nguyên tắc GIGO vào việc chuẩn bị prompt</li>
+<li>[ ] Inject context dự án vào prompt một cách hiệu quả</li>
+<li>[ ] Hiểu khái niệm RAG và Fine-tuning ở mức ứng dụng (không cần code)</li>
+<li>[ ] Tạo Context Card cá nhân cho dự án đang làm</li>
+</ul>
+<hr />
+<h2 id="phan-1-ly-thuyet-60-phut">PHẦN 1 — LÝ THUYẾT (60 phút)</h2>
+<h3 id="11-tai-sao-context-la-nguyen-tac-quan-trong-nhat">1.1 Tại sao Context là nguyên tắc quan trọng nhất?</h3>
+<p>Sau khi học Mindset và Technique, nhiều Tester vẫn thấy AI trả về kết quả quá chung chung. Lý do chính: <strong>THIẾU BỐI CẢNH</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Prompt thiếu context</th>
+<th>Prompt đủ context</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>"Tạo test case cho đăng nhập"</em></td>
+<td><em>"Tạo test case cho chức năng SSO login của ứng dụng quản lý kho B2B, user là warehouse manager, hệ thống tích hợp với Active Directory"</em></td>
+</tr>
+<tr>
+<td><strong>Kết quả:</strong> Generic, có thể dùng cho bất kỳ app nào</td>
+<td><strong>Kết quả:</strong> Cụ thể, cover đúng rủi ro thực tế của dự án</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="quy-tac-gigo-garbage-in-garbage-out">Quy tắc GIGO (Garbage In, Garbage Out)</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>┌─────────────────────────────────────────────────────────┐
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>│                                                         │
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>│  Prompt chung chung  →  Output nông cạn, vô dụng        │
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>│                                                         │
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>│  Prompt + Context    →  Output sâu, sát thực tế         │
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>│                                                         │
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>│       &quot;Rác vào = Rác ra&quot;  (GIGO)                        │
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>│                                                         │
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>└─────────────────────────────────────────────────────────┘
+</code></pre></div>
+<blockquote>
+<p><strong>Nguyên tắc:</strong> Context tốt = Dữ liệu đầu vào tốt = Output giá trị cao</p>
+</blockquote>
+<hr />
+<h3 id="12-nam-loai-context-can-cung-cap-cho-ai">1.2 Năm loại Context cần cung cấp cho AI</h3>
+<table>
+<thead>
+<tr>
+<th>Loại Context</th>
+<th>Ví dụ cụ thể cho QA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Business domain</strong></td>
+<td>Hệ thống ngân hàng / y tế / thương mại điện tử / logistics</td>
+</tr>
+<tr>
+<td><strong>User persona</strong></td>
+<td>Người dùng là ai, trình độ công nghệ, thói quen sử dụng</td>
+</tr>
+<tr>
+<td><strong>Kỹ thuật / Công nghệ</strong></td>
+<td>React frontend, Java Spring Boot, PostgreSQL, REST API</td>
+</tr>
+<tr>
+<td><strong>Quy tắc nghiệp vụ</strong></td>
+<td>Số tiền chuyển tối đa 500 triệu/ngày, thẻ hết hạn tự động hủy</td>
+</tr>
+<tr>
+<td><strong>Lịch sử bug / Rủi ro</strong></td>
+<td>Module thanh toán hay lỗi khi concurrent user &gt; 100</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="13-rag-va-fine-tuning-giai-thich-cho-non-tech">1.3 RAG và Fine-tuning — Giải thích cho non-tech</h3>
+<p><strong>RAG (Retrieval-Augmented Generation):</strong><br />
+AI được cung cấp tài liệu cụ thể <strong>TRƯỚC KHI</strong> trả lời. Giống như bạn cho nhân viên đọc tài liệu nội bộ trước khi làm việc.</p>
+<p><strong>Fine-tuning:</strong><br />
+"Huấn luyện lại" AI với dữ liệu của công ty. Phức tạp hơn, cần kỹ thuật, nhưng kết quả rất đặc thù. Phù hợp khi có nhiều tài liệu nội bộ.</p>
+<table>
+<thead>
+<tr>
+<th>Phương pháp</th>
+<th>Độ khó</th>
+<th>Khi nào dùng</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Context injection</strong> <em>(Session này)</em></td>
+<td>Dễ — chỉ cần copy-paste</td>
+<td>Ngay lập tức, mọi dự án</td>
+</tr>
+<tr>
+<td><strong>RAG</strong></td>
+<td>Trung bình — cần setup</td>
+<td>Có nhiều tài liệu nội bộ (&gt; 50 trang)</td>
+</tr>
+<tr>
+<td><strong>Fine-tuning</strong></td>
+<td>Khó — cần kỹ thuật AI</td>
+<td>Khi cần AI hiểu sâu nghiệp vụ đặc thù</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="phan-2-thuc-hanh-120-phut">PHẦN 2 — THỰC HÀNH (120 phút)</h2>
+<h3 id="lab-31-context-injection-voi-tai-lieu-thuc-te-40-phut">🔬 Lab 3.1 — Context Injection với tài liệu thực tế (40 phút)</h3>
+<p><strong>Bước thực hành:</strong></p>
+<p><strong>Bước 1:</strong> Chọn 1 trong các tài liệu sau (hoặc dùng tài liệu dự án thực tế của bạn):
+- User story / Acceptance criteria
+- API documentation (Swagger/Postman)
+- Business requirement document (BRD)</p>
+<p><strong>Bước 2:</strong> Copy nội dung tài liệu vào prompt theo template:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>=== CONTEXT ===
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>[Paste nội dung tài liệu vào đây — tối đa 2000 ký tự]
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>=== HẾT CONTEXT ===
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>Dựa trên tài liệu trên, hãy:
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>1. Xác định 5 rủi ro kiểm thử chính
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>2. Tạo 10 test case ưu tiên cao nhất
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>3. Đề xuất test data cần chuẩn bị
+</code></pre></div>
+<p><strong>Bước 3:</strong> So sánh với kết quả khi <strong>KHÔNG có context</strong> (từ Session 1).</p>
+<hr />
+<h3 id="hands-on-checkpoint-3-so-sanh-chat-luong-output">✅ HANDS-ON CHECKPOINT 3: So sánh chất lượng output</h3>
+<blockquote>
+<p><strong>Bảng đánh giá</strong> (chấm điểm 1–5 cho mỗi tiêu chí):</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Tiêu chí</th>
+<th style="text-align: center;">Không context</th>
+<th style="text-align: center;">Có context</th>
+<th style="text-align: center;">Cải thiện</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Độ cụ thể (sát business domain?)</td>
+<td style="text-align: center;">___/5</td>
+<td style="text-align: center;">___/5</td>
+<td style="text-align: center;">+___%</td>
+</tr>
+<tr>
+<td>Khả năng dùng ngay (cần sửa nhiều không?)</td>
+<td style="text-align: center;">___/5</td>
+<td style="text-align: center;">___/5</td>
+<td style="text-align: center;">+___%</td>
+</tr>
+<tr>
+<td>Coverage (cover đúng rủi ro đặc thù?)</td>
+<td style="text-align: center;">___/5</td>
+<td style="text-align: center;">___/5</td>
+<td style="text-align: center;">+___%</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>💬 <strong>Chia sẻ</strong> bảng đánh giá lên Zoom chat — trainer sẽ tổng hợp real-time.</p>
+</blockquote>
+<hr />
+<h3 id="lab-32-domain-specific-test-data-40-phut">🔬 Lab 3.2 — Domain-Specific Test Data (40 phút)</h3>
+<p><strong>Vấn đề:</strong> Test data chung chung không cover được đặc thù domain.</p>
+<p><strong>Ví dụ — Hệ thống ngân hàng Việt Nam:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>❌ Prompt thiếu context:
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>&quot;Tạo test data cho hệ thống ngân hàng&quot;
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>→ AI tạo: tên = &quot;John Doe&quot;, số tài khoản = &quot;123456&quot; (vô nghĩa)
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>✅ Prompt đủ context:
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>&quot;Tạo test data cho hệ thống ngân hàng Việt Nam theo quy định SBV.
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>Yêu cầu:
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>- Số tài khoản: 14 chữ số, bắt đầu bằng mã ngân hàng (VCB: 0070, TCB: 019)
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>- Số CMND/CCCD: 9 hoặc 12 chữ số, khớp với tỉnh thành
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>- Số tiền: VND, không có số thập phân, tối thiểu 50,000 VND
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>- Tên khách hàng: tên Việt Nam có dấu, format Họ Tên đệm
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>Tạo 10 dòng data hợp lệ và 5 dòng data lỗi để test validation.&quot;
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>→ AI tạo dữ liệu thực tế, đúng chuẩn Việt Nam
+</code></pre></div>
+<p><strong>Nhiệm vụ thực hành — Chọn domain dự án của bạn:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Nhóm</th>
+<th>Domain</th>
+<th>Test data cần tạo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Nhóm 1</strong></td>
+<td>E-commerce</td>
+<td>Sản phẩm, giỏ hàng, voucher, vận chuyển</td>
+</tr>
+<tr>
+<td><strong>Nhóm 2</strong></td>
+<td>HR System</td>
+<td>Nhân viên, lương, ngày phép, bảo hiểm</td>
+</tr>
+<tr>
+<td><strong>Nhóm 3</strong></td>
+<td>Healthcare</td>
+<td>Bệnh nhân, lịch khám, đơn thuốc, BHYT</td>
+</tr>
+<tr>
+<td><strong>Nhóm 4</strong></td>
+<td>Logistics</td>
+<td>Đơn hàng, tuyến đường, kho hàng, tài xế</td>
+</tr>
+<tr>
+<td><strong>Nhóm 5</strong></td>
+<td>Finance</td>
+<td>Tài khoản, giao dịch, hạn mức, phí</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Output mỗi nhóm:</strong> 15 dòng data hợp lệ + 5 dòng edge case + 5 dòng data lỗi</p>
+<hr />
+<h3 id="tinh-huong-thuc-te-3-tai-lieu-qua-dai-ai-quen-context">💡 TÌNH HUỐNG THỰC TẾ 3: "Tài liệu quá dài, AI quên context"</h3>
+<p><strong>Bối cảnh:</strong><br />
+Hương là QA Lead. Cô paste cả 50-trang BRD vào ChatGPT để sinh test plan. Khi hỏi đến module cuối, AI bắt đầu "quên" thông tin ở module đầu. Test plan tạo ra bị thiếu sót nhiều phần quan trọng.</p>
+<p><strong>Câu hỏi:</strong>
+1. Nguyên nhân kỹ thuật là gì? <em>(Gợi ý: "context window")</em>
+2. Chiến lược nào giúp xử lý tài liệu dài?
+3. Nếu bạn là Hương, bạn sẽ làm gì khác đi?
+4. Khi nào nên dùng RAG thay vì context injection?</p>
+<blockquote>
+<p><strong>Gợi ý giải:</strong> ChatGPT ~128K token, Claude ~200K token (1 token ≈ 4 ký tự). Tài liệu 50 trang ≈ 75K+ token — đã gần limit. <strong>Giải pháp:</strong> Chia tài liệu theo module, xử lý từng phần riêng biệt, tổng hợp sau.</p>
+</blockquote>
+<hr />
+<h3 id="lab-33-xay-dung-context-card-ca-nhan-20-phut">🔬 Lab 3.3 — Xây dựng Context Card cá nhân (20 phút)</h3>
+<p>Mỗi học viên tạo <strong>Context Card</strong> cho dự án mình đang làm. Lưu lại — dùng cho mọi prompt sau này.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="gu">## Context Card — [Tên dự án]</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="gu">### Domain</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>[Lĩnh vực: e-commerce / banking / healthcare / ...]
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="gu">### Tech Stack</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="k">-</span><span class="w"> </span>Frontend: [React / Angular / Vue / ...]
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="k">-</span><span class="w"> </span>Backend: [Java Spring / Node.js / Python / ...]
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="k">-</span><span class="w"> </span>Database: [PostgreSQL / MySQL / MongoDB / ...]
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="k">-</span><span class="w"> </span>API: [REST / GraphQL / ...]
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="gu">### User chính</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="k">-</span><span class="w"> </span>Vai trò: [Admin / End-user / Manager / ...]
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="k">-</span><span class="w"> </span>Trình độ công nghệ: [Cao / Trung bình / Thấp]
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="k">-</span><span class="w"> </span>Đặc điểm: [...]
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="gu">### Business rules quan trọng</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="k">-</span><span class="w"> </span>[Quy tắc 1]
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="k">-</span><span class="w"> </span>[Quy tắc 2]
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="k">-</span><span class="w"> </span>[Quy tắc 3]
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="gu">### Các loại lỗi hay gặp</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="k">-</span><span class="w"> </span>[Vấn đề 1]
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="k">-</span><span class="w"> </span>[Vấn đề 2]
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="gu">### Đặc điểm dữ liệu</span>
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="k">-</span><span class="w"> </span>Format số, ngày tháng, tiền tệ: [...]
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="k">-</span><span class="w"> </span>Giới hạn, ràng buộc: [...]
+</code></pre></div>
+<blockquote>
+<p><strong>Gợi ý:</strong> Lưu Context Card vào Notion / Git repo. Copy vào mọi prompt để output tốt hơn ngay lập tức.</p>
+</blockquote>
+<hr />
+<h2 id="phan-3-kiem-tra-hieu-bai-20-phut">PHẦN 3 — KIỂM TRA HIỂU BÀI (20 phút)</h2>
+<h3 id="scenario-based-assessment-context-detective">📋 SCENARIO-BASED ASSESSMENT: "Context Detective"</h3>
+<blockquote>
+<p><strong>Thời gian:</strong> 10 phút cá nhân → 10 phút thảo luận nhóm</p>
+</blockquote>
+<p>Dưới đây là 3 output AI tạo ra. Nhiệm vụ: <strong>Phân tích context nào đã được cung cấp (hay thiếu)</strong>.</p>
+<hr />
+<p><strong>Output 1:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Test case: Đăng nhập với email &quot;user123@email.com&quot;, password &quot;Test@1234&quot;
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>Expected: Đăng nhập thành công
+</code></pre></div>
+- Context nào có mặt? <code>_______________</code>
+- Context nào đang thiếu? <code>_______________</code>
+- Chất lượng: ___/10</p>
+<hr />
+<p><strong>Output 2:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Test case: Kiểm tra chuyển tiền với số tiền &quot;1,000,000 VND&quot;
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>Số tài khoản nguồn: &quot;0070123456789012&quot; (VCB)
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>Expected: Giao dịch thành công, số dư giảm đúng
+</code></pre></div>
+- Context nào có mặt? <code>_______________</code>
+- Tốt hơn Output 1 ở điểm nào? <code>_______________</code>
+- Vẫn còn thiếu context gì? <code>_______________</code></p>
+<hr />
+<p><strong>Output 3:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>API Test: POST /api/v1/orders/cancel
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>Payload: {
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>  &quot;orderId&quot;: &quot;ORD-2024-001&quot;,
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>  &quot;reason&quot;: &quot;customer_request&quot;,
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>  &quot;cancelledBy&quot;: &quot;user_id_123&quot;
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>}
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>Expected: 200 OK, order status = &quot;cancelled&quot;
+</code></pre></div>
+- Context nào có mặt? <code>_______________</code>
+- Còn thiếu context gì để test tốt hơn? <code>_______________</code></p>
+<hr />
+<h2 id="recap-5-iem-chinh-session-3">📝 RECAP — 5 điểm chính Session 3</h2>
+<ol>
+<li>✅ <strong>Context = chất lượng output:</strong> Thiếu context ⇒ output vô dụng</li>
+<li>✅ <strong>5 loại context:</strong> Domain, User, Tech, Business rules, Lịch sử lỗi</li>
+<li>✅ <strong>GIGO:</strong> Garbage In = Garbage Out — đây là nguyên tắc bất biến của AI</li>
+<li>✅ <strong>RAG</strong> dùng khi có nhiều tài liệu nội bộ; <strong>Fine-tuning</strong> khi cần AI "hiểu" sản phẩm</li>
+<li>✅ <strong>Context Card</strong> cho dự án — copy vào mỗi prompt để output tốt hơn ngay</li>
+</ol>
+<hr />
+<h2 id="quick-reference-cheat-sheet-session-3">🗒️ QUICK REFERENCE — Cheat Sheet Session 3</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Template context:
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>  [Domain] + [User] + [Tech stack] + [Business rules] + [Constraints]
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>Gợi ý: Copy 1 đoạn từ BRD / AC vào prompt trước khi yêu cầu sinh test case
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>Context window limits:
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>  ChatGPT: ~128K token   Claude: ~200K token   (1 token ≈ 4 ký tự)
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>Tài liệu dài: Chia theo module, xử lý từng phần, tổng hợp sau
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>Context Card: Tạo 1 lần, dùng mãi mãi cho dự án của bạn
+</code></pre></div>
+<hr />
+<h2 id="bai-tap-ve-nha">📚 Bài tập về nhà</h2>
+<blockquote>
+<p>Tạo <strong>Context Card</strong> cho dự án hiện tại.<br />
+Test với 5 prompt khác nhau: So sánh output có/không có Context Card.<br />
+Đo lường: Tiết kiệm bao nhiêu thời gian chỉnh sửa output?</p>
+</blockquote>
+<hr />
+<p><em>⬅️ <a href="../session-02-technique/">Session 2 — Technique</a> · ➡️ <a href="../session-04-skill-building/">Session 4 — Skill Building</a></em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Trở lại mục lục
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0110\u00e3 sao ch\u00e9p", "clipboard.copy": "Sao ch\u00e9p v\u00e0o b\u1ed9 nh\u1edb t\u1ea1m", "search.result.more.one": "1 t\u1eeb kh\u00e1c trong trang", "search.result.more.other": "# t\u1eeb kh\u00e1c trong trang", "search.result.none": "Kh\u00f4ng t\u00ecm th\u1ea5y t\u00e0i li\u1ec7u li\u00ean quan", "search.result.one": "1 t\u00e0i li\u1ec7u li\u00ean quan", "search.result.other": "# t\u00e0i li\u1ec7u li\u00ean quan", "search.result.placeholder": "Nh\u1eadp \u0111\u1ec3 b\u1eaft \u0111\u1ea7u t\u00ecm ki\u1ebfm", "search.result.term.missing": "Kh\u00f4ng", "select.version": "Ch\u1ecdn phi\u00ean b\u1ea3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

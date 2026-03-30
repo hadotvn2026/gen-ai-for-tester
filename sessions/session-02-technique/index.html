@@ -1,0 +1,1676 @@
+
+<!doctype html>
+<html lang="vi" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Khóa học thực hành ứng dụng AI trong kiểm thử phần mềm">
+      
+      
+        <meta name="author" content="QA Automation Trainer">
+      
+      
+        <link rel="canonical" href="https://hadotvn2026.github.io/gen-ai-for-tester/sessions/session-02-technique/">
+      
+      
+        <link rel="prev" href="../session-01-mindset/">
+      
+      
+        <link rel="next" href="../session-03-context/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Session 2 — Technique - Generative AI for Testers</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#session-2-technique-prompt-engineering-cho-tester" class="md-skip">
+          Bỏ qua
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Đầu trang">
+    <a href="../.." title="Generative AI for Testers" class="md-header__button md-logo" aria-label="Generative AI for Testers" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Generative AI for Testers
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Session 2 — Technique
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Tìm kiếm" placeholder="Tìm kiếm" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Tìm kiếm">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Xoá" aria-label="Xoá" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Tổng quan
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../session-01-mindset/" class="md-tabs__link">
+          
+  
+  
+  Sessions
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../resources/prompt-library/" class="md-tabs__link">
+          
+  
+  
+  Resources
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Thanh điều hướng" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Generative AI for Testers" class="md-nav__button md-logo" aria-label="Generative AI for Testers" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Generative AI for Testers
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tổng quan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sessions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sessions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../session-01-mindset/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Session 1 — Mindset
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Session 2 — Technique
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Session 2 — Technique
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Mục lục">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Mục lục
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#muc-tieu-buoi-hoc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Mục tiêu buổi học
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phan-1-ly-thuyet-70-phut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PHẦN 1 — LÝ THUYẾT (70 phút)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PHẦN 1 — LÝ THUYẾT (70 phút)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-giai-phau-mot-prompt-tot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Giải phẫu một prompt tốt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-bon-ky-thuat-prompt-chinh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Bốn kỹ thuật Prompt chính
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2 Bốn kỹ thuật Prompt chính">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ky-thuat-1-zero-shot-prompting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kỹ thuật 1: Zero-shot Prompting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ky-thuat-2-few-shot-prompting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kỹ thuật 2: Few-shot Prompting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ky-thuat-3-chain-of-thought-cot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kỹ thuật 3: Chain-of-Thought (CoT)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ky-thuat-4-role-prompting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kỹ thuật 4: Role Prompting
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-xu-ly-khi-ai-tra-ve-sai-3-chien-luoc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Xử lý khi AI trả về sai — 3 chiến lược
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phan-2-thuc-hanh-110-phut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PHẦN 2 — THỰC HÀNH (110 phút)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PHẦN 2 — THỰC HÀNH (110 phút)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lab-21-xay-dung-prompt-library-ca-nhan-40-phut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔬 Lab 2.1 — Xây dựng Prompt Library cá nhân (40 phút)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hands-on-checkpoint-2-kiem-tra-prompt-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ HANDS-ON CHECKPOINT 2: Kiểm tra Prompt Library
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lab-22-prompt-battle-30-phut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔬 Lab 2.2 — Prompt Battle (30 phút)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tinh-huong-thuc-te-2-prompt-qua-chung-output-vo-dung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 TÌNH HUỐNG THỰC TẾ 2: "Prompt quá chung, output vô dụng"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lab-23-advanced-multi-turn-prompting-20-phut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔬 Lab 2.3 — Advanced: Multi-turn Prompting (20 phút)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phan-3-kiem-tra-hieu-bai-20-phut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PHẦN 3 — KIỂM TRA HIỂU BÀI (20 phút)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PHẦN 3 — KIỂM TRA HIỂU BÀI (20 phút)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scenario-based-assessment-fix-the-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 SCENARIO-BASED ASSESSMENT: "Fix the Prompt"
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recap-5-iem-chinh-session-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 RECAP — 5 điểm chính Session 2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-reference-cheat-sheet-session-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🗒️ QUICK REFERENCE — Cheat Sheet Session 2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bai-tap-ve-nha" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 Bài tập về nhà
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../session-03-context/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Session 3 — Context
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../session-04-skill-building/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Session 4 — Skill Building
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../session-05-ai-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Session 5 — AI Agent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../session-06-agentic-ai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Session 6 — Agentic AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Resources
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/prompt-library/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prompt Library
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/cheat-sheets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cheat Sheets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Mục lục">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Mục lục
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#muc-tieu-buoi-hoc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Mục tiêu buổi học
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phan-1-ly-thuyet-70-phut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PHẦN 1 — LÝ THUYẾT (70 phút)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PHẦN 1 — LÝ THUYẾT (70 phút)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-giai-phau-mot-prompt-tot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Giải phẫu một prompt tốt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-bon-ky-thuat-prompt-chinh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Bốn kỹ thuật Prompt chính
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2 Bốn kỹ thuật Prompt chính">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ky-thuat-1-zero-shot-prompting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kỹ thuật 1: Zero-shot Prompting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ky-thuat-2-few-shot-prompting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kỹ thuật 2: Few-shot Prompting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ky-thuat-3-chain-of-thought-cot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kỹ thuật 3: Chain-of-Thought (CoT)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ky-thuat-4-role-prompting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kỹ thuật 4: Role Prompting
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-xu-ly-khi-ai-tra-ve-sai-3-chien-luoc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Xử lý khi AI trả về sai — 3 chiến lược
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phan-2-thuc-hanh-110-phut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PHẦN 2 — THỰC HÀNH (110 phút)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PHẦN 2 — THỰC HÀNH (110 phút)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lab-21-xay-dung-prompt-library-ca-nhan-40-phut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔬 Lab 2.1 — Xây dựng Prompt Library cá nhân (40 phút)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hands-on-checkpoint-2-kiem-tra-prompt-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ HANDS-ON CHECKPOINT 2: Kiểm tra Prompt Library
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lab-22-prompt-battle-30-phut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔬 Lab 2.2 — Prompt Battle (30 phút)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tinh-huong-thuc-te-2-prompt-qua-chung-output-vo-dung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 TÌNH HUỐNG THỰC TẾ 2: "Prompt quá chung, output vô dụng"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lab-23-advanced-multi-turn-prompting-20-phut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔬 Lab 2.3 — Advanced: Multi-turn Prompting (20 phút)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phan-3-kiem-tra-hieu-bai-20-phut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PHẦN 3 — KIỂM TRA HIỂU BÀI (20 phút)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PHẦN 3 — KIỂM TRA HIỂU BÀI (20 phút)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scenario-based-assessment-fix-the-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 SCENARIO-BASED ASSESSMENT: "Fix the Prompt"
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recap-5-iem-chinh-session-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 RECAP — 5 điểm chính Session 2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-reference-cheat-sheet-session-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🗒️ QUICK REFERENCE — Cheat Sheet Session 2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bai-tap-ve-nha" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 Bài tập về nhà
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="session-2-technique-prompt-engineering-cho-tester">Session 2 — Technique: Prompt Engineering cho Tester</h1>
+<blockquote>
+<p><strong>Nguyên tắc:</strong> 🟢 TECHNIQUE<br />
+<strong>Thời lượng:</strong> 3 giờ · Lý thuyết: 70 phút · Thực hành: 110 phút · Kiểm tra: 20 phút<br />
+<strong>Prerequisite:</strong> <a href="../session-01-mindset/">Session 1 — Mindset</a></p>
+</blockquote>
+<hr />
+<h2 id="muc-tieu-buoi-hoc">🎯 Mục tiêu buổi học</h2>
+<p>Sau session này, học viên có thể:</p>
+<ul>
+<li>[ ] Phân tích cấu trúc của một prompt hiệu quả (4 thành phần)</li>
+<li>[ ] Áp dụng 4 kỹ thuật prompt chính vào công việc QA hằng ngày</li>
+<li>[ ] Xây dựng thư viện prompt cá nhân tái sử dụng được</li>
+<li>[ ] Xử lý khi AI trả về kết quả sai hoặc thiếu</li>
+<li>[ ] Thực hiện multi-turn prompting để làm giàu kết quả</li>
+</ul>
+<hr />
+<h2 id="phan-1-ly-thuyet-70-phut">PHẦN 1 — LÝ THUYẾT (70 phút)</h2>
+<h3 id="11-giai-phau-mot-prompt-tot">1.1 Giải phẫu một prompt tốt</h3>
+<p>Một prompt hiệu quả cho Tester gồm <strong>4 thành phần</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>┌─────────────────────────────────────────────────────────┐
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>│  [ROLE]    → Vai trò AI đóng                            │
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>│  [CONTEXT] → Bối cảnh dự án                             │
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>│  [TASK]    → Nhiệm vụ cụ thể                            │
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>│  [FORMAT]  → Định dạng output mong muốn                 │
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>└─────────────────────────────────────────────────────────┘
+</code></pre></div>
+<p><strong>Ví dụ đầy đủ:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>[ROLE]    Bạn là QA Engineer kỹ lưỡng với 5 năm kinh nghiệm test API
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>[CONTEXT] Dự án là hệ thống quản lý bệnh viện, user là bác sĩ và y tá
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>[TASK]    Hãy tạo test case cho tính năng &quot;Đặt lịch khám&quot;
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>[FORMAT]  Trả về dưới dạng bảng: STT | Loại | Mô tả | Expected result
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Thành phần</th>
+<th>Vai trò</th>
+<th>Ví dụ cụ thể</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ROLE</strong></td>
+<td>Định hướng "góc nhìn" của AI</td>
+<td>"Bạn là QA Engineer kỹ lưỡng với 5 năm kinh nghiệm..."</td>
+</tr>
+<tr>
+<td><strong>CONTEXT</strong></td>
+<td>Cung cấp bối cảnh dự án</td>
+<td>"Dự án là hệ thống quản lý bệnh viện, user là bác sĩ và y tá"</td>
+</tr>
+<tr>
+<td><strong>TASK</strong></td>
+<td>Nhiệm vụ rõ ràng, đo lường được</td>
+<td>"Tạo test case cho tính năng Đặt lịch khám"</td>
+</tr>
+<tr>
+<td><strong>FORMAT</strong></td>
+<td>Định dạng output cụ thể</td>
+<td>"Bảng: STT | Loại | Mô tả | Expected result"</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="12-bon-ky-thuat-prompt-chinh">1.2 Bốn kỹ thuật Prompt chính</h3>
+<h4 id="ky-thuat-1-zero-shot-prompting">Kỹ thuật 1: Zero-shot Prompting</h4>
+<p>Đưa ra yêu cầu trực tiếp không cần ví dụ. Tốt cho các tác vụ đơn giản và phổ biến.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Tạo 5 test case cho chức năng &quot;Đăng ký tài khoản&quot; của ứng dụng mobile.
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Bao gồm: positive case, negative case, và boundary value.
+</code></pre></div>
+<p><strong>Dùng khi:</strong> Tác vụ quen thuộc, output format đơn giản.</p>
+<hr />
+<h4 id="ky-thuat-2-few-shot-prompting">Kỹ thuật 2: Few-shot Prompting</h4>
+<p>Cung cấp 1–3 ví dụ mẫu trước khi yêu cầu AI làm. Tốt cho output có định dạng phức tạp.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Tôi cần tạo test case theo format sau. Đây là 2 ví dụ:
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Ví dụ 1:
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>TC-001 | Positive | Đăng nhập thành công | Email và password đúng | Vào được dashboard
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>Ví dụ 2:
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>TC-002 | Negative | Sai mật khẩu | Password sai 3 lần | Tài khoản bị khóa 15 phút
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>Bây giờ tạo thêm 5 test case tương tự cho chức năng &quot;Đặt lại mật khẩu&quot;.
+</code></pre></div>
+<p><strong>Dùng khi:</strong> Format output phức tạp, muốn AI "bắt chước" cách viết của team.</p>
+<hr />
+<h4 id="ky-thuat-3-chain-of-thought-cot">Kỹ thuật 3: Chain-of-Thought (CoT)</h4>
+<p>Yêu cầu AI suy nghĩ từng bước trước khi đưa ra kết quả. Tốt cho bug analysis và risk assessment.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Hãy phân tích bug sau đây bằng cách sử dụng suy nghĩ từng bước:
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>Bug: &quot;Ứng dụng crash khi user upload file PDF lớn hơn 10MB&quot;
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>Bước 1: Liệt kê các nguyên nhân có thể gây ra bug này
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>Bước 2: Xác định nguyên nhân có khả năng cao nhất
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>Bước 3: Đề xuất các test case để verify fix
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>Bước 4: Đánh giá severity và priority
+</code></pre></div>
+<p><strong>Dùng khi:</strong> Phân tích phức tạp, cần lý luận có logic.</p>
+<hr />
+<h4 id="ky-thuat-4-role-prompting">Kỹ thuật 4: Role Prompting</h4>
+<p>Gán cho AI một vai trò cụ thể để có cách nhìn chuyên sâu hơn.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Đóng vai QA Lead với 10 năm kinh nghiệm test hệ thống ngân hàng.
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>Hãy review test plan sau và chỉ ra 3 rủi ro lớn nhất bị bỏ sót...
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Vai trò giao cho AI</th>
+<th>Khi nào dùng</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"Đóng vai QA Lead với 10 năm kinh nghiệm..."</td>
+<td>Review test plan, đánh giá rủi ro</td>
+</tr>
+<tr>
+<td>"Đóng vai hacker mũ trắng (ethical hacker)..."</td>
+<td>Sinh security test case</td>
+</tr>
+<tr>
+<td>"Đóng vai end-user là người cao tuổi không giỏi công nghệ..."</td>
+<td>UX / accessibility testing</td>
+</tr>
+<tr>
+<td>"Đóng vai developer review code của Automation Tester..."</td>
+<td>Review automation script</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="13-xu-ly-khi-ai-tra-ve-sai-3-chien-luoc">1.3 Xử lý khi AI trả về sai — 3 chiến lược</h3>
+<table>
+<thead>
+<tr>
+<th>Vấn đề</th>
+<th>Chiến lược xử lý</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Output quá chung, không cụ thể</td>
+<td>Thêm context: mô tả hệ thống, user, business rule</td>
+</tr>
+<tr>
+<td>AI bỏ sót trường hợp quan trọng</td>
+<td>Followup: "Bây giờ focus vào các trường hợp lỗi và edge case"</td>
+</tr>
+<tr>
+<td>Format không đúng ý</td>
+<td>Cho ví dụ mẫu cụ thể (chiến lược few-shot)</td>
+</tr>
+<tr>
+<td>AI hallucinate (bịa thông tin)</td>
+<td>Yêu cầu AI chỉ đưa ra những gì chắc chắn, đánh dấu rõ nếu không chắc</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="phan-2-thuc-hanh-110-phut">PHẦN 2 — THỰC HÀNH (110 phút)</h2>
+<h3 id="lab-21-xay-dung-prompt-library-ca-nhan-40-phut">🔬 Lab 2.1 — Xây dựng Prompt Library cá nhân (40 phút)</h3>
+<p>Mỗi học viên tạo file ghi chú (Notion / Google Doc / Notepad) chứa <strong>4 prompt</strong> sau:</p>
+<hr />
+<p><strong>PROMPT 1 — Test Case Generation:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>[ROLE] Bạn là Senior QA Engineer với kinh nghiệm test [DOMAIN DỰ ÁN CỦA BẠN].
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>[CONTEXT] Hệ thống: [MÔ TẢ HỆ THỐNG]. User chính: [AI LÀ USER].
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>[TASK] Tạo test case cho tính năng: [TÊN TÍNH NĂNG]
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>Bao gồm: happy path, negative cases, boundary values, edge cases.
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>[FORMAT] Bảng Markdown: STT | Loại | Tên test case | Precondition | Steps | Expected | Priority (P1/P2/P3)
+</code></pre></div>
+<hr />
+<p><strong>PROMPT 2 — Bug Report Enhancement:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Tôi có bug report sau đây còn sơ sài:
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>---
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>[PASTE BUG REPORT VÀO ĐÂY]
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>---
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>Hãy làm rõ bug report này bằng cách:
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>1. Viết lại tiêu đề rõ ràng hơn
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>2. Thêm Steps to Reproduce chi tiết
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>3. Phân biệt rõ Actual result vs Expected result
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>4. Đề xuất Severity và Priority với lý do
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>5. Gợi ý: Attachments/evidence cần có
+</code></pre></div>
+<hr />
+<p><strong>PROMPT 3 — API Test Creation (Chain-of-Thought):</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Hãy suy nghĩ từng bước để tạo Postman test collection cho API sau:
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>[PASTE API SPEC / ENDPOINT VÀO ĐÂY]
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>Bước 1: Liệt kê các test scenarios chính
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>Bước 2: Xác định test data cần thiết
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>Bước 3: Viết test cases với request/response examples
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>Bước 4: Thêm assertions cho mỗi test case
+</code></pre></div>
+<hr />
+<p><strong>PROMPT 4 — Risk Analysis (Role Prompting):</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Đóng vai QA Lead với 8 năm kinh nghiệm, hãy đánh giá rủi ro của sprint sau trước khi release:
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>---
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>[PASTE SPRINT NOTES / CHANGELOGS]
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>---
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>Trả về:
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>- Top 5 rủi ro kiểm thử (sắp xếp theo mức độ)
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>- Các tính năng có thể bị ảnh hưởng ngoài ý muốn
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>- Đề xuất: Nên test gì trước nếu ít thời gian
+</code></pre></div>
+<hr />
+<h3 id="hands-on-checkpoint-2-kiem-tra-prompt-library">✅ HANDS-ON CHECKPOINT 2: Kiểm tra Prompt Library</h3>
+<blockquote>
+<p><strong>Thời gian:</strong> 5 phút tự đánh giá · Chia sẻ 1 prompt tốt nhất lên Zoom chat</p>
+</blockquote>
+<p><strong>Tiêu chí đánh giá:</strong></p>
+<ul>
+<li>[ ] Mỗi prompt có đủ 4 thành phần (Role, Context, Task, Format)?</li>
+<li>[ ] Bạn có sử dụng ít nhất 2 trong 4 kỹ thuật đã học?</li>
+<li>[ ] Output AI trả về có đúng với nhu cầu thực tế của bạn không?</li>
+<li>[ ] Bạn đã thử "cải tiến" prompt sau khi thấy output chưa đủ?</li>
+</ul>
+<hr />
+<h3 id="lab-22-prompt-battle-30-phut">🔬 Lab 2.2 — Prompt Battle (30 phút)</h3>
+<blockquote>
+<p><strong>Làm việc nhóm:</strong> 5 người · Mỗi người dùng 1 kỹ thuật khác nhau</p>
+</blockquote>
+<p><strong>User Story chung cho tất cả nhóm:</strong></p>
+<blockquote>
+<p><em>"Là một khách hàng, tôi muốn có thể hủy đơn hàng trong vòng 2 giờ sau khi đặt, với điều kiện đơn hàng chưa được xử lý."</em></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Người</th>
+<th>Kỹ thuật</th>
+<th>Nhiệm vụ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Người 1</td>
+<td><strong>Zero-shot</strong></td>
+<td>Yêu cầu thẳng, không ví dụ</td>
+</tr>
+<tr>
+<td>Người 2</td>
+<td><strong>Few-shot</strong></td>
+<td>Cho 2 ví dụ test case trước</td>
+</tr>
+<tr>
+<td>Người 3</td>
+<td><strong>Chain-of-Thought</strong></td>
+<td>Yêu cầu AI suy nghĩ từng bước</td>
+</tr>
+<tr>
+<td>Người 4</td>
+<td><strong>Role prompting</strong></td>
+<td>AI đóng vai QA Lead kỹ tính</td>
+</tr>
+<tr>
+<td>Người 5</td>
+<td><strong>Kết hợp cả 4</strong></td>
+<td>Combine tất cả kỹ thuật</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Sau khi mỗi người có output:</strong> So sánh và bầu chọn prompt tốt nhất.</p>
+<hr />
+<h3 id="tinh-huong-thuc-te-2-prompt-qua-chung-output-vo-dung">💡 TÌNH HUỐNG THỰC TẾ 2: "Prompt quá chung, output vô dụng"</h3>
+<p><strong>Bối cảnh:</strong><br />
+Trung là Manual Tester mới học dùng AI. Anh nhập prompt:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Tạo test case cho hệ thống
+</code></pre></div>
+<p>AI trả về 10 test case rất chung chung, không liên quan đến dự án ngân hàng của anh. Trung bực bội, nghĩ rằng <em>"AI không tốt cho việc này"</em>.</p>
+<p><strong>Câu hỏi:</strong>
+1. Nguyên nhân thật sự là gì? (AI hay Prompt?)
+2. Viết lại prompt tốt hơn cho tình huống của Trung.
+3. Nguyên tắc nào trong Technique model bị vi phạm?
+4. Làm thế nào để Trung không mắc lỗi này lần sau?</p>
+<hr />
+<h3 id="lab-23-advanced-multi-turn-prompting-20-phut">🔬 Lab 2.3 — Advanced: Multi-turn Prompting (20 phút)</h3>
+<p>Một prompt hiếm khi là đủ. Luyện kỹ năng tiếp nối cuộc hội thoại:</p>
+<p><strong>Quy trình Multi-turn:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>Turn 1: &quot;Tạo test case cơ bản cho tính năng Tìm kiếm sản phẩm&quot;
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>         → Xem output
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>Turn 2: &quot;Hãy mở rộng thêm 3 edge case mà bạn chưa nêu&quot;
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>         → Xem output
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>Turn 3: &quot;Viết lại test case số [X] chi tiết hơn,
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>          bao gồm precondition và test data cụ thể&quot;
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>         → Xem output
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>Turn 4: &quot;Xếp hạng các test case này theo mức độ rủi ro từ cao xuống thấp&quot;
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>         → Xem output
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>Turn 5: &quot;Tạo Gherkin (Given/When/Then) cho 3 test case quan trọng nhất&quot;
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>         → Final output
+</code></pre></div>
+<blockquote>
+<p><strong>Thực hành:</strong> Áp dụng multi-turn với tính năng "Tìm kiếm sản phẩm" trên bất kỳ e-commerce nào.</p>
+</blockquote>
+<hr />
+<h2 id="phan-3-kiem-tra-hieu-bai-20-phut">PHẦN 3 — KIỂM TRA HIỂU BÀI (20 phút)</h2>
+<h3 id="scenario-based-assessment-fix-the-prompt">📋 SCENARIO-BASED ASSESSMENT: "Fix the Prompt"</h3>
+<blockquote>
+<p><strong>Thời gian:</strong> 10 phút cá nhân → 10 phút chia sẻ toàn lớp</p>
+</blockquote>
+<p>Dưới đây là các prompt kém. Nhiệm vụ của bạn: <strong>viết lại prompt tốt hơn</strong>.</p>
+<hr />
+<p><strong>Prompt kém 1:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>Tạo test
+</code></pre></div>
+- Vấn đề: <code>_______________</code>
+- Prompt tốt hơn: <code>_______________</code></p>
+<hr />
+<p><strong>Prompt kém 2:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Hãy giúp tôi test ứng dụng mobile
+</code></pre></div>
+- Vấn đề: <code>_______________</code>
+- Prompt tốt hơn: <code>_______________</code></p>
+<hr />
+<p><strong>Prompt kém 3:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>Viết code Selenium cho tôi
+</code></pre></div>
+- Vấn đề: <code>_______________</code>
+- Prompt tốt hơn: <code>_______________</code></p>
+<hr />
+<h2 id="recap-5-iem-chinh-session-2">📝 RECAP — 5 điểm chính Session 2</h2>
+<ol>
+<li>✅ <strong>Prompt tốt = [Role] + [Context] + [Task] + [Format]</strong></li>
+<li>✅ <strong>4 kỹ thuật:</strong> Zero-shot (đơn giản), Few-shot (có mẫu), CoT (phân tích), Role (chuyên sâu)</li>
+<li>✅ <strong>Output sai ⇒ Chỉnh prompt</strong>, không phải đổi bot AI</li>
+<li>✅ <strong>Multi-turn:</strong> Dùng followup để làm giàu dần kết quả</li>
+<li>✅ <strong>Xây dựng Prompt Library cá nhân</strong> — tài sản quý giá nhất sau khóa học này</li>
+</ol>
+<hr />
+<h2 id="quick-reference-cheat-sheet-session-2">🗒️ QUICK REFERENCE — Cheat Sheet Session 2</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>Template chuẩn:
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>  [Đóng vai X] [Bối cảnh Y] [Làm việc Z] [Trả về định dạng W]
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>Zero-shot : Đưa yêu cầu thẳng, không cần ví dụ
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>Few-shot  : &quot;Đây là 2 ví dụ... bây giờ làm tương tự cho...&quot;
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>CoT       : &quot;Hãy suy nghĩ từng bước trước khi trả lời...&quot;
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>Role      : &quot;Đóng vai [vai trò cụ thể] với [X] năm kinh nghiệm...&quot;
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>Fix output:
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>  → Thêm context
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>  → Cho ví dụ mẫu (few-shot)
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>  → Yêu cầu chi tiết hơn trong followup
+</code></pre></div>
+<hr />
+<h2 id="bai-tap-ve-nha">📚 Bài tập về nhà</h2>
+<blockquote>
+<p>Xây dựng <strong>Prompt Library 10 prompt</strong> cho dự án hiện tại của bạn.<br />
+Mỗi prompt phải có đủ 4 thành phần và đã được test thực tế.<br />
+Lưu vào Notion / Google Doc để dùng lại.</p>
+</blockquote>
+<hr />
+<p><em>⬅️ <a href="../session-01-mindset/">Session 1 — Mindset</a> · ➡️ <a href="../session-03-context/">Session 3 — Context</a></em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Trở lại mục lục
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0110\u00e3 sao ch\u00e9p", "clipboard.copy": "Sao ch\u00e9p v\u00e0o b\u1ed9 nh\u1edb t\u1ea1m", "search.result.more.one": "1 t\u1eeb kh\u00e1c trong trang", "search.result.more.other": "# t\u1eeb kh\u00e1c trong trang", "search.result.none": "Kh\u00f4ng t\u00ecm th\u1ea5y t\u00e0i li\u1ec7u li\u00ean quan", "search.result.one": "1 t\u00e0i li\u1ec7u li\u00ean quan", "search.result.other": "# t\u00e0i li\u1ec7u li\u00ean quan", "search.result.placeholder": "Nh\u1eadp \u0111\u1ec3 b\u1eaft \u0111\u1ea7u t\u00ecm ki\u1ebfm", "search.result.term.missing": "Kh\u00f4ng", "select.version": "Ch\u1ecdn phi\u00ean b\u1ea3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
