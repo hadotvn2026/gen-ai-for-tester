@@ -1,14 +1,10 @@
 # Session 2 — Technique: Prompt Engineering cho Tester
 
-> **Nguyên tắc:** 🟢 TECHNIQUE  
-> **Thời lượng:** 3 giờ · Lý thuyết: 70 phút · Thực hành: 110 phút · Kiểm tra: 20 phút  
-> **Prerequisite:** [Session 1 — Mindset](./session-01-mindset.md)
+> Bạn sẽ học cách viết prompt có cấu trúc, áp dụng 4 kỹ thuật chính, và xây dựng thư viện prompt cá nhân tái sử dụng được — những kỹ năng thực tế nhất để tăng năng suất QA hằng ngày.
 
----
+**Prerequisite:** [Session 1 — Mindset](./session-01-mindset.md)
 
-## 🎯 Mục tiêu buổi học
-
-Sau session này, học viên có thể:
+## ✅ Mục tiêu — Sau session này bạn có thể
 
 - [ ] Phân tích cấu trúc của một prompt hiệu quả (4 thành phần)
 - [ ] Áp dụng 4 kỹ thuật prompt chính vào công việc QA hằng ngày
@@ -18,7 +14,7 @@ Sau session này, học viên có thể:
 
 ---
 
-## PHẦN 1 — LÝ THUYẾT (70 phút)
+## PHẦN 1 — LÝ THUYẾT
 
 ### 1.1 Giải phẫu một prompt tốt
 
@@ -123,6 +119,16 @@ Hãy review test plan sau và chỉ ra 3 rủi ro lớn nhất bị bỏ sót...
 
 ---
 
+### 📺 Video tham khảo — Prompt Engineering từ cơ bản đến nâng cao
+
+> **"Prompt Engineering Tutorial – Master ChatGPT and LLM Responses"** — freeCodeCamp · 1 giờ · Tiếng Anh
+
+<iframe width="100%" height="380" src="https://www.youtube.com/embed/_ZvnD73m40o" title="Prompt Engineering Tutorial – Master ChatGPT and LLM Responses" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+> Hướng dẫn toàn diện về prompt engineering: zero-shot, few-shot, chain-of-thought, và best practices với ChatGPT/LLM. Bao gồm thực hành thực tế.
+
+---
+
 ### 1.3 Xử lý khi AI trả về sai — 3 chiến lược
 
 | Vấn đề | Chiến lược xử lý |
@@ -134,11 +140,19 @@ Hãy review test plan sau và chỉ ra 3 rủi ro lớn nhất bị bỏ sót...
 
 ---
 
-## PHẦN 2 — THỰC HÀNH (110 phút)
+## PHẦN 2 — THỰC HÀNH
 
-### 🔬 Lab 2.1 — Xây dựng Prompt Library cá nhân (40 phút)
+### 🛠️ Bài tập 2.1 — Xây dựng Prompt Library cá nhân
 
-Mỗi học viên tạo file ghi chú (Notion / Google Doc / Notepad) chứa **4 prompt** sau:
+> **Thời gian ước tính:** 40 phút | **Công cụ:** ChatGPT hoặc Claude.ai + Notion / Google Doc / bất kỳ ứng dụng ghi chú nào
+
+**Bước 1:** Tạo một file ghi chú mới (Notion, Google Doc, hoặc Notepad đều được). Đặt tên: `Prompt Library — QA`.
+
+**Bước 2:** Copy lần lượt 4 prompt template bên dưới vào file của bạn.
+
+**Bước 3:** Với mỗi prompt, thay thế các phần trong `[DẤU NGOẶC VUÔNG]` bằng thông tin thực tế từ dự án của bạn (hoặc dùng một dự án mẫu nếu chưa có dự án thực).
+
+**Bước 4:** Chạy thử từng prompt đã điền vào AI và xem output. Ghi chú lại những gì cần điều chỉnh.
 
 ---
 
@@ -198,44 +212,63 @@ Trả về:
 - Đề xuất: Nên test gì trước nếu ít thời gian
 ```
 
----
+**✅ Kết quả mong đợi:**
+> Bạn có một file ghi chú chứa 4 prompt đã được cá nhân hóa cho dự án của mình. Khi chạy thử, output của mỗi prompt sẽ liên quan trực tiếp đến ngữ cảnh bạn đã điền vào — không còn chung chung nữa. Prompt Library này là tài sản bạn sẽ dùng lại hằng ngày.
 
-### ✅ HANDS-ON CHECKPOINT 2: Kiểm tra Prompt Library
-
-> **Thời gian:** 5 phút tự đánh giá · Chia sẻ 1 prompt tốt nhất lên Zoom chat
-
-**Tiêu chí đánh giá:**
-
+**❓ Tự kiểm tra:**
 - [ ] Mỗi prompt có đủ 4 thành phần (Role, Context, Task, Format)?
 - [ ] Bạn có sử dụng ít nhất 2 trong 4 kỹ thuật đã học?
 - [ ] Output AI trả về có đúng với nhu cầu thực tế của bạn không?
 - [ ] Bạn đã thử "cải tiến" prompt sau khi thấy output chưa đủ?
 
+💡 **Gợi ý khi bị kẹt:** Nếu chưa có dự án thực tế, hãy dùng: domain = "e-commerce", hệ thống = "ứng dụng mua sắm online", user = "khách hàng phổ thông". Điều quan trọng là luyện tập điền context — không phải tính chính xác của dữ liệu mẫu.
+
 ---
 
-### 🔬 Lab 2.2 — Prompt Battle (30 phút)
+### 🛠️ Bài tập 2.2 — Prompt Battle cá nhân
 
-> **Làm việc nhóm:** 5 người · Mỗi người dùng 1 kỹ thuật khác nhau
+> **Thời gian ước tính:** 30 phút | **Công cụ:** ChatGPT hoặc Claude.ai
 
-**User Story chung cho tất cả nhóm:**
+Bài tập này giúp bạn tự trải nghiệm sự khác biệt giữa 4 kỹ thuật prompt với cùng một user story.
+
+**User Story:**
 
 > *"Là một khách hàng, tôi muốn có thể hủy đơn hàng trong vòng 2 giờ sau khi đặt, với điều kiện đơn hàng chưa được xử lý."*
 
-| Người | Kỹ thuật | Nhiệm vụ |
-|-------|---------|---------|
-| Người 1 | **Zero-shot** | Yêu cầu thẳng, không ví dụ |
-| Người 2 | **Few-shot** | Cho 2 ví dụ test case trước |
-| Người 3 | **Chain-of-Thought** | Yêu cầu AI suy nghĩ từng bước |
-| Người 4 | **Role prompting** | AI đóng vai QA Lead kỹ tính |
-| Người 5 | **Kết hợp cả 4** | Combine tất cả kỹ thuật |
+**Bước 1:** Viết và chạy 4 prompt riêng biệt cho user story trên, mỗi prompt dùng một kỹ thuật khác nhau:
 
-**Sau khi mỗi người có output:** So sánh và bầu chọn prompt tốt nhất.
+| Lượt | Kỹ thuật | Yêu cầu của bạn |
+|------|---------|----------------|
+| **Lượt 1** | **Zero-shot** | Yêu cầu thẳng, không ví dụ, không role |
+| **Lượt 2** | **Few-shot** | Cho 2 ví dụ test case trước, sau đó yêu cầu tạo thêm |
+| **Lượt 3** | **Chain-of-Thought** | Yêu cầu AI suy nghĩ từng bước trước khi tạo test case |
+| **Lượt 4** | **Role prompting** | Cho AI đóng vai QA Lead kỹ tính, yêu cầu review kỹ |
+
+**Bước 2:** Sau khi có cả 4 output, so sánh và điền vào bảng sau vào notes của bạn:
+
+| Kỹ thuật | Số test case tạo được | Có edge case không? | Chất lượng tổng thể (1–5) |
+|---------|:--------------------:|:-------------------:|:------------------------:|
+| Zero-shot | | | |
+| Few-shot | | | |
+| Chain-of-Thought | | | |
+| Role prompting | | | |
+
+**Bước 3:** Chọn kỹ thuật cho output tốt nhất. Viết lại một prompt kết hợp cả 4 kỹ thuật.
+
+**✅ Kết quả mong đợi:**
+> Zero-shot thường cho output nhanh nhưng có thể bỏ sót edge case. Few-shot cho format nhất quán. Chain-of-Thought thường có độ sâu phân tích tốt hơn. Role prompting cho góc nhìn chuyên sâu. Prompt kết hợp cả 4 thường cho output tốt nhất — nhưng cũng dài nhất.
+
+**❓ Tự kiểm tra:**
+- [ ] Bạn thấy sự khác biệt rõ ràng giữa 4 kỹ thuật không?
+- [ ] Kỹ thuật nào phù hợp nhất với loại công việc QA bạn hay làm?
+
+💡 **Gợi ý khi bị kẹt:** Nếu output các lượt trông giống nhau, hãy làm cho prompt khác biệt hơn. Ví dụ: lượt Few-shot phải có ít nhất 2 ví dụ cụ thể trước khi yêu cầu; lượt CoT phải có "Hãy suy nghĩ từng bước:" ở đầu prompt.
 
 ---
 
-### 💡 TÌNH HUỐNG THỰC TẾ 2: "Prompt quá chung, output vô dụng"
+### 💡 TÌNH HUỐNG THỰC TẾ: "Prompt quá chung, output vô dụng"
 
-**Bối cảnh:**  
+**Bối cảnh:**
 Trung là Manual Tester mới học dùng AI. Anh nhập prompt:
 
 ```
@@ -244,7 +277,8 @@ Tạo test case cho hệ thống
 
 AI trả về 10 test case rất chung chung, không liên quan đến dự án ngân hàng của anh. Trung bực bội, nghĩ rằng *"AI không tốt cho việc này"*.
 
-**Câu hỏi:**
+**Bài tập:** Ghi lại câu trả lời của bạn vào notes — không có đáp án duy nhất, miễn là bạn có thể giải thích lý do.
+
 1. Nguyên nhân thật sự là gì? (AI hay Prompt?)
 2. Viết lại prompt tốt hơn cho tình huống của Trung.
 3. Nguyên tắc nào trong Technique model bị vi phạm?
@@ -252,41 +286,62 @@ AI trả về 10 test case rất chung chung, không liên quan đến dự án 
 
 ---
 
-### 🔬 Lab 2.3 — Advanced: Multi-turn Prompting (20 phút)
+### 🛠️ Bài tập 2.3 — Multi-turn Prompting
 
-Một prompt hiếm khi là đủ. Luyện kỹ năng tiếp nối cuộc hội thoại:
+> **Thời gian ước tính:** 20 phút | **Công cụ:** ChatGPT hoặc Claude.ai
 
-**Quy trình Multi-turn:**
+Một prompt hiếm khi là đủ. Bài tập này luyện kỹ năng tiếp nối cuộc hội thoại để làm giàu dần kết quả.
+
+**Bước 1:** Mở một cuộc hội thoại mới với AI.
+
+**Bước 2:** Gửi lần lượt 5 prompt sau (mỗi prompt trong cùng một cuộc hội thoại — đừng mở tab mới):
 
 ```
 Turn 1: "Tạo test case cơ bản cho tính năng Tìm kiếm sản phẩm"
-         → Xem output
+```
+→ Đọc output, sau đó gửi tiếp:
 
+```
 Turn 2: "Hãy mở rộng thêm 3 edge case mà bạn chưa nêu"
-         → Xem output
+```
+→ Đọc output, sau đó gửi tiếp:
 
+```
 Turn 3: "Viết lại test case số [X] chi tiết hơn,
           bao gồm precondition và test data cụ thể"
-         → Xem output
+```
+*(Thay [X] bằng số thứ tự của test case bạn thấy quan trọng nhất)*
 
+→ Đọc output, sau đó gửi tiếp:
+
+```
 Turn 4: "Xếp hạng các test case này theo mức độ rủi ro từ cao xuống thấp"
-         → Xem output
+```
+→ Đọc output, sau đó gửi tiếp:
 
+```
 Turn 5: "Tạo Gherkin (Given/When/Then) cho 3 test case quan trọng nhất"
-         → Final output
 ```
 
-> **Thực hành:** Áp dụng multi-turn với tính năng "Tìm kiếm sản phẩm" trên bất kỳ e-commerce nào.
+**Bước 3:** Đọc output cuối cùng (Turn 5). So sánh với output Turn 1. Ghi lại nhận xét vào notes.
+
+**✅ Kết quả mong đợi:**
+> Output ở Turn 5 sẽ chi tiết, có cấu trúc, và sát thực tế hơn rất nhiều so với Turn 1. Đây là cách làm việc thực tế với AI — không phải chạy 1 prompt rồi dùng ngay, mà là lặp lại và tinh chỉnh.
+
+**❓ Tự kiểm tra:**
+- [ ] Output Turn 5 có tốt hơn Turn 1 rõ rệt không?
+- [ ] AI có "nhớ" context từ các turn trước không?
+- [ ] Bạn sẽ áp dụng multi-turn như thế nào vào công việc hằng ngày?
+
+💡 **Gợi ý khi bị kẹt:** Nếu AI "quên" context ở turn sau, hãy nhắc lại ngắn gọn: *"Tiếp tục với danh sách test case ở trên, hãy..."*
 
 ---
 
-## PHẦN 3 — KIỂM TRA HIỂU BÀI (20 phút)
+## PHẦN 3 — TỰ ĐÁNH GIÁ
 
-### 📋 SCENARIO-BASED ASSESSMENT: "Fix the Prompt"
+### 📋 "Fix the Prompt"
 
-> **Thời gian:** 10 phút cá nhân → 10 phút chia sẻ toàn lớp
-
-Dưới đây là các prompt kém. Nhiệm vụ của bạn: **viết lại prompt tốt hơn**.
+Dưới đây là các prompt kém. Nhiệm vụ của bạn: phân tích vấn đề và viết lại prompt tốt hơn. Ghi câu trả lời vào notes.
 
 ---
 
@@ -315,9 +370,11 @@ Viết code Selenium cho tôi
 - Vấn đề: `_______________`
 - Prompt tốt hơn: `_______________`
 
+💡 **Gợi ý khi bị kẹt:** Với mỗi prompt kém, hãy hỏi: thiếu thành phần nào trong [Role] + [Context] + [Task] + [Format]? Câu trả lời đó chính là "vấn đề", và prompt tốt hơn là phiên bản bổ sung các thành phần còn thiếu.
+
 ---
 
-## 📝 RECAP — 5 điểm chính Session 2
+## 📝 Tổng kết
 
 1. ✅ **Prompt tốt = [Role] + [Context] + [Task] + [Format]**
 2. ✅ **4 kỹ thuật:** Zero-shot (đơn giản), Few-shot (có mẫu), CoT (phân tích), Role (chuyên sâu)
@@ -327,7 +384,7 @@ Viết code Selenium cho tôi
 
 ---
 
-## 🗒️ QUICK REFERENCE — Cheat Sheet Session 2
+## 🗒️ Cheat Sheet
 
 ```
 Template chuẩn:
@@ -348,8 +405,8 @@ Fix output:
 
 ## 📚 Bài tập về nhà
 
-> Xây dựng **Prompt Library 10 prompt** cho dự án hiện tại của bạn.  
-> Mỗi prompt phải có đủ 4 thành phần và đã được test thực tế.  
+> Xây dựng **Prompt Library 10 prompt** cho dự án hiện tại của bạn.
+> Mỗi prompt phải có đủ 4 thành phần và đã được test thực tế.
 > Lưu vào Notion / Google Doc để dùng lại.
 
 ---

@@ -1,14 +1,8 @@
 # Session 4 — Skill Building: Automation với AI
 
-> **Nguyên tắc:** 🟡 APPLY — Tổng hợp Mindset + Technique + Context  
-> **Thời lượng:** 3 giờ · Lý thuyết: 60 phút · Thực hành: 120 phút · Kiểm tra: 20 phút  
-> **Prerequisite:** [Session 3 — Context](./session-03-context.md)
+> Trong session này, bạn sẽ học cách dùng GitHub Copilot để viết automation script nhanh hơn và xây dựng các "skill" tái sử dụng với Claude — giúp bạn tiết kiệm thời gian lặp lại mỗi ngày trong công việc QA thực tế.
 
----
-
-## 🎯 Mục tiêu buổi học
-
-Sau session này, học viên có thể:
+## ✅ Mục tiêu — Sau session này bạn có thể
 
 - [ ] Viết automation script Selenium / Playwright với sự hỗ trợ của GitHub Copilot
 - [ ] Tạo REST Assured / Postman test với AI
@@ -17,7 +11,7 @@ Sau session này, học viên có thể:
 
 ---
 
-## PHẦN 1 — LÝ THUYẾT (60 phút)
+## PHẦN 1 — LÝ THUYẾT
 
 ### 1.1 GitHub Copilot cho Automation Tester
 
@@ -28,6 +22,16 @@ Copilot là AI coding assistant tích hợp trực tiếp vào IDE (VS Code, Int
 - Giải thích đoạn code bạn không hiểu
 - Refactor code test để dễ bảo trì hơn
 - Tạo Page Object Model từ HTML snippet
+
+### 📺 Video tham khảo — Dùng AI để lập trình nhanh hơn
+
+> **"How to Code Using AI – ChatGPT Programming Tutorial"** — freeCodeCamp (Guil Hernandez) · 5 giờ · Tiếng Anh
+
+<iframe width="100%" height="380" src="https://www.youtube.com/embed/dJhlMn2otxA" title="How to Code Using AI – ChatGPT Programming Course" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+> Khóa học toàn diện về cách dùng ChatGPT/AI để viết và debug code. Phù hợp cho cả Manual Tester muốn học automation lẫn Automation Engineer muốn tăng tốc.
+
+---
 
 | Viết thủ công (trước AI) | Viết với Copilot (sau AI) |
 |------------------------|--------------------------|
@@ -80,13 +84,15 @@ Thay vì viết lại prompt dài mỗi lần, bạn chỉ cần gọi tên skil
 
 ---
 
-## PHẦN 2 — THỰC HÀNH (120 phút)
+## PHẦN 2 — THỰC HÀNH
 
-### 🔬 Lab 4.1 — Automation Script với AI (40 phút)
+### 🛠️ Bài tập 4.1 — Automation Script với AI
 
-**Mục tiêu:** Dùng AI tạo script kiểm tra luồng đăng nhập
+> **Thời gian ước tính:** 40 phút | **Công cụ:** Claude.ai hoặc GitHub Copilot, VS Code
 
-**Prompt cho Selenium WebDriver (Java + TestNG):**
+**Bước 1:** Mở Claude.ai (hoặc Copilot trong VS Code). Tạo một cuộc hội thoại mới.
+
+**Bước 2:** Paste prompt sau vào Claude:
 
 ```
 Tạo Selenium WebDriver test (Java, TestNG) cho tính năng đăng nhập.
@@ -104,11 +110,7 @@ Yêu cầu kỹ thuật:
 - TestNG annotations: @Test, @BeforeMethod, @AfterMethod
 ```
 
----
-
-### ✅ HANDS-ON CHECKPOINT 4: Review Script AI tạo ra
-
-> **Checklist review** — đánh dấu ✅ đã / ❌ chưa:
+**Bước 3:** Đọc kỹ code AI tạo ra. Dùng checklist sau để review — đánh dấu ✅ đã / ❌ chưa:
 
 ```
 [ ] Page Object Model có tách biệt khỏi test logic?
@@ -120,18 +122,33 @@ Yêu cầu kỹ thuật:
 [ ] @BeforeMethod và @AfterMethod có setup/teardown đúng?
 ```
 
-> 💡 **Nếu có lỗi:** Paste error message vào AI và hỏi:  
-> *"Tại sao lỗi này xảy ra và fix như thế nào?"*
+**Bước 4:** Nếu phát hiện vấn đề, hỏi AI để sửa. Ví dụ: *"Đoạn này đang dùng Thread.sleep — hãy thay bằng Explicit Wait đúng cách."*
 
-> 🎯 **Dành cho Manual Tester:** Dùng AI giải thích từng dòng code bạn chưa hiểu — không cần biết code để review được output AI tạo ra.
+**Bước 5:** Nếu có thể, chạy thử script trong IDE và xem kết quả.
+
+**✅ Kết quả mong đợi:**
+> Script gồm ít nhất 2 file: `LoginPage.java` (Page Object) và `LoginTest.java` (test methods). File `LoginPage.java` chứa các WebElement và action methods. File `LoginTest.java` chứa 3 `@Test` methods dùng `WebDriverWait` (không có `Thread.sleep`), mỗi test có assertion kiểm tra text thông báo trên trang.
+
+**❓ Tự kiểm tra:**
+- [ ] Code AI tạo có dùng POM đúng cách không?
+- [ ] Nếu bạn là Manual Tester, bạn có thể giải thích logic từng test method không (dù không tự code được)?
+- [ ] Bạn có thể nhận ra điểm nào cần cải thiện trong script này không?
+
+💡 **Gợi ý khi bị kẹt:** Nếu không quen với Java/Selenium, dùng AI để giải thích từng dòng code — nhập vào chat: *"Giải thích đoạn code này làm gì, từng dòng một."* Bạn không cần biết code để hiểu output và đánh giá chất lượng.
 
 ---
 
-### 🔬 Lab 4.2 — Xây dựng 3 Custom Skills (60 phút)
+### 🛠️ Bài tập 4.2 — Xây dựng 3 Custom Skills
 
-#### SKILL 1: Test Case Generator (20 phút)
+> **Thời gian ước tính:** 60 phút | **Công cụ:** Claude.ai (Projects hoặc system prompt)
 
-Mở Claude.ai và set system prompt (hoặc dùng Claude Projects):
+#### SKILL 1: Test Case Generator
+
+> **Thời gian ước tính:** 20 phút
+
+**Bước 1:** Mở Claude.ai. Vào **Projects** (nếu có) hoặc bắt đầu cuộc hội thoại mới.
+
+**Bước 2:** Dùng đoạn sau làm system prompt (hoặc paste vào đầu cuộc hội thoại):
 
 ```
 Bạn là Test Case Generator chuyên nghiệp.
@@ -153,11 +170,24 @@ RÀNG BUỘC:
 - Tối thiểu 8 test case cho mỗi user story
 ```
 
-**Test:** Paste 1 User Story thực tế vào, xem kết quả.
+**Bước 3:** Paste 1 User Story thực tế từ dự án của bạn vào (hoặc dùng ví dụ: *"Người dùng có thể thêm sản phẩm vào wishlist. Wishlist lưu tối đa 50 sản phẩm."*) và gửi đi.
+
+**Bước 4:** Đọc kết quả — đánh giá xem test case có đủ happy path, negative, boundary không.
+
+**✅ Kết quả mong đợi:**
+> Một bảng Markdown với ít nhất 8 test case, mỗi dòng có đủ TC-ID, Loại (Happy/Negative/Boundary), Mô tả ngắn gọn, Steps và Expected result rõ ràng. Với wishlist, test case phải bao gồm: thêm sản phẩm thành công, thêm khi đã đủ 50 sản phẩm (boundary), thêm sản phẩm trùng lặp, thêm khi chưa đăng nhập.
+
+💡 **Gợi ý khi bị kẹt:** Nếu AI tạo test case quá chung chung, thêm vào prompt: *"Tập trung vào rủi ro đặc thù của [domain] — ví dụ [1 rủi ro cụ thể]."*
 
 ---
 
-#### SKILL 2: Bug Report Enhancer (20 phút)
+#### SKILL 2: Bug Report Enhancer
+
+> **Thời gian ước tính:** 20 phút
+
+**Bước 1:** Mở một cuộc hội thoại mới trong Claude.ai.
+
+**Bước 2:** Paste system prompt sau:
 
 ```
 Bạn là QA Technical Writer chuyên nghiệp.
@@ -176,11 +206,31 @@ RÀNG BUỘC:
 - Nếu thiếu thông tin quan trọng, đánh dấu [CẦN XÁC NHẬN]
 ```
 
-**Test:** Paste 1 bug report sơ sài bất kỳ, xem AI làm đẹp như thế nào.
+**Bước 3:** Paste 1 bug report sơ sài (của bạn hoặc ví dụ dưới đây) vào:
+
+```
+Nút thanh toán bị lỗi khi dùng voucher. Tổng tiền tính sai.
+```
+
+**Bước 4:** Đọc bug report được AI làm đẹp. So sánh với bản gốc — cái gì được thêm vào, cái gì bị đánh dấu [CẦN XÁC NHẬN]?
+
+**✅ Kết quả mong đợi:**
+> Bug report được cải thiện gồm: tiêu đề dạng *"[Checkout] - Tổng tiền tính sai khi áp dụng voucher"*, các bước tái hiện được đánh số cụ thể (mở app → thêm sản phẩm → nhập voucher → xem tổng tiền), phần Actual vs Expected rõ ràng, Severity được đề xuất là High với lý do *"ảnh hưởng trực tiếp đến luồng thanh toán"*, và ít nhất 1 mục [CẦN XÁC NHẬN] cho thông tin còn thiếu.
+
+**❓ Tự kiểm tra:**
+- [ ] AI có bịa thêm thông tin không có trong mô tả gốc không?
+- [ ] Mục [CẦN XÁC NHẬN] có hợp lý không?
+- [ ] Bug report sau khi cải thiện có đủ để dev tái hiện lỗi không?
 
 ---
 
-#### SKILL 3: Sprint Risk Analyzer (20 phút)
+#### SKILL 3: Sprint Risk Analyzer
+
+> **Thời gian ước tính:** 20 phút
+
+**Bước 1:** Mở một cuộc hội thoại mới trong Claude.ai.
+
+**Bước 2:** Paste system prompt sau:
 
 ```
 Bạn là QA Risk Analyst có kinh nghiệm.
@@ -202,50 +252,77 @@ RÀNG BUỘC:
 - Nếu không đủ thông tin, hỏi thêm trước khi phân tích
 ```
 
-**Test:** Paste changelogs hoặc sprint notes của bạn.
+**Bước 3:** Paste changelogs hoặc sprint notes thực tế. Nếu chưa có, dùng ví dụ:
+
+```
+Sprint 23 thay đổi:
+- Thêm 2FA cho màn hình đăng nhập
+- Cập nhật logic tính giá khi dùng voucher kết hợp giảm giá thành viên
+- Fix bug: giỏ hàng không lưu khi session hết hạn
+- Nâng cấp thư viện xử lý thanh toán từ v2.1 lên v3.0
+```
+
+**Bước 4:** Đọc kết quả phân tích rủi ro. Bạn có đồng ý với thứ tự ưu tiên không? Ghi lại quan điểm của bạn.
+
+**✅ Kết quả mong đợi:**
+> Một bảng Markdown với ít nhất 5 rủi ro được xếp hạng. Với ví dụ trên, rủi ro cao nhất nên là: nâng cấp thư viện thanh toán (v3.0 có thể có breaking changes), logic voucher kết hợp với giảm giá thành viên (nhiều case phức tạp), và 2FA (ảnh hưởng toàn bộ luồng đăng nhập). Mỗi rủi ro có hành động đề xuất cụ thể.
+
+**❓ Tự kiểm tra:**
+- [ ] AI có bỏ sót rủi ro nào quan trọng mà bạn nghĩ đến không?
+- [ ] Thứ tự ưu tiên có phù hợp với dự án thực tế của bạn không?
+- [ ] Bạn có thể dùng output này để trình bày với QA Lead không?
+
+💡 **Gợi ý khi bị kẹt:** Nếu AI cho ra phân tích quá chung chung, thêm thông tin về domain: *"Đây là ứng dụng thương mại điện tử với 100.000 đơn/ngày — ưu tiên rủi ro ảnh hưởng đến thanh toán."*
 
 ---
 
 ### 💡 TÌNH HUỐNG THỰC TẾ 4: "Copilot gợi ý code sai"
 
-**Bối cảnh:**  
+**Bối cảnh:**
 Hoàng là Automation Engineer. Anh dùng Copilot để viết test cho API. Copilot gợi ý dùng `Thread.sleep(3000)` để chờ element load. Hoàng nhận Copilot suggestion và push lên. CI pipeline pass.
 
 Sau 2 tuần, team thấy test **flaky** — lúc pass lúc fail không rõ lý do.
 
-**Câu hỏi:**
+**Ghi lại câu trả lời của bạn vào notes — không có đáp án duy nhất, miễn là bạn có thể giải thích lý do:**
+
 1. Lỗi kỹ thuật cụ thể là gì với `Thread.sleep`?
 2. Mindset nào của Hoàng bị thiếu?
-3. Viết lại đoạn code dùng Explicit Wait với sự hỗ trợ của AI.
-4. Nên thêm quy tắc gì vào checklist review script?
+3. Dùng AI để viết lại đoạn code dùng Explicit Wait thay thế.
+4. Nên thêm quy tắc gì vào checklist review script để tránh lặp lại?
 
 ---
 
-## PHẦN 3 — KIỂM TRA HIỂU BÀI (20 phút)
+## PHẦN 3 — TỰ ĐÁNH GIÁ
 
-### 📋 SCENARIO-BASED ASSESSMENT: "Skill Battle"
+### 📋 Bài tập tự đánh giá: So sánh 3 cách tạo test case
 
-> **Thời gian:** 15 phút · Chia lớp thành 3 nhóm
+**Mục tiêu:** Tự trải nghiệm sự khác biệt giữa prompt thường và skill được cấu hình sẵn.
 
-**User Story chung:**
+**Bước 1:** Lấy User Story sau (hoặc thay bằng user story thực tế của bạn):
 
 > *"Người dùng có thể thêm sản phẩm vào wishlist. Wishlist lưu tối đa 50 sản phẩm."*
 
-| Nhóm | Cách làm | Đánh giá |
-|------|---------|---------|
-| **Nhóm 1** | Dùng Skill "Test Case Generator" đã xây dựng | Tốc độ + Chất lượng? |
-| **Nhóm 2** | Dùng prompt thường (không có skill) | Tốc độ + Chất lượng? |
-| **Nhóm 3** | Dùng Skill + thêm Context Card | Tốc độ + Chất lượng? |
+**Bước 2:** Thực hiện lần lượt 3 cách sau và ghi lại thời gian + số test case tạo ra:
 
-**So sánh:**
-1. Nhóm nào ra kết quả nhanh nhất?
-2. Nhóm nào ra kết quả chất lượng nhất? *(QA Lead đánh giá)*
-3. Skill có thay đổi kết quả so với prompt thường không?
-4. Context Card có làm tăng chất lượng thêm không?
+| Cách | Làm như thế nào | Thời gian | Số TC | Chất lượng (tự đánh giá 1–5) |
+|------|----------------|-----------|-------|------------------------------|
+| **Cách 1** | Prompt thường: *"Tạo test case cho user story này"* | | | |
+| **Cách 2** | Dùng Skill Test Case Generator đã xây dựng (không có Context Card) | | | |
+| **Cách 3** | Dùng Skill + thêm Context Card của dự án | | | |
+
+**Bước 3:** Tự trả lời các câu hỏi sau vào notes:
+
+- Cách nào ra kết quả nhanh nhất? Nhanh hơn bao nhiêu?
+- Cách nào ra kết quả chất lượng nhất? Vì sao?
+- Skill có thay đổi kết quả so với prompt thường không? Thay đổi ở điểm nào?
+- Context Card có làm tăng chất lượng không? Tăng ở điểm nào cụ thể?
+
+**✅ Kết quả mong đợi:**
+> Cách 3 (Skill + Context Card) thường cho ra test case có domain-specific risks hơn (ví dụ: boundary 50 sản phẩm, wishlist khi chưa đăng nhập, sản phẩm hết hàng trong wishlist). Cách 1 thường cho ra test case chung chung hơn và ít edge case hơn. Chênh lệch thời gian giữa cách 1 và cách 3 thường không nhiều — giá trị chính là ở chất lượng.
 
 ---
 
-## 📝 RECAP — 5 điểm chính Session 4
+## 📝 Tổng kết
 
 1. ✅ **Copilot / AI giảm 70% thời gian viết script** — nhưng vẫn cần review kỹ
 2. ✅ **Skill = Prompt đã được cấu hình sẵn** — tiết kiệm thời gian, tăng nhất quán
@@ -255,7 +332,7 @@ Sau 2 tuần, team thấy test **flaky** — lúc pass lúc fail không rõ lý 
 
 ---
 
-## 🗒️ QUICK REFERENCE — Cheat Sheet Session 4
+## 🗒️ Cheat Sheet
 
 ```
 Copilot: Viết comment mô tả yêu cầu, Copilot tự viết code
@@ -279,8 +356,8 @@ Review checklist script AI:
 
 ## 📚 Bài tập về nhà
 
-> Tạo thêm **2 skill mới** cho công việc QA hằng ngày của bạn.  
-> Chia sẻ skill với team và đo lường kết quả sau 1 tuần sử dụng.
+> Tạo thêm **2 skill mới** cho công việc QA hằng ngày của bạn.
+> Lưu skill vào file `.md` trong repo hoặc Claude Projects, dùng thử trong 1 tuần và ghi lại: skill đó tiết kiệm được bao nhiêu thời gian? Cần cải thiện gì?
 
 ---
 
