@@ -160,26 +160,36 @@ Một số lệnh hay dùng:
 
 ## Troubleshooting
 
-??? question "Playwright báo lỗi browser not found"
+!!! tip "Playwright báo lỗi browser not found"
     ```bash
     npx playwright install --with-deps chromium
     ```
 
-??? question "Claude Code không thấy MCP Jira"
+!!! tip "Claude Code không thấy MCP Jira"
+    Kiểm tra `.env` đã điền đủ 3 biến, sau đó re-add:
+
     ```bash
-    # Kiểm tra .env đã điền đủ
     cat .env
-    # Re-add MCP
     claude mcp remove jira
-    claude mcp add jira --env JIRA_BASE_URL --env JIRA_EMAIL --env JIRA_API_TOKEN -- npx -y @modelcontextprotocol/server-jira
+    claude mcp add jira \
+      --env JIRA_BASE_URL \
+      --env JIRA_EMAIL \
+      --env JIRA_API_TOKEN \
+      -- npx -y @modelcontextprotocol/server-jira
     ```
 
-??? question "Antigravity extension không sign in được"
-    Restart VS Code sau khi cài extension. Nếu vẫn lỗi, thử uninstall → reinstall.
+!!! tip "Antigravity extension không sign in được"
+    Restart VS Code sau khi cài extension. Nếu vẫn lỗi, thử uninstall → reinstall từ Marketplace.
 
-??? question "npm install lỗi permission trên macOS"
+!!! tip "npm install lỗi permission trên macOS"
     ```bash
     sudo npm install
-    # Hoặc dùng nvm để tránh sudo:
-    # https://github.com/nvm-sh/nvm
     ```
+    Hoặc dùng **nvm** để tránh cần `sudo`: [github.com/nvm-sh/nvm](https://github.com/nvm-sh/nvm)
+
+!!! tip "Không thấy tab Playwright trong VS Code"
+    Cài extension **Playwright Test for VS Code** từ Marketplace, sau đó chạy:
+    ```bash
+    npx playwright install
+    ```
+    Mở Activity Bar → icon beaker (Testing) để thấy test explorer.
