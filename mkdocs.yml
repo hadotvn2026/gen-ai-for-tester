@@ -37,6 +37,7 @@ nav:
     - 'Session 5 — AI Agent': sessions/session-05-ai-agent.md
     - 'Session 6 — Agentic AI': sessions/session-06-agentic-ai.md
   - Resources:
+    - 'Workspace Setup': workspace-setup.md
     - 'Prompt Library': resources/prompt-library.md
     - 'Cheat Sheets': resources/cheat-sheets.md
 

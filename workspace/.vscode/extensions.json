@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "GitHub.copilot",
+    "GitHub.copilot-chat",
+    "ms-playwright.playwright",
+    "antigravity.antigravity-vscode",
+    "bradlc.vscode-tailwindcss",
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "yzhang.markdown-all-in-one",
+    "bierner.markdown-preview-github-styles"
+  ]
+}

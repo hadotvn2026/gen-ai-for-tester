@@ -284,7 +284,7 @@ AI giúp bạn xây kế hoạch học có cấu trúc, không bị lạc lối 
 ## 🚀 Bắt đầu nhanh
 
 1. Xác định role của bạn trong bảng **"Học theo role"** ở trên
-2. Mở session đầu tiên theo lộ trình được đề xuất
+2. **[Thiết lập workspace](./workspace-setup.md)** — VS Code + Playwright + MCP (15–20 phút, làm trước buổi học)
 3. Cài đặt công cụ AI (ChatGPT hoặc Claude.ai — chọn 1 là đủ để bắt đầu)
 4. Dùng `resources/prompt-library.md` để tra cứu nhanh khi làm việc thực tế
 

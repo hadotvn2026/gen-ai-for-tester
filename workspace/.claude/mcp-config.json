@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "jira": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-jira"],
+      "env": {
+        "JIRA_BASE_URL": "${JIRA_BASE_URL}",
+        "JIRA_EMAIL": "${JIRA_EMAIL}",
+        "JIRA_API_TOKEN": "${JIRA_API_TOKEN}"
+      }
+    },
+    "playwright": {
+      "command": "npx",
+      "args": ["-y", "@playwright/mcp@latest"],
+      "env": {}
+    }
+  }
+}
