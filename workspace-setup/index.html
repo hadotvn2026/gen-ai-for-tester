@@ -1223,31 +1223,40 @@
 </code></pre></div>
 <hr />
 <h2 id="troubleshooting">Troubleshooting</h2>
-<details class="question">
-<summary>Playwright báo lỗi browser not found</summary>
+<div class="admonition tip">
+<p class="admonition-title">Playwright báo lỗi browser not found</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>npx<span class="w"> </span>playwright<span class="w"> </span>install<span class="w"> </span>--with-deps<span class="w"> </span>chromium
 </code></pre></div>
-</details>
-<details class="question">
-<summary>Claude Code không thấy MCP Jira</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># Kiểm tra .env đã điền đủ</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>cat<span class="w"> </span>.env
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="c1"># Re-add MCP</span>
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>claude<span class="w"> </span>mcp<span class="w"> </span>remove<span class="w"> </span>jira
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>claude<span class="w"> </span>mcp<span class="w"> </span>add<span class="w"> </span>jira<span class="w"> </span>--env<span class="w"> </span>JIRA_BASE_URL<span class="w"> </span>--env<span class="w"> </span>JIRA_EMAIL<span class="w"> </span>--env<span class="w"> </span>JIRA_API_TOKEN<span class="w"> </span>--<span class="w"> </span>npx<span class="w"> </span>-y<span class="w"> </span>@modelcontextprotocol/server-jira
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Claude Code không thấy MCP Jira</p>
+<p>Kiểm tra <code>.env</code> đã điền đủ 3 biến, sau đó re-add:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>cat<span class="w"> </span>.env
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>claude<span class="w"> </span>mcp<span class="w"> </span>remove<span class="w"> </span>jira
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>claude<span class="w"> </span>mcp<span class="w"> </span>add<span class="w"> </span>jira<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">  </span>--env<span class="w"> </span>JIRA_BASE_URL<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">  </span>--env<span class="w"> </span>JIRA_EMAIL<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">  </span>--env<span class="w"> </span>JIRA_API_TOKEN<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">  </span>--<span class="w"> </span>npx<span class="w"> </span>-y<span class="w"> </span>@modelcontextprotocol/server-jira
 </code></pre></div>
-</details>
-<details class="question">
-<summary>Antigravity extension không sign in được</summary>
-<p>Restart VS Code sau khi cài extension. Nếu vẫn lỗi, thử uninstall → reinstall.</p>
-</details>
-<details class="question">
-<summary>npm install lỗi permission trên macOS</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>sudo<span class="w"> </span>npm<span class="w"> </span>install
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="c1"># Hoặc dùng nvm để tránh sudo:</span>
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="c1"># https://github.com/nvm-sh/nvm</span>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Antigravity extension không sign in được</p>
+<p>Restart VS Code sau khi cài extension. Nếu vẫn lỗi, thử uninstall → reinstall từ Marketplace.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">npm install lỗi permission trên macOS</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>sudo<span class="w"> </span>npm<span class="w"> </span>install
 </code></pre></div>
-</details>
+Hoặc dùng <strong>nvm</strong> để tránh cần <code>sudo</code>: <a href="https://github.com/nvm-sh/nvm">github.com/nvm-sh/nvm</a></p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Không thấy tab Playwright trong VS Code</p>
+<p>Cài extension <strong>Playwright Test for VS Code</strong> từ Marketplace, sau đó chạy:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>npx<span class="w"> </span>playwright<span class="w"> </span>install
+</code></pre></div>
+Mở Activity Bar → icon beaker (Testing) để thấy test explorer.</p>
+</div>
 
 
 
