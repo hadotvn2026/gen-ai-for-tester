@@ -90,6 +90,16 @@ Thay vì viết lại prompt dài mỗi lần, bạn chỉ cần gọi tên skil
 
 > **Thời gian ước tính:** 40 phút | **Công cụ:** Claude.ai hoặc GitHub Copilot, VS Code
 
+> **🎯 Lộ trình theo role — đọc trước khi bắt đầu:**
+>
+> | Role | Làm gì trong bài tập này |
+> |------|--------------------------|
+> | **Automation Engineer / QA Lead** | Làm đầy đủ Bước 1–5, bao gồm chạy script trong IDE |
+> | **Manual Tester / BA** | Làm Bước 1–4 (tạo prompt, đọc code, review checklist). **Bỏ qua Bước 5.** Mục tiêu của bạn là biết cách ra yêu cầu cho AI và đánh giá chất lượng output — không phải tự chạy code. |
+> | **PO / QA Manager** | Đọc qua Bước 2–3 để hiểu AI tạo code như thế nào. Tập trung vào checklist review ở Bước 3 — đây là góc nhìn bạn cần khi sign-off automated test suite. |
+>
+> 💡 **Tại sao Manual Tester vẫn nên làm bài tập này?** Xu hướng 2025: ranh giới giữa manual và automation đang mờ dần. Biết cách đọc và đánh giá script AI tạo ra — dù không tự code — là kỹ năng ngày càng được yêu cầu trong JD của senior manual tester.
+
 **Bước 1:** Mở Claude.ai (hoặc Copilot trong VS Code). Tạo một cuộc hội thoại mới.
 
 **Bước 2:** Paste prompt sau vào Claude:

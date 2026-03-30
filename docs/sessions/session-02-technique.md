@@ -156,11 +156,15 @@ Hãy review test plan sau và chỉ ra 3 rủi ro lớn nhất bị bỏ sót...
 
 ---
 
-**PROMPT 1 — Test Case Generation:**
+> **🎯 Chú ý theo role:** Bạn không cần dùng tất cả 6 prompt. Hãy ưu tiên những prompt phù hợp với công việc hằng ngày của bạn — cột *"Dành cho"* giúp bạn chọn nhanh.
+
+---
+
+**PROMPT 1 — Test Case Generation** *(Dành cho: Mọi role)*
 
 ```
 [ROLE] Bạn là Senior QA Engineer với kinh nghiệm test [DOMAIN DỰ ÁN CỦA BẠN].
-[CONTEXT] Hệ thống: [MÔ TẢ HỆ THỐNG]. User chính: [AI LÀ USER].
+[CONTEXT] Hệ thống: [MÔ TẢ HỆ THỐNG]. User chính: [MÔ TẢ USER].
 [TASK] Tạo test case cho tính năng: [TÊN TÍNH NĂNG]
 Bao gồm: happy path, negative cases, boundary values, edge cases.
 [FORMAT] Bảng Markdown: STT | Loại | Tên test case | Precondition | Steps | Expected | Priority (P1/P2/P3)
@@ -168,7 +172,7 @@ Bao gồm: happy path, negative cases, boundary values, edge cases.
 
 ---
 
-**PROMPT 2 — Bug Report Enhancement:**
+**PROMPT 2 — Bug Report Enhancement** *(Dành cho: Manual Tester, QA Lead)*
 
 ```
 Tôi có bug report sau đây còn sơ sài:
@@ -185,7 +189,7 @@ Hãy làm rõ bug report này bằng cách:
 
 ---
 
-**PROMPT 3 — API Test Creation (Chain-of-Thought):**
+**PROMPT 3 — API Test Creation** *(Dành cho: Automation Engineer, Manual Tester dùng Postman)*
 
 ```
 Hãy suy nghĩ từng bước để tạo Postman test collection cho API sau:
@@ -199,7 +203,7 @@ Bước 4: Thêm assertions cho mỗi test case
 
 ---
 
-**PROMPT 4 — Risk Analysis (Role Prompting):**
+**PROMPT 4 — Sprint Risk Analysis** *(Dành cho: QA Lead, QA Manager)*
 
 ```
 Đóng vai QA Lead với 8 năm kinh nghiệm, hãy đánh giá rủi ro của sprint sau trước khi release:
@@ -212,16 +216,60 @@ Trả về:
 - Đề xuất: Nên test gì trước nếu ít thời gian
 ```
 
+---
+
+**PROMPT 5 — Acceptance Criteria Review** *(Dành cho: Manual Tester, BA, QA Lead)*
+
+> Xu hướng 2025: AI đang được dùng để phát hiện AC mơ hồ ngay từ giai đoạn grooming — trước khi dev viết một dòng code. Đây là một trong những ứng dụng có ROI cao nhất của AI trong QA.
+
+```
+[ROLE] Bạn là QA Engineer có kinh nghiệm đánh giá chất lượng requirement.
+[CONTEXT] Dự án: [MÔ TẢ NGẮN]. Giai đoạn: Pre-development / Sprint grooming.
+[TASK] Review Acceptance Criteria sau và chỉ ra:
+1. AC nào chưa testable (không đo lường được, mơ hồ)?
+2. Edge case quan trọng nào đang bị bỏ sót?
+3. Business rule nào có thể hiểu nhiều cách — cần làm rõ với BA/PO?
+4. Viết lại các AC yếu theo format Given/When/Then rõ ràng hơn.
+
+AC cần review:
+---
+[PASTE ACCEPTANCE CRITERIA VÀO ĐÂY]
+---
+[FORMAT] Bảng: AC gốc | Vấn đề phát hiện | Đề xuất cải thiện
+```
+
+---
+
+**PROMPT 6 — Test Execution Report** *(Dành cho: Manual Tester, QA Lead, QA Manager)*
+
+> Thay vì viết báo cáo sprint test thủ công mỗi lần, dùng prompt này để tạo draft trong 2 phút — sau đó chỉ cần review và điều chỉnh.
+
+```
+[ROLE] Bạn là QA Engineer tổng hợp kết quả kiểm thử cuối sprint.
+[CONTEXT] Dự án: [TÊN DỰ ÁN]. Sprint: [SỐ SPRINT]. Ngày: [NGÀY].
+[TASK] Tạo Test Execution Report từ dữ liệu sau:
+---
+[PASTE KẾT QUẢ TEST: tổng số TC, số pass/fail/blocked, danh sách bug chính, tính năng đã test/chưa test]
+---
+Report cần bao gồm:
+1. Executive Summary: tổng số TC, pass rate, trạng thái tổng thể
+2. Top 3 rủi ro còn lại chưa được giải quyết trước khi release
+3. Đề xuất: ✅ Go / ⚠️ Conditional Go / ❌ No-go — kèm lý do rõ ràng
+4. Action items cụ thể cho team (dev, PM, QA)
+[FORMAT] Markdown, có thể paste thẳng vào Confluence, Notion, hoặc email cho stakeholder
+```
+
 **✅ Kết quả mong đợi:**
-> Bạn có một file ghi chú chứa 4 prompt đã được cá nhân hóa cho dự án của mình. Khi chạy thử, output của mỗi prompt sẽ liên quan trực tiếp đến ngữ cảnh bạn đã điền vào — không còn chung chung nữa. Prompt Library này là tài sản bạn sẽ dùng lại hằng ngày.
+> Bạn có một file ghi chú chứa ít nhất 3 prompt đã được cá nhân hóa cho dự án và role của mình. Khi chạy thử, output của mỗi prompt phải liên quan trực tiếp đến ngữ cảnh bạn điền vào — không còn chung chung. Đây là tài sản bạn sẽ dùng lại hằng ngày và liên tục cải tiến theo kinh nghiệm thực tế.
 
 **❓ Tự kiểm tra:**
+- [ ] Bạn đã chọn ít nhất 3 prompt phù hợp với role của mình chưa?
 - [ ] Mỗi prompt có đủ 4 thành phần (Role, Context, Task, Format)?
 - [ ] Bạn có sử dụng ít nhất 2 trong 4 kỹ thuật đã học?
-- [ ] Output AI trả về có đúng với nhu cầu thực tế của bạn không?
-- [ ] Bạn đã thử "cải tiến" prompt sau khi thấy output chưa đủ?
+- [ ] Output AI trả về có đúng với nhu cầu thực tế không — hay vẫn còn chung chung?
+- [ ] Bạn đã thử chỉnh sửa prompt ít nhất 1 lần sau khi thấy output chưa đủ?
 
-💡 **Gợi ý khi bị kẹt:** Nếu chưa có dự án thực tế, hãy dùng: domain = "e-commerce", hệ thống = "ứng dụng mua sắm online", user = "khách hàng phổ thông". Điều quan trọng là luyện tập điền context — không phải tính chính xác của dữ liệu mẫu.
+💡 **Gợi ý khi bị kẹt:** Nếu chưa có dự án thực tế, dùng: domain = "e-commerce", hệ thống = "ứng dụng mua sắm online", user = "khách hàng phổ thông". Điều quan trọng là luyện tập điền đủ 4 thành phần — không phải tính chính xác của dữ liệu mẫu. Prompt Library tốt nhất là cái bạn tự chỉnh từ template, không phải copy nguyên xi.
 
 ---
 

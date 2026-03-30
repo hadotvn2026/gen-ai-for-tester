@@ -38,6 +38,23 @@ Khóa học **Generative AI for Testers** được thiết kế dành cho:
 
 ---
 
+## 🎯 Học theo role của bạn
+
+> Không phải session nào cũng có cùng mức độ ưu tiên với mọi người. Hãy bắt đầu từ lộ trình phù hợp với công việc hằng ngày của bạn — sau đó mở rộng dần sang các session còn lại.
+
+| Role | Mục tiêu khi học | Lộ trình đề xuất | Có thể bỏ qua (tạm thời) |
+|------|-----------------|-----------------|--------------------------|
+| **Manual Tester** | Tăng tốc viết test case, bug report, chọn regression scope | S1 → S2 → S3 → S4 *(chỉ Bước 1–4)* | S4 Bước 5, phần technical trong S5–S6 |
+| **QA Automation** | Viết script nhanh hơn, debug với AI, xây dựng AI-assisted framework | S1 → S2 → S3 → S4 *(toàn bộ)* → S5 → S6 | Không — tất cả đều relevant |
+| **BA** | Review requirement, viết AC testable, tạo Gherkin scenarios | S1 → S2 *(Prompt 1, 5)* → S3 → S6 *(phần 1.4)* | S4 Bước 4–5, phần technical trong S5 |
+| **Product Owner** | Hiểu AI risk, governance, đặt kỳ vọng đúng với team | S1 → S6 *(phần 1.4)* → S2 *(đọc nhanh)* | Lab kỹ thuật trong S4–S5 |
+| **QA Lead** | Chuẩn hóa AI workflow cho team, quality gate cho AI-generated artifacts | S1 → S2 → S3 → S4 → S5 → S6 *(toàn bộ)* | Không — cần đủ để lead team |
+| **QA Manager** | Adoption roadmap, đo ROI, quản lý rủi ro tổ chức | S1 → S6 → S2 → S3 | Lab kỹ thuật trong S4–S5 *(đọc overview là đủ)* |
+
+> **💡 Xu hướng 2025 cần biết:** Ranh giới giữa các role đang mờ dần nhanh chóng — Manual Tester ngày càng cần hiểu automation concepts để cộng tác với AI agents; BA tham gia vào quality process sớm hơn bao giờ hết (*shift-left quality*); "vibe-coding" với Copilot/Cursor đang trở thành kỹ năng mặc định. Lộ trình trên là điểm khởi đầu — không phải giới hạn của bạn.
+
+---
+
 ## 📚 Chương trình học
 
 | Session | Chủ đề | Nguyên tắc | Thời lượng |
