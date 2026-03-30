@@ -128,4 +128,4 @@ Tiếp tục: n8n | LangChain | CrewAI | Claude API
 
 ---
 
-*🏠 [README](../README.md) · 📚 [Prompt Library](./prompt-library.md)*
+*🏠 [README](../index.md) · 📚 [Prompt Library](./prompt-library.md)*

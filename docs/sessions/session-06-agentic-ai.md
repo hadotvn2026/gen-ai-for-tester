@@ -367,4 +367,4 @@ Cộng đồng học tiếp:
 
 ---
 
-*⬅️ [Session 5 — AI Agent](./session-05-ai-agent.md) · 🏠 [README](../README.md)*
+*⬅️ [Session 5 — AI Agent](./session-05-ai-agent.md) · 🏠 [README](../index.md)*

@@ -1,0 +1,58 @@
+site_name: Generative AI for Testers
+site_description: Khóa học thực hành ứng dụng AI trong kiểm thử phần mềm
+site_author: QA Automation Trainer
+site_url: https://hadotvn2026.github.io/gen-ai-for-tester/
+
+theme:
+  name: material
+  language: vi
+  palette:
+    - scheme: default
+      primary: deep purple
+      accent: teal
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: deep purple
+      accent: teal
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+nav:
+  - Tổng quan: index.md
+  - Sessions:
+    - 'Session 1 — Mindset': sessions/session-01-mindset.md
+    - 'Session 2 — Technique': sessions/session-02-technique.md
+    - 'Session 3 — Context': sessions/session-03-context.md
+    - 'Session 4 — Skill Building': sessions/session-04-skill-building.md
+    - 'Session 5 — AI Agent': sessions/session-05-ai-agent.md
+    - 'Session 6 — Agentic AI': sessions/session-06-agentic-ai.md
+  - Resources:
+    - 'Prompt Library': resources/prompt-library.md
+    - 'Cheat Sheets': resources/cheat-sheets.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - attr_list
+  - md_in_html
+
+plugins:
+  - search:
+      lang: en

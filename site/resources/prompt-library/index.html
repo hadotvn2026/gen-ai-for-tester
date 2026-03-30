@@ -1,0 +1,1617 @@
+
+<!doctype html>
+<html lang="vi" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Khóa học thực hành ứng dụng AI trong kiểm thử phần mềm">
+      
+      
+        <meta name="author" content="QA Automation Trainer">
+      
+      
+        <link rel="canonical" href="https://hadotvn2026.github.io/gen-ai-for-tester/resources/prompt-library/">
+      
+      
+        <link rel="prev" href="../../sessions/session-06-agentic-ai/">
+      
+      
+        <link rel="next" href="../cheat-sheets/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Prompt Library - Generative AI for Testers</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#prompt-library-thu-vien-prompt-mau-cho-tester" class="md-skip">
+          Bỏ qua
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Đầu trang">
+    <a href="../.." title="Generative AI for Testers" class="md-header__button md-logo" aria-label="Generative AI for Testers" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Generative AI for Testers
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Prompt Library
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Tìm kiếm" placeholder="Tìm kiếm" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Tìm kiếm">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Xoá" aria-label="Xoá" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Tổng quan
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../sessions/session-01-mindset/" class="md-tabs__link">
+          
+  
+  
+  Sessions
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  Resources
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Thanh điều hướng" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Generative AI for Testers" class="md-nav__button md-logo" aria-label="Generative AI for Testers" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Generative AI for Testers
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tổng quan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sessions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sessions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sessions/session-01-mindset/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Session 1 — Mindset
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sessions/session-02-technique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Session 2 — Technique
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sessions/session-03-context/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Session 3 — Context
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sessions/session-04-skill-building/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Session 4 — Skill Building
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sessions/session-05-ai-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Session 5 — AI Agent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sessions/session-06-agentic-ai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Session 6 — Agentic AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Resources
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prompt Library
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prompt Library
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Mục lục">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Mục lục
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-test-case-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. TEST CASE GENERATION
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. TEST CASE GENERATION">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-tu-user-story-zero-shot-role" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Từ User Story (Zero-shot + Role)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-tu-api-spec-chain-of-thought" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Từ API Spec (Chain-of-Thought)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-tu-acceptance-criteria-few-shot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Từ Acceptance Criteria (Few-shot)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-bug-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. BUG REPORT
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. BUG REPORT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-enhance-bug-report-so-sai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Enhance bug report sơ sài
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-phan-tich-root-cause-tu-error-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Phân tích root cause từ error log
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-test-data-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. TEST DATA GENERATION
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. TEST DATA GENERATION">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-domain-specific-test-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Domain-specific test data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-test-data-cho-api-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Test data cho API testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-automation-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. AUTOMATION SCRIPT
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. AUTOMATION SCRIPT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-selenium-webdriver-java-testng" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Selenium WebDriver (Java + TestNG)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-playwright-typescript" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Playwright (TypeScript)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-rest-assured-java" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 REST Assured (Java)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-risk-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. RISK ANALYSIS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. RISK ANALYSIS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-sprint-risk-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Sprint risk analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-release-readiness-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Release readiness check
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-review-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. REVIEW &amp; SUMMARY
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. REVIEW &amp; SUMMARY">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-review-test-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Review test plan
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-tom-tat-test-execution-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Tóm tắt test execution report
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cheat-sheets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cheat Sheets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Mục lục">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Mục lục
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-test-case-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. TEST CASE GENERATION
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. TEST CASE GENERATION">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-tu-user-story-zero-shot-role" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Từ User Story (Zero-shot + Role)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-tu-api-spec-chain-of-thought" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Từ API Spec (Chain-of-Thought)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-tu-acceptance-criteria-few-shot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Từ Acceptance Criteria (Few-shot)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-bug-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. BUG REPORT
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. BUG REPORT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-enhance-bug-report-so-sai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Enhance bug report sơ sài
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-phan-tich-root-cause-tu-error-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Phân tích root cause từ error log
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-test-data-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. TEST DATA GENERATION
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. TEST DATA GENERATION">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-domain-specific-test-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Domain-specific test data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-test-data-cho-api-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Test data cho API testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-automation-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. AUTOMATION SCRIPT
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. AUTOMATION SCRIPT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-selenium-webdriver-java-testng" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Selenium WebDriver (Java + TestNG)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-playwright-typescript" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Playwright (TypeScript)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-rest-assured-java" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 REST Assured (Java)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-risk-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. RISK ANALYSIS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. RISK ANALYSIS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-sprint-risk-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Sprint risk analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-release-readiness-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Release readiness check
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-review-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. REVIEW &amp; SUMMARY
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. REVIEW &amp; SUMMARY">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-review-test-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Review test plan
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-tom-tat-test-execution-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Tóm tắt test execution report
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="prompt-library-thu-vien-prompt-mau-cho-tester">📚 Prompt Library — Thư viện Prompt mẫu cho Tester</h1>
+<blockquote>
+<p>Tổng hợp các prompt tái sử dụng được từ 6 sessions.<br />
+<strong>Cách dùng:</strong> Copy prompt, thay thế <code>[...]</code> bằng thông tin dự án của bạn.</p>
+</blockquote>
+<hr />
+<h2 id="1-test-case-generation">1. TEST CASE GENERATION</h2>
+<h3 id="11-tu-user-story-zero-shot-role">1.1 Từ User Story (Zero-shot + Role)</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Bạn là Senior QA Engineer với 5 năm kinh nghiệm test [DOMAIN].
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Hệ thống: [MÔ TẢ HỆ THỐNG]
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>User chính: [AI LÀ USER]
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>Tech stack: [FRONTEND / BACKEND / DB]
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>User Story:
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>[PASTE USER STORY VÀO ĐÂY]
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>Hãy tạo test cases theo format:
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>| TC-ID | Loại | Tên test case | Precondition | Steps | Expected result | Priority |
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>Bao gồm: Happy path, Negative cases, Boundary values, Edge cases
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>Priority: P1 (Critical) / P2 (High) / P3 (Medium)
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>Minimum: 8 test cases
+</code></pre></div>
+<hr />
+<h3 id="12-tu-api-spec-chain-of-thought">1.2 Từ API Spec (Chain-of-Thought)</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Hãy suy nghĩ từng bước để tạo test cases cho API sau:
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>API: [ENDPOINT URL + METHOD]
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>Payload: [REQUEST BODY EXAMPLE]
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>Auth: [AUTHENTICATION METHOD]
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>Bước 1: Liệt kê các test scenarios cần cover
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>Bước 2: Xác định test data cho mỗi scenario
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>Bước 3: Viết test cases với status code expected
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>Bước 4: Thêm edge cases và error cases
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>Bước 5: Đề xuất assertions quan trọng nhất
+</code></pre></div>
+<hr />
+<h3 id="13-tu-acceptance-criteria-few-shot">1.3 Từ Acceptance Criteria (Few-shot)</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Tôi cần tạo test cases từ Acceptance Criteria. Đây là 2 ví dụ:
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Ví dụ 1:
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>AC: &quot;Hệ thống cho phép chuyển tiền tối đa 500 triệu VND mỗi ngày&quot;
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>Test case: Chuyển đúng 500 triệu → Pass | Chuyển 500 triệu + 1 đồng → Fail
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>Ví dụ 2:
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>AC: &quot;Password phải có ít nhất 8 ký tự, 1 chữ hoa, 1 số&quot;
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>Test case: &quot;Test@1234&quot; → Pass | &quot;test1234&quot; → Fail | &quot;TEST1234&quot; → Fail
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>Bây giờ tạo test cases từ AC sau:
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>[PASTE ACCEPTANCE CRITERIA VÀO ĐÂY]
+</code></pre></div>
+<hr />
+<h2 id="2-bug-report">2. BUG REPORT</h2>
+<h3 id="21-enhance-bug-report-so-sai">2.1 Enhance bug report sơ sài</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Tôi có bug report sau đây còn sơ sài:
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>---
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>[PASTE BUG REPORT VÀO ĐÂY]
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>---
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>Hãy làm rõ bug report này:
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>1. Tiêu đề rõ ràng: [Module] - [Vấn đề ngắn gọn]
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>2. Steps to Reproduce chi tiết (đánh số)
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>3. Actual result vs Expected result (phân biệt rõ)
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>4. Severity (Critical/High/Medium/Low) + lý do
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>5. Priority + lý do
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>6. Gợi ý attachments/evidence cần có
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>7. Environment info nếu thiếu
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>Giữ nguyên ngôn ngữ gốc. Đánh dấu [CẦN XÁC NHẬN] nếu thiếu thông tin.
+</code></pre></div>
+<hr />
+<h3 id="22-phan-tich-root-cause-tu-error-log">2.2 Phân tích root cause từ error log</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Đóng vai Senior Developer + QA Engineer.
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>Error log:
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>---
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>[PASTE ERROR LOG VÀO ĐÂY]
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>---
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>Hãy phân tích:
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>1. Lỗi xảy ra ở tầng nào? (Frontend / Backend / Database / Network)
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>2. Root cause có khả năng nhất là gì?
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>3. Bước reproduce để verify root cause
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>4. Test cases cần thêm để catch lỗi này trong tương lai
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>5. Ảnh hưởng đến tính năng nào khác?
+</code></pre></div>
+<hr />
+<h2 id="3-test-data-generation">3. TEST DATA GENERATION</h2>
+<h3 id="31-domain-specific-test-data">3.1 Domain-specific test data</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Tạo test data cho hệ thống [DOMAIN] với các yêu cầu sau:
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>ĐỊNH DẠNG DỮ LIỆU:
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>- [Trường 1]: [quy tắc định dạng]
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>- [Trường 2]: [quy tắc định dạng]
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>- [Trường 3]: [quy tắc định dạng]
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>QUY TẮC NGHIỆP VỤ:
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>- [Quy tắc 1]
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>- [Quy tắc 2]
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>XUẤT RA:
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>- 15 dòng data hợp lệ (valid)
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>- 5 dòng edge case (boundary values)
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>- 5 dòng data lỗi (invalid, để test validation)
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>Format: CSV với header
+</code></pre></div>
+<hr />
+<h3 id="32-test-data-cho-api-testing">3.2 Test data cho API testing</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Tạo test data JSON cho API [ENDPOINT]:
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>Schema yêu cầu:
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>[PASTE JSON SCHEMA HOẶC EXAMPLE]
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>Tạo:
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>1. Request body hợp lệ (5 variations)
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>2. Request thiếu required fields (3 cases)
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>3. Request với data type sai (3 cases)
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>4. Request với boundary values (3 cases)
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>Format: Array of JSON objects với comment giải thích
+</code></pre></div>
+<hr />
+<h2 id="4-automation-script">4. AUTOMATION SCRIPT</h2>
+<h3 id="41-selenium-webdriver-java-testng">4.1 Selenium WebDriver (Java + TestNG)</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Tạo Selenium WebDriver test class (Java, TestNG) cho:
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>URL: [URL]
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>Tính năng: [MÔ TẢ TÍNH NĂNG]
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>Test cases cần cover:
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>1. [Test case 1]
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>2. [Test case 2]
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>3. [Test case 3]
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>YÊU CẦU KỸ THUẬT:
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>- Page Object Model (tách Page class riêng)
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>- Explicit Wait (WebDriverWait + ExpectedConditions)
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>- KHÔNG dùng Thread.sleep
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>- TestNG: @Test, @BeforeMethod, @AfterMethod
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>- Assert với message rõ ràng
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>- Test data không hard-code trong @Test methods
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>Tạo 2 file: [FeatureName]Page.java và [FeatureName]Test.java
+</code></pre></div>
+<hr />
+<h3 id="42-playwright-typescript">4.2 Playwright (TypeScript)</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Tạo Playwright test (TypeScript) cho:
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>URL: [URL]
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>Tính năng: [MÔ TẢ]
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>Test cases:
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>1. [Test case 1]
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>2. [Test case 2]
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>YÊU CẦU:
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>- Dùng Page Object Model
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>- Locators theo thứ tự ưu tiên: getByRole &gt; getByText &gt; getByLabel &gt; CSS
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>- async/await đầy đủ
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>- expect() assertions rõ ràng
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>- test.beforeEach / test.afterEach cho setup/teardown
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>- Không dùng hard-coded selectors như &quot;div.class-name&quot; nếu có thể tránh
+</code></pre></div>
+<hr />
+<h3 id="43-rest-assured-java">4.3 REST Assured (Java)</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Tạo REST Assured test (Java, TestNG) cho API:
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>Base URL: [URL]
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>Endpoint: [PATH]
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>Method: [GET/POST/PUT/DELETE]
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>Auth: [Bearer token / Basic / None]
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>Request body (nếu có):
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>[JSON EXAMPLE]
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>Test cases:
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>1. Happy path — status 200 + verify response body
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>2. Invalid input — status 400 + verify error message
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>3. Unauthorized — status 401
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>4. Not found — status 404
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>YÊU CẦU:
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>- RestAssured.given().when().then() syntax
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>- JSON Schema validation nếu có schema
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>- Soft assertions cho response body
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>- @BeforeClass để setup base URL và auth
+</code></pre></div>
+<hr />
+<h2 id="5-risk-analysis">5. RISK ANALYSIS</h2>
+<h3 id="51-sprint-risk-analysis">5.1 Sprint risk analysis</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Đóng vai QA Lead có kinh nghiệm. Phân tích rủi ro sprint sau:
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>THAY ĐỔI TRONG SPRINT:
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>---
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>[PASTE SPRINT NOTES / CHANGELOGS]
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>---
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>Hãy trả về:
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>## Top 5 Rủi ro Kiểm thử
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>| Rủi ro | Mức độ | Lý do | Hành động đề xuất |
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>## Regression Risk
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>Tính năng nào có thể bị ảnh hưởng ngoài ý muốn?
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>## Thứ tự test nếu ít thời gian
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>1. [Test gì trước và tại sao]
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>
+<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>## Flag cho QA Lead
+<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>[Điều gì cần QA Lead quyết định trực tiếp?]
+</code></pre></div>
+<hr />
+<h3 id="52-release-readiness-check">5.2 Release readiness check</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>Dựa trên kết quả test sau, đánh giá sẵn sàng release:
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>KẾT QUẢ TEST:
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>- Tổng TC: [X]
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>- Pass: [X] ([X]%)
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>- Fail: [X]
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>- Blocked: [X]
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>- Bug mở: [X] (Critical: [X], High: [X], Medium: [X])
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>THAY ĐỔI TRONG RELEASE NÀY:
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>[DANH SÁCH TÍNH NĂNG]
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>Hãy đánh giá:
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>1. Ready to release? (Yes / No / Conditional)
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>2. Điều kiện release nếu &quot;Conditional&quot;
+<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>3. Rủi ro nếu release với bug hiện tại
+<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>4. Đề xuất cho QA Lead và PM
+</code></pre></div>
+<hr />
+<h2 id="6-review-summary">6. REVIEW &amp; SUMMARY</h2>
+<h3 id="61-review-test-plan">6.1 Review test plan</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>Đóng vai QA Lead senior, review test plan sau:
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>---
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>[PASTE TEST PLAN]
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>---
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>Feedback theo các khía cạnh:
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>1. Coverage: Có bỏ sót risk area nào không?
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>2. Prioritization: Thứ tự test có hợp lý không?
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>3. Feasibility: Có thể thực hiện trong timeframe không?
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>4. Completeness: Thiếu phần nào?
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>5. Đề xuất cải thiện: Top 3 điều nên sửa ngay
+</code></pre></div>
+<hr />
+<h3 id="62-tom-tat-test-execution-report">6.2 Tóm tắt test execution report</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Tóm tắt báo cáo test sau đây thành bản executive summary (1 trang):
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>---
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>[PASTE RAW TEST REPORT]
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>---
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>Format output:
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>## Executive Summary — [Sprint/Version Name]
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>**Ngày:** [Date] | **QA:** [Name] | **Build:** [Build number]
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>### Kết quả tổng quan
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>[Bảng tóm tắt số liệu]
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>### Điểm nổi bật
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>- ✅ [Điều tốt]
+<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>- ⚠️ [Điều cần lưu ý]
+<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>- ❌ [Vấn đề nghiêm trọng]
+<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a>
+<a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a>### Quyết định đề xuất
+<a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a>[RELEASE / HOLD / CONDITIONAL RELEASE + lý do ngắn]
+</code></pre></div>
+<hr />
+<p><em>🏠 <a href="../../">README</a> · 📋 <a href="../cheat-sheets/">Cheat Sheets</a></em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Trở lại mục lục
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0110\u00e3 sao ch\u00e9p", "clipboard.copy": "Sao ch\u00e9p v\u00e0o b\u1ed9 nh\u1edb t\u1ea1m", "search.result.more.one": "1 t\u1eeb kh\u00e1c trong trang", "search.result.more.other": "# t\u1eeb kh\u00e1c trong trang", "search.result.none": "Kh\u00f4ng t\u00ecm th\u1ea5y t\u00e0i li\u1ec7u li\u00ean quan", "search.result.one": "1 t\u00e0i li\u1ec7u li\u00ean quan", "search.result.other": "# t\u00e0i li\u1ec7u li\u00ean quan", "search.result.placeholder": "Nh\u1eadp \u0111\u1ec3 b\u1eaft \u0111\u1ea7u t\u00ecm ki\u1ebfm", "search.result.term.missing": "Kh\u00f4ng", "select.version": "Ch\u1ecdn phi\u00ean b\u1ea3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

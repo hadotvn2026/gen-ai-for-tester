@@ -333,4 +333,4 @@ Format output:
 
 ---
 
-*🏠 [README](../README.md) · 📋 [Cheat Sheets](./cheat-sheets.md)*
+*🏠 [README](../index.md) · 📋 [Cheat Sheets](./cheat-sheets.md)*

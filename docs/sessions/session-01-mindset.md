@@ -258,4 +258,4 @@ Prompt cơ bản:
 
 ---
 
-*⬅️ [README](../README.md) · ➡️ [Session 2 — Technique](./session-02-technique.md)*
+*⬅️ [README](../index.md) · ➡️ [Session 2 — Technique](./session-02-technique.md)*
