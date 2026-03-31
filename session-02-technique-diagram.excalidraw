@@ -1,0 +1,68 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://excalidraw.com",
+  "elements": [
+    {"id":"s2-title","type":"text","x":100,"y":10,"width":1100,"height":30,"text":"Session 2 — Prompt Engineering: Giải phẫu Prompt + 4 Kỹ thuật chính","fontSize":21,"fontFamily":5,"textAlign":"center","verticalAlign":"top","strokeColor":"#1a1a1a","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":201},
+
+    {"id":"s2-anatomy-lbl","type":"text","x":100,"y":55,"width":600,"height":24,"text":"Giải phẫu một Prompt hiệu quả (4 thành phần)","fontSize":15,"fontFamily":5,"textAlign":"left","verticalAlign":"top","strokeColor":"#495057","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":202},
+
+    {"id":"s2-role","type":"rectangle","x":100,"y":85,"width":230,"height":65,"strokeColor":"#1971c2","backgroundColor":"#74c0fc","fillStyle":"solid","strokeWidth":2,"roughness":0,"opacity":100,"roundness":{"type":3},"seed":203},
+    {"id":"s2-role-t","type":"text","x":105,"y":98,"width":220,"height":40,"text":"ROLE\nVai trò AI đóng","fontSize":13,"fontFamily":5,"textAlign":"center","verticalAlign":"middle","strokeColor":"#1a1a1a","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":204},
+
+    {"id":"s2-plus1","type":"text","x":335,"y":107,"width":30,"height":30,"text":"+","fontSize":22,"fontFamily":5,"textAlign":"center","verticalAlign":"middle","strokeColor":"#495057","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":205},
+
+    {"id":"s2-context","type":"rectangle","x":370,"y":85,"width":230,"height":65,"strokeColor":"#2f9e44","backgroundColor":"#b2f2bb","fillStyle":"solid","strokeWidth":2,"roughness":0,"opacity":100,"roundness":{"type":3},"seed":206},
+    {"id":"s2-context-t","type":"text","x":375,"y":98,"width":220,"height":40,"text":"CONTEXT\nBối cảnh dự án","fontSize":13,"fontFamily":5,"textAlign":"center","verticalAlign":"middle","strokeColor":"#1a1a1a","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":207},
+
+    {"id":"s2-plus2","type":"text","x":605,"y":107,"width":30,"height":30,"text":"+","fontSize":22,"fontFamily":5,"textAlign":"center","verticalAlign":"middle","strokeColor":"#495057","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":208},
+
+    {"id":"s2-task","type":"rectangle","x":640,"y":85,"width":230,"height":65,"strokeColor":"#e67700","backgroundColor":"#ffd43b","fillStyle":"solid","strokeWidth":2,"roughness":0,"opacity":100,"roundness":{"type":3},"seed":209},
+    {"id":"s2-task-t","type":"text","x":645,"y":98,"width":220,"height":40,"text":"TASK\nNhiệm vụ cụ thể","fontSize":13,"fontFamily":5,"textAlign":"center","verticalAlign":"middle","strokeColor":"#1a1a1a","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":210},
+
+    {"id":"s2-plus3","type":"text","x":875,"y":107,"width":30,"height":30,"text":"+","fontSize":22,"fontFamily":5,"textAlign":"center","verticalAlign":"middle","strokeColor":"#495057","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":211},
+
+    {"id":"s2-format","type":"rectangle","x":910,"y":85,"width":230,"height":65,"strokeColor":"#7950f2","backgroundColor":"#e5dbff","fillStyle":"solid","strokeWidth":2,"roughness":0,"opacity":100,"roundness":{"type":3},"seed":212},
+    {"id":"s2-format-t","type":"text","x":915,"y":98,"width":220,"height":40,"text":"FORMAT\nĐịnh dạng output","fontSize":13,"fontFamily":5,"textAlign":"center","verticalAlign":"middle","strokeColor":"#1a1a1a","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":213},
+
+    {"id":"s2-eq","type":"text","x":1145,"y":107,"width":30,"height":30,"text":"=","fontSize":22,"fontFamily":5,"textAlign":"center","verticalAlign":"middle","strokeColor":"#495057","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":214},
+
+    {"id":"s2-result","type":"rectangle","x":1180,"y":85,"width":190,"height":65,"strokeColor":"#c92a2a","backgroundColor":"#ffc9c9","fillStyle":"solid","strokeWidth":2,"roughness":0,"opacity":100,"roundness":{"type":3},"seed":215},
+    {"id":"s2-result-t","type":"text","x":1185,"y":98,"width":180,"height":40,"text":"Output\nhiệu quả","fontSize":14,"fontFamily":5,"textAlign":"center","verticalAlign":"middle","strokeColor":"#1a1a1a","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":216},
+
+    {"id":"s2-divider","type":"text","x":100,"y":175,"width":1000,"height":24,"text":"── 4 Kỹ thuật Prompt chính ──────────────────────────────────────────────────────────","fontSize":14,"fontFamily":5,"textAlign":"left","verticalAlign":"top","strokeColor":"#868e96","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":217},
+
+    {"id":"s2-zs","type":"rectangle","x":50,"y":210,"width":260,"height":55,"strokeColor":"#1971c2","backgroundColor":"#74c0fc","fillStyle":"solid","strokeWidth":2,"roughness":0,"opacity":100,"roundness":{"type":3},"seed":218},
+    {"id":"s2-zs-t","type":"text","x":55,"y":223,"width":250,"height":30,"text":"1. Zero-shot Prompting","fontSize":15,"fontFamily":5,"textAlign":"center","verticalAlign":"middle","strokeColor":"#1a1a1a","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":219},
+    {"id":"s2-zs-desc","type":"rectangle","x":50,"y":275,"width":260,"height":70,"strokeColor":"#1971c2","backgroundColor":"#e7f5ff","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"roundness":{"type":3},"seed":220},
+    {"id":"s2-zs-desc-t","type":"text","x":55,"y":282,"width":250,"height":56,"text":"Yêu cầu thẳng, không ví dụ.\nDùng khi: Tác vụ đơn giản,\noutput format quen thuộc.","fontSize":12,"fontFamily":5,"textAlign":"left","verticalAlign":"top","strokeColor":"#1a1a1a","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":221},
+    {"id":"s2-zs-ex","type":"rectangle","x":50,"y":355,"width":260,"height":60,"strokeColor":"#1971c2","backgroundColor":"#d0ebff","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"roundness":{"type":3},"seed":222},
+    {"id":"s2-zs-ex-t","type":"text","x":55,"y":362,"width":250,"height":46,"text":"\"Tạo 5 test case cho\nchức năng đăng ký tài khoản\"","fontSize":11,"fontFamily":5,"textAlign":"left","verticalAlign":"top","strokeColor":"#1971c2","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":223},
+
+    {"id":"s2-fs","type":"rectangle","x":340,"y":210,"width":260,"height":55,"strokeColor":"#2f9e44","backgroundColor":"#b2f2bb","fillStyle":"solid","strokeWidth":2,"roughness":0,"opacity":100,"roundness":{"type":3},"seed":224},
+    {"id":"s2-fs-t","type":"text","x":345,"y":223,"width":250,"height":30,"text":"2. Few-shot Prompting","fontSize":15,"fontFamily":5,"textAlign":"center","verticalAlign":"middle","strokeColor":"#1a1a1a","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":225},
+    {"id":"s2-fs-desc","type":"rectangle","x":340,"y":275,"width":260,"height":70,"strokeColor":"#2f9e44","backgroundColor":"#ebfbee","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"roundness":{"type":3},"seed":226},
+    {"id":"s2-fs-desc-t","type":"text","x":345,"y":282,"width":250,"height":56,"text":"Cung cấp 1-3 ví dụ mẫu trước.\nDùng khi: Output có format\nphức tạp, muốn AI bắt chước.","fontSize":12,"fontFamily":5,"textAlign":"left","verticalAlign":"top","strokeColor":"#1a1a1a","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":227},
+    {"id":"s2-fs-ex","type":"rectangle","x":340,"y":355,"width":260,"height":60,"strokeColor":"#2f9e44","backgroundColor":"#c3fae8","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"roundness":{"type":3},"seed":228},
+    {"id":"s2-fs-ex-t","type":"text","x":345,"y":362,"width":250,"height":46,"text":"\"Đây là 2 ví dụ...\nbây giờ làm tương tự cho...\"","fontSize":11,"fontFamily":5,"textAlign":"left","verticalAlign":"top","strokeColor":"#2f9e44","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":229},
+
+    {"id":"s2-cot","type":"rectangle","x":630,"y":210,"width":260,"height":55,"strokeColor":"#e67700","backgroundColor":"#ffd43b","fillStyle":"solid","strokeWidth":2,"roughness":0,"opacity":100,"roundness":{"type":3},"seed":230},
+    {"id":"s2-cot-t","type":"text","x":635,"y":223,"width":250,"height":30,"text":"3. Chain-of-Thought (CoT)","fontSize":15,"fontFamily":5,"textAlign":"center","verticalAlign":"middle","strokeColor":"#1a1a1a","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":231},
+    {"id":"s2-cot-desc","type":"rectangle","x":630,"y":275,"width":260,"height":70,"strokeColor":"#e67700","backgroundColor":"#fff9db","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"roundness":{"type":3},"seed":232},
+    {"id":"s2-cot-desc-t","type":"text","x":635,"y":282,"width":250,"height":56,"text":"AI suy nghĩ từng bước trước.\nDùng khi: Bug analysis, risk\nassessment, phân tích phức tạp.","fontSize":12,"fontFamily":5,"textAlign":"left","verticalAlign":"top","strokeColor":"#1a1a1a","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":233},
+    {"id":"s2-cot-ex","type":"rectangle","x":630,"y":355,"width":260,"height":60,"strokeColor":"#e67700","backgroundColor":"#ffe8cc","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"roundness":{"type":3},"seed":234},
+    {"id":"s2-cot-ex-t","type":"text","x":635,"y":362,"width":250,"height":46,"text":"\"Hãy suy nghĩ từng bước:\nBước 1: ... Bước 2: ...\"","fontSize":11,"fontFamily":5,"textAlign":"left","verticalAlign":"top","strokeColor":"#c05c00","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":235},
+
+    {"id":"s2-role-p","type":"rectangle","x":920,"y":210,"width":260,"height":55,"strokeColor":"#7950f2","backgroundColor":"#e5dbff","fillStyle":"solid","strokeWidth":2,"roughness":0,"opacity":100,"roundness":{"type":3},"seed":236},
+    {"id":"s2-role-p-t","type":"text","x":925,"y":223,"width":250,"height":30,"text":"4. Role Prompting","fontSize":15,"fontFamily":5,"textAlign":"center","verticalAlign":"middle","strokeColor":"#1a1a1a","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":237},
+    {"id":"s2-role-p-desc","type":"rectangle","x":920,"y":275,"width":260,"height":70,"strokeColor":"#7950f2","backgroundColor":"#f3f0ff","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"roundness":{"type":3},"seed":238},
+    {"id":"s2-role-p-desc-t","type":"text","x":925,"y":282,"width":250,"height":56,"text":"Gán vai trò chuyên gia cho AI.\nDùng khi: Review test plan,\nsecurity testing, UX testing.","fontSize":12,"fontFamily":5,"textAlign":"left","verticalAlign":"top","strokeColor":"#1a1a1a","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":239},
+    {"id":"s2-role-p-ex","type":"rectangle","x":920,"y":355,"width":260,"height":60,"strokeColor":"#7950f2","backgroundColor":"#d0bfff","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"roundness":{"type":3},"seed":240},
+    {"id":"s2-role-p-ex-t","type":"text","x":925,"y":362,"width":250,"height":46,"text":"\"Đóng vai QA Lead 10 năm\nkinh nghiệm ngân hàng...\"","fontSize":11,"fontFamily":5,"textAlign":"left","verticalAlign":"top","strokeColor":"#5c3bb4","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":241},
+
+    {"id":"s2-tip","type":"rectangle","x":50,"y":435,"width":1130,"height":55,"strokeColor":"#c92a2a","backgroundColor":"#fff5f5","fillStyle":"solid","strokeWidth":1.5,"roughness":0,"opacity":100,"roundness":{"type":3},"seed":242},
+    {"id":"s2-tip-t","type":"text","x":55,"y":448,"width":1120,"height":30,"text":"Output sai → Chỉnh Prompt (không phải đổi AI tool)   |   Multi-turn: Followup liên tục để làm giàu dần kết quả   |   Output sai luôn có nguyên nhân từ prompt","fontSize":13,"fontFamily":5,"textAlign":"center","verticalAlign":"middle","strokeColor":"#c92a2a","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":243}
+  ],
+  "appState": {"viewBackgroundColor":"#ffffff","gridSize":20},
+  "files": {}
+}

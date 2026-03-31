@@ -24,6 +24,27 @@
 | Người dùng phải "cầm tay chỉ việc" | Agent tự quyết định bước tiếp theo |
 | *"Viết test case cho login"* | *"Chạy hết regression suite và báo cáo kết quả"* |
 
+```mermaid
+flowchart LR
+    subgraph ChatGPT["💬 ChatGPT / Claude thông thường"]
+        direction TB
+        U1["Người dùng"] -->|"1 câu hỏi"| A1["AI trả lời\n1 lượt"]
+        A1 -->|"Người dùng hỏi tiếp"| U1
+    end
+
+    subgraph Agent["🤖 AI Agent"]
+        direction TB
+        T["Nhiệm vụ QA\nphức tạp"] --> P["Planning\nChia nhỏ bước"]
+        P --> E1["Bước 1:\nĐọc API spec"]
+        E1 --> E2["Bước 2:\nSinh test cases"]
+        E2 --> E3["Bước 3:\nChạy tests"]
+        E3 --> E4["Bước 4:\nTạo report"]
+    end
+
+    style ChatGPT fill:#e7f5ff,stroke:#1971c2
+    style Agent fill:#ebfbee,stroke:#2f9e44
+```
+
 ---
 
 ### 1.2 Ba thành phần cốt lõi của Agent
@@ -112,6 +133,28 @@ Ví dụ: Nhận nhiệm vụ "Test API checkout" →
   - Quyết định release
   - Thay đổi test plan
   - Xóa dữ liệu test
+```
+
+```mermaid
+flowchart TD
+    Input["Nhiệm vụ QA"] --> Agent
+
+    subgraph Agent["🤖 AI Agent — 3 Thành phần cốt lõi"]
+        T["🔧 TOOLS\nBrowser · API · Code · File · Reporting"]
+        M["🧠 MEMORY\nShort-term: trong session\nLong-term: file / database"]
+        P["🗺️ PLANNING\nChia nhỏ → Thực hiện → Điều chỉnh"]
+    end
+
+    Agent --> Auto["✅ Tự động làm:\nChạy test · Tạo data\nSinh bug draft · Gửi thông báo"]
+    Agent --> HITL["⛔ Chờ người duyệt:\nĐóng bug · Quyết định release\nThay đổi test plan · Xóa data"]
+
+    HITL --> Human["👤 QA Tester / QA Lead\nReview & Phê duyệt"]
+    Human -->|Approved| Done["✅ Thực hiện"]
+    Human -->|Rejected| Fix["🔁 Điều chỉnh"]
+
+    style Auto fill:#b2f2bb,stroke:#2f9e44
+    style HITL fill:#ffc9c9,stroke:#c92a2a
+    style Human fill:#ffd43b,stroke:#e67700
 ```
 
 ---

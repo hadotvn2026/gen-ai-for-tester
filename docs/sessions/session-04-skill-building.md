@@ -40,6 +40,18 @@ Copilot là AI coding assistant tích hợp trực tiếp vào IDE (VS Code, Int
 | Debug tự mình | Copilot giải thích lỗi và gợi ý fix |
 | POM phải viết tay | Copilot tạo POM từ HTML snippet |
 
+```mermaid
+flowchart LR
+    Dev["Automation Tester\nViết mô tả yêu cầu"] -->|"Mô tả bằng ngôn ngữ tự nhiên"| COP["GitHub Copilot\n/ Claude AI"]
+    COP -->|"Gợi ý code"| Rev{"Review\nkỹ lưỡng"}
+    Rev -->|"✅ Đúng POM / Explicit Wait"| Done["Push lên repo"]
+    Rev -->|"❌ Thread.sleep / Sai logic"| Fix["Yêu cầu AI sửa\nvà giải thích"]
+    Fix --> Rev
+
+    style Done fill:#b2f2bb,stroke:#2f9e44
+    style Fix fill:#ffc9c9,stroke:#c92a2a
+```
+
 ---
 
 ### 1.2 Xây dựng Skill với Claude — Khái niệm
@@ -55,6 +67,26 @@ Thay vì viết lại prompt dài mỗi lần, bạn chỉ cần gọi tên skil
 | **Test Data Factory** | Tạo test data theo đúng domain và quy tắc nghiệp vụ |
 | **Script Reviewer** | Review và gợi ý cải tiến automation script |
 | **Risk Analyzer** | Đánh giá rủi ro sprint trước khi release |
+
+```mermaid
+flowchart TD
+    SP["System Prompt\nSkill Creator Pattern"] --> N["Tên Skill"]
+    SP --> P["Mục đích\nDùng khi nào"]
+    SP --> I["Input yêu cầu\nNgười dùng cung cấp gì"]
+    SP --> PR["Quy trình xử lý\nAI làm gì từng bước"]
+    SP --> O["Output format\nBảng / Markdown / JSON"]
+    SP --> EX["Ví dụ mẫu\nFew-shot examples"]
+
+    N & P & I & PR & O & EX --> S3["3 Skills quan trọng nhất"]
+    S3 --> TC["Test Case\nGenerator"]
+    S3 --> BR["Bug Report\nEnhancer"]
+    S3 --> RA["Sprint Risk\nAnalyzer"]
+
+    style SP fill:#ffd43b,stroke:#e67700
+    style TC fill:#74c0fc,stroke:#1971c2
+    style BR fill:#b2f2bb,stroke:#2f9e44
+    style RA fill:#ffc9c9,stroke:#c92a2a
+```
 
 ---
 

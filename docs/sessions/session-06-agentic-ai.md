@@ -26,6 +26,32 @@ Agentic AI là một hệ thống trong đó nhiều AI Agent được phân cô
 | **Reviewer Agent** | Kiểm tra coverage, chất lượng test case | QA Reviewer |
 | **Reporter Agent** | Tạo báo cáo, tóm tắt, gửi notification | QA Reporting Specialist |
 
+```mermaid
+flowchart TD
+    Trigger(["⚡ Trigger\nPR tạo / Deploy staging"]) --> O
+
+    O["🎯 Orchestrator\nQA Lead — Phân công & theo dõi"]
+
+    O --> PL["📋 Planner Agent\nĐọc changelog\nXác định impact areas\nTạo test plan"]
+    PL --> EX["⚙️ Executor Agent\nChạy regression suite\nChạy new test cases\nGọi API tests"]
+    EX --> RV["🔍 Reviewer Agent\nKiểm tra coverage\nPhân loại bug\nĐánh giá severity"]
+    RV --> RP["📊 Reporter Agent\nSlack notification\nHTML report\nJira tickets"]
+    RP --> HC
+
+    HC["👤 Human Checkpoint\nQA Lead review bắt buộc"]
+    HC -->|"✅ Pass"| Merge["Merge PR"]
+    HC -->|"❌ Fail"| Block["Block + Notify Dev"]
+
+    style O fill:#ffd43b,stroke:#e67700
+    style PL fill:#74c0fc,stroke:#1971c2
+    style EX fill:#b2f2bb,stroke:#2f9e44
+    style RV fill:#e5dbff,stroke:#7950f2
+    style RP fill:#ffc9c9,stroke:#c92a2a
+    style HC fill:#fff9db,stroke:#e67700
+    style Merge fill:#b2f2bb,stroke:#2f9e44
+    style Block fill:#ffc9c9,stroke:#c92a2a
+```
+
 ---
 
 ### 📺 Video tham khảo — Xây dựng hệ thống Multi-Agent nâng cao
@@ -114,6 +140,26 @@ jobs:
 | Thông tin nhạy cảm trong prompt | Không paste PII (họ tên, CCCD, số thẻ) vào AI công cộng |
 | AI hallucinate trong bug analysis | Xác minh root cause bằng cách đọc code / log thực tế |
 | Team mất kỹ năng kiểm thử tay | Duy trì kỹ năng manual test, AI chỉ là công cụ hỗ trợ |
+
+```mermaid
+flowchart LR
+    subgraph DO["❌ KHÔNG làm"]
+        D1["Paste CMND/CCCD thật\nvào ChatGPT"]
+        D2["Đưa thông tin khách hàng\nthật vào AI công cộng"]
+        D3["Để AI tự động\nclose bug Critical"]
+        D4["Tin hoàn toàn AI\nphân tích lỗi security"]
+    end
+
+    subgraph DO2["✅ NÊN làm"]
+        G1["Anonymize data\ntrước khi dùng AI"]
+        G2["Dùng AI tools có\nchính sách bảo mật rõ ràng"]
+        G3["Human review\nvới quyết định quan trọng"]
+        G4["Ghi lại khi nào AI\nđược dùng trong process"]
+    end
+
+    style DO fill:#fff5f5,stroke:#c92a2a
+    style DO2 fill:#ebfbee,stroke:#2f9e44
+```
 
 **Nguyên tắc bảo mật dữ liệu:**
 

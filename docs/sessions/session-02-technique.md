@@ -29,6 +29,20 @@ Một prompt hiệu quả cho Tester gồm **4 thành phần**:
 └─────────────────────────────────────────────────────────┘
 ```
 
+```mermaid
+flowchart LR
+    R["ROLE\nVai trò AI đóng"] --> C["CONTEXT\nBối cảnh dự án"]
+    C --> T["TASK\nNhiệm vụ cụ thể"]
+    T --> F["FORMAT\nĐịnh dạng output"]
+    F --> O["✅ Output\nhiệu quả"]
+
+    style R fill:#74c0fc,stroke:#1971c2
+    style C fill:#b2f2bb,stroke:#2f9e44
+    style T fill:#ffd43b,stroke:#e67700
+    style F fill:#e5dbff,stroke:#7950f2
+    style O fill:#ffc9c9,stroke:#c92a2a
+```
+
 **Ví dụ đầy đủ:**
 
 ```
@@ -128,6 +142,27 @@ Hãy review test plan sau và chỉ ra 3 rủi ro lớn nhất bị bỏ sót...
 > Hướng dẫn toàn diện về prompt engineering: zero-shot, few-shot, chain-of-thought, và best practices với ChatGPT/LLM. Bao gồm thực hành thực tế.
 
 ---
+
+```mermaid
+flowchart TD
+    Start["Bắt đầu viết Prompt"] --> Q{"Loại tác vụ?"}
+
+    Q -->|"Đơn giản, quen thuộc"| ZS["1️⃣ Zero-shot\nYêu cầu thẳng, không ví dụ"]
+    Q -->|"Cần format phức tạp"| FS["2️⃣ Few-shot\nCho 1–3 ví dụ mẫu trước"]
+    Q -->|"Phân tích, bug analysis"| CoT["3️⃣ Chain-of-Thought\nYêu cầu suy nghĩ từng bước"]
+    Q -->|"Cần góc nhìn chuyên sâu"| RP["4️⃣ Role Prompting\nGán vai trò chuyên gia cho AI"]
+
+    ZS & FS & CoT & RP --> R{"Output tốt?"}
+    R -->|"Có"| Done["✅ Sử dụng output"]
+    R -->|"Chưa đủ"| Fix["Followup / Chỉnh prompt\nThêm context hoặc ví dụ"]
+    Fix --> Q
+
+    style ZS fill:#e7f5ff,stroke:#1971c2
+    style FS fill:#ebfbee,stroke:#2f9e44
+    style CoT fill:#fff9db,stroke:#e67700
+    style RP fill:#f3f0ff,stroke:#7950f2
+    style Done fill:#b2f2bb,stroke:#2f9e44
+```
 
 ### 1.3 Xử lý khi AI trả về sai — 3 chiến lược
 
