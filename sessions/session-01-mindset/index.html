@@ -1290,11 +1290,38 @@
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>🔴 CONTEXT  →  Cung cấp bối cảnh cụ thể cho AI
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>               Rác vào = Rác ra (GIGO)
 </code></pre></div>
+<pre class="mermaid"><code>mindmap
+  root((Tester + AI\nCo-Pilot))
+    MINDSET
+      Hiểu khả năng &amp; giới hạn AI
+      Hoài nghi lành mạnh với output
+      AI giỏi = người dùng giỏi
+    TECHNIQUE
+      Prompt 4 thành phần
+      Zero-shot / Few-shot / CoT / Role
+      Multi-turn prompting
+    CONTEXT
+      Bối cảnh cụ thể cho dự án
+      GIGO: Rác vào = Rác ra
+      5 loại context cần cung cấp</code></pre>
 <blockquote>
 <p><strong>💡 Lưu ý:</strong> Ba nguyên tắc này sẽ xuất hiện xuyên suốt mọi session. Khi bạn thấy AI cho output kém, hãy tự hỏi: mình đang thiếu nguyên tắc nào trong 3 cái này?</p>
 </blockquote>
 <hr />
 <h3 id="13-llm-hoat-ong-nhu-the-nao-khong-can-toan-hoc">1.3 LLM hoạt động như thế nào? (Không cần toán học)</h3>
+<pre class="mermaid"><code>flowchart LR
+    A["QA Tester\n(Prompt tốt)"] --&gt;|"Role + Context\n+ Task + Format"| B[LLM]
+    B --&gt;|"Output chất lượng cao"| C["✅ Test case sát thực tế\nCover đúng rủi ro"]
+
+    D["QA Tester\n(Prompt mơ hồ)"] --&gt;|"'Tạo test cho hệ thống'"| E[LLM]
+    E --&gt;|"Output chung chung"| F["❌ Generic, không dùng được\nCần sửa nhiều"]
+
+    style A fill:#b2f2bb,stroke:#2f9e44
+    style C fill:#b2f2bb,stroke:#2f9e44
+    style D fill:#ffc9c9,stroke:#c92a2a
+    style F fill:#ffc9c9,stroke:#c92a2a
+    style B fill:#74c0fc,stroke:#1971c2
+    style E fill:#74c0fc,stroke:#1971c2</code></pre>
 <p>Hãy hình dung LLM như một <strong>"nhân viên mới cực kỳ đọc nhiều sách"</strong> nhưng chưa bao giờ làm việc thực tế. Họ biết nhiều khái niệm nhưng:</p>
 <ul>
 <li>❌ Không có memory giữa các đoạn chat riêng biệt</li>
@@ -1346,6 +1373,17 @@ Một Tester không đánh giá được output + AI = bug ×3</p>
 </tr>
 </tbody>
 </table>
+<pre class="mermaid"><code>flowchart TD
+    A["Nhận output từ AI"] --&gt; B{"Review kỹ\ntrước khi dùng?"}
+    B --&gt;|"Có — Hoài nghi lành mạnh"| C["Kiểm tra: AI sai ở đâu?\nAI bỏ sót gì?"]
+    B --&gt;|"Không — Copy ngay"| D["❌ Rủi ro:\nHallucination\nMissing edge case"]
+    C --&gt; E{"Output đủ tốt?"}
+    E --&gt;|"Có"| F["✅ Sử dụng output"]
+    E --&gt;|"Thiếu / Sai"| G["Chỉnh prompt\nFollowup để cải thiện"]
+    G --&gt; A
+
+    style D fill:#ffc9c9,stroke:#c92a2a
+    style F fill:#b2f2bb,stroke:#2f9e44</code></pre>
 <hr />
 <h2 id="phan-2-thuc-hanh">PHẦN 2 — THỰC HÀNH</h2>
 <h3 id="bai-tap-11-prompt-au-tien-cua-ban">🛠️ Bài tập 1.1 — Prompt đầu tiên của bạn</h3>

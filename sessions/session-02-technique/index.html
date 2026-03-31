@@ -1307,6 +1307,17 @@
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>│  [FORMAT]  → Định dạng output mong muốn                 │
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>└─────────────────────────────────────────────────────────┘
 </code></pre></div>
+<pre class="mermaid"><code>flowchart LR
+    R["ROLE\nVai trò AI đóng"] --&gt; C["CONTEXT\nBối cảnh dự án"]
+    C --&gt; T["TASK\nNhiệm vụ cụ thể"]
+    T --&gt; F["FORMAT\nĐịnh dạng output"]
+    F --&gt; O["✅ Output\nhiệu quả"]
+
+    style R fill:#74c0fc,stroke:#1971c2
+    style C fill:#b2f2bb,stroke:#2f9e44
+    style T fill:#ffd43b,stroke:#e67700
+    style F fill:#e5dbff,stroke:#7950f2
+    style O fill:#ffc9c9,stroke:#c92a2a</code></pre>
 <p><strong>Ví dụ đầy đủ:</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>[ROLE]    Bạn là QA Engineer kỹ lưỡng với 5 năm kinh nghiệm test API
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>[CONTEXT] Dự án là hệ thống quản lý bệnh viện, user là bác sĩ và y tá
@@ -1422,6 +1433,24 @@
 <p>Hướng dẫn toàn diện về prompt engineering: zero-shot, few-shot, chain-of-thought, và best practices với ChatGPT/LLM. Bao gồm thực hành thực tế.</p>
 </blockquote>
 <hr />
+<pre class="mermaid"><code>flowchart TD
+    Start["Bắt đầu viết Prompt"] --&gt; Q{"Loại tác vụ?"}
+
+    Q --&gt;|"Đơn giản, quen thuộc"| ZS["1️⃣ Zero-shot\nYêu cầu thẳng, không ví dụ"]
+    Q --&gt;|"Cần format phức tạp"| FS["2️⃣ Few-shot\nCho 1–3 ví dụ mẫu trước"]
+    Q --&gt;|"Phân tích, bug analysis"| CoT["3️⃣ Chain-of-Thought\nYêu cầu suy nghĩ từng bước"]
+    Q --&gt;|"Cần góc nhìn chuyên sâu"| RP["4️⃣ Role Prompting\nGán vai trò chuyên gia cho AI"]
+
+    ZS &amp; FS &amp; CoT &amp; RP --&gt; R{"Output tốt?"}
+    R --&gt;|"Có"| Done["✅ Sử dụng output"]
+    R --&gt;|"Chưa đủ"| Fix["Followup / Chỉnh prompt\nThêm context hoặc ví dụ"]
+    Fix --&gt; Q
+
+    style ZS fill:#e7f5ff,stroke:#1971c2
+    style FS fill:#ebfbee,stroke:#2f9e44
+    style CoT fill:#fff9db,stroke:#e67700
+    style RP fill:#f3f0ff,stroke:#7950f2
+    style Done fill:#b2f2bb,stroke:#2f9e44</code></pre>
 <h3 id="13-xu-ly-khi-ai-tra-ve-sai-3-chien-luoc">1.3 Xử lý khi AI trả về sai — 3 chiến lược</h3>
 <table>
 <thead>

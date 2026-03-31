@@ -1297,6 +1297,15 @@
 </tr>
 </tbody>
 </table>
+<pre class="mermaid"><code>flowchart LR
+    Dev["Automation Tester\nViết mô tả yêu cầu"] --&gt;|"Mô tả bằng ngôn ngữ tự nhiên"| COP["GitHub Copilot\n/ Claude AI"]
+    COP --&gt;|"Gợi ý code"| Rev{"Review\nkỹ lưỡng"}
+    Rev --&gt;|"✅ Đúng POM / Explicit Wait"| Done["Push lên repo"]
+    Rev --&gt;|"❌ Thread.sleep / Sai logic"| Fix["Yêu cầu AI sửa\nvà giải thích"]
+    Fix --&gt; Rev
+
+    style Done fill:#b2f2bb,stroke:#2f9e44
+    style Fix fill:#ffc9c9,stroke:#c92a2a</code></pre>
 <hr />
 <h3 id="12-xay-dung-skill-voi-claude-khai-niem">1.2 Xây dựng Skill với Claude — Khái niệm</h3>
 <p><strong>Claude Skill</strong> là các "công thức" được cấu hình sẵn, giúp AI trả về output nhất quán, có cấu trúc, và đúng với dự án của bạn.</p>
@@ -1331,6 +1340,23 @@
 </tr>
 </tbody>
 </table>
+<pre class="mermaid"><code>flowchart TD
+    SP["System Prompt\nSkill Creator Pattern"] --&gt; N["Tên Skill"]
+    SP --&gt; P["Mục đích\nDùng khi nào"]
+    SP --&gt; I["Input yêu cầu\nNgười dùng cung cấp gì"]
+    SP --&gt; PR["Quy trình xử lý\nAI làm gì từng bước"]
+    SP --&gt; O["Output format\nBảng / Markdown / JSON"]
+    SP --&gt; EX["Ví dụ mẫu\nFew-shot examples"]
+
+    N &amp; P &amp; I &amp; PR &amp; O &amp; EX --&gt; S3["3 Skills quan trọng nhất"]
+    S3 --&gt; TC["Test Case\nGenerator"]
+    S3 --&gt; BR["Bug Report\nEnhancer"]
+    S3 --&gt; RA["Sprint Risk\nAnalyzer"]
+
+    style SP fill:#ffd43b,stroke:#e67700
+    style TC fill:#74c0fc,stroke:#1971c2
+    style BR fill:#b2f2bb,stroke:#2f9e44
+    style RA fill:#ffc9c9,stroke:#c92a2a</code></pre>
 <hr />
 <h3 id="13-cau-truc-mot-skill-skill-creator-pattern">1.3 Cấu trúc một Skill — Skill Creator Pattern</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gu">## Tên Skill: [Tên rõ ràng, ngắn gọn]</span>
