@@ -1,0 +1,101 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://excalidraw.com",
+  "elements": [
+    {"id":"s6-title","type":"text","x":230,"y":8,"width":840,"height":32,"text":"Session 6 — QA Team Agent Pipeline: Từ PR đến Quyết định","fontSize":22,"fontFamily":5,"textAlign":"center","verticalAlign":"top","strokeColor":"#1a1a1a","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":601},
+    {"id":"s6-sub","type":"text","x":230,"y":44,"width":840,"height":22,"text":"Mỗi Agent = Một thành viên chuyên biệt trong team QA","fontSize":14,"fontFamily":5,"textAlign":"center","verticalAlign":"top","strokeColor":"#868e96","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":602},
+
+    {"id":"s6-pr","type":"rectangle","x":310,"y":72,"width":165,"height":48,"strokeColor":"#495057","backgroundColor":"#f8f9fa","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"roundness":{"type":3},"seed":603},
+    {"id":"s6-prt","type":"text","x":315,"y":83,"width":155,"height":26,"text":"Pull Request created","fontSize":12,"fontFamily":5,"textAlign":"center","verticalAlign":"middle","strokeColor":"#495057","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":604},
+    {"id":"s6-dep","type":"rectangle","x":825,"y":72,"width":165,"height":48,"strokeColor":"#495057","backgroundColor":"#f8f9fa","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"roundness":{"type":3},"seed":605},
+    {"id":"s6-dept","type":"text","x":830,"y":83,"width":155,"height":26,"text":"Deploy to Staging","fontSize":12,"fontFamily":5,"textAlign":"center","verticalAlign":"middle","strokeColor":"#495057","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":606},
+
+    {"id":"s6-trigger","type":"rectangle","x":533,"y":62,"width":234,"height":68,"strokeColor":"#e67700","backgroundColor":"#ffd43b","fillStyle":"solid","strokeWidth":3,"roughness":0,"opacity":100,"roundness":{"type":3},"seed":607},
+    {"id":"s6-triggert","type":"text","x":538,"y":80,"width":224,"height":32,"text":"⚡ Trigger","fontSize":20,"fontFamily":5,"textAlign":"center","verticalAlign":"middle","strokeColor":"#7c4d00","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":608},
+    {"id":"s6-arr-pr","type":"arrow","x":475,"y":96,"points":[[0,0],[58,0]],"strokeColor":"#495057","strokeWidth":1,"roughness":0,"opacity":100,"seed":609,"startArrowhead":null,"endArrowhead":"arrow"},
+    {"id":"s6-arr-dep","type":"arrow","x":767,"y":96,"points":[[0,0],[58,0]],"strokeColor":"#495057","strokeWidth":1,"roughness":0,"opacity":100,"seed":610,"startArrowhead":"arrow","endArrowhead":null},
+
+    {"id":"s6-a0","type":"arrow","x":650,"y":130,"points":[[0,0],[0,32]],"strokeColor":"#495057","strokeWidth":2,"roughness":0,"opacity":100,"seed":611,"startArrowhead":null,"endArrowhead":"arrow"},
+
+    {"id":"s6-orch","type":"rectangle","x":390,"y":162,"width":520,"height":110,"strokeColor":"#e67700","backgroundColor":"#fff9db","fillStyle":"solid","strokeWidth":3,"roughness":0,"opacity":100,"roundness":{"type":3},"seed":612},
+    {"id":"s6-orcht1","type":"text","x":400,"y":174,"width":380,"height":28,"text":"🎯  Orchestrator","fontSize":18,"fontFamily":5,"textAlign":"left","verticalAlign":"top","strokeColor":"#e67700","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":613},
+    {"id":"s6-orcht2","type":"text","x":400,"y":208,"width":500,"height":20,"text":"Nhận nhiệm vụ  ·  Phân công  ·  Theo dõi tiến độ toàn pipeline","fontSize":13,"fontFamily":5,"textAlign":"left","verticalAlign":"top","strokeColor":"#495057","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":614},
+    {"id":"s6-orch-bdg","type":"rectangle","x":925,"y":193,"width":160,"height":40,"strokeColor":"#e67700","backgroundColor":"#ffe8cc","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"roundness":{"type":3},"seed":615},
+    {"id":"s6-orch-bdgt","type":"text","x":930,"y":205,"width":150,"height":18,"text":"= QA Lead","fontSize":12,"fontFamily":5,"textAlign":"center","verticalAlign":"middle","strokeColor":"#7c4d00","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":616},
+
+    {"id":"s6-a1","type":"arrow","x":650,"y":272,"points":[[0,0],[0,30]],"strokeColor":"#495057","strokeWidth":2,"roughness":0,"opacity":100,"seed":617,"startArrowhead":null,"endArrowhead":"arrow"},
+
+    {"id":"s6-plan","type":"rectangle","x":390,"y":302,"width":520,"height":110,"strokeColor":"#1971c2","backgroundColor":"#e7f5ff","fillStyle":"solid","strokeWidth":2,"roughness":0,"opacity":100,"roundness":{"type":3},"seed":618},
+    {"id":"s6-plant1","type":"text","x":400,"y":314,"width":380,"height":28,"text":"📋  Planner Agent","fontSize":18,"fontFamily":5,"textAlign":"left","verticalAlign":"top","strokeColor":"#1971c2","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":619},
+    {"id":"s6-plant2","type":"text","x":400,"y":348,"width":500,"height":20,"text":"Đọc changelog  ·  Xác định impact areas  ·  Lập sprint test plan","fontSize":13,"fontFamily":5,"textAlign":"left","verticalAlign":"top","strokeColor":"#495057","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":620},
+    {"id":"s6-plan-bdg","type":"rectangle","x":925,"y":333,"width":160,"height":40,"strokeColor":"#1971c2","backgroundColor":"#d0ebff","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"roundness":{"type":3},"seed":621},
+    {"id":"s6-plan-bdgt","type":"text","x":930,"y":345,"width":150,"height":18,"text":"= Senior QA Analyst","fontSize":11,"fontFamily":5,"textAlign":"center","verticalAlign":"middle","strokeColor":"#1971c2","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":622},
+
+    {"id":"s6-art-plan","type":"rectangle","x":10,"y":330,"width":195,"height":48,"strokeColor":"#adb5bd","backgroundColor":"#f8f9fa","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"roundness":{"type":3},"seed":623},
+    {"id":"s6-art-plant","type":"text","x":15,"y":347,"width":185,"height":18,"text":"→ Sprint Test Plan","fontSize":12,"fontFamily":5,"textAlign":"center","verticalAlign":"middle","strokeColor":"#495057","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":624},
+    {"id":"s6-arr-art1","type":"arrow","x":205,"y":354,"points":[[0,0],[185,0]],"strokeColor":"#adb5bd","strokeWidth":1,"roughness":0,"opacity":100,"seed":625,"startArrowhead":null,"endArrowhead":"arrow"},
+
+    {"id":"s6-a2","type":"arrow","x":650,"y":412,"points":[[0,0],[0,30]],"strokeColor":"#495057","strokeWidth":2,"roughness":0,"opacity":100,"seed":626,"startArrowhead":null,"endArrowhead":"arrow"},
+
+    {"id":"s6-exec","type":"rectangle","x":390,"y":442,"width":520,"height":110,"strokeColor":"#2f9e44","backgroundColor":"#ebfbee","fillStyle":"solid","strokeWidth":2,"roughness":0,"opacity":100,"roundness":{"type":3},"seed":627},
+    {"id":"s6-exect1","type":"text","x":400,"y":454,"width":380,"height":28,"text":"⚙️  Executor Agent","fontSize":18,"fontFamily":5,"textAlign":"left","verticalAlign":"top","strokeColor":"#2f9e44","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":628},
+    {"id":"s6-exect2","type":"text","x":400,"y":488,"width":500,"height":20,"text":"Chạy regression suite  ·  Chạy new test cases  ·  API tests","fontSize":13,"fontFamily":5,"textAlign":"left","verticalAlign":"top","strokeColor":"#495057","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":629},
+    {"id":"s6-exec-bdg","type":"rectangle","x":925,"y":473,"width":160,"height":40,"strokeColor":"#2f9e44","backgroundColor":"#c3fae8","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"roundness":{"type":3},"seed":630},
+    {"id":"s6-exec-bdgt","type":"text","x":930,"y":485,"width":150,"height":18,"text":"= Automation Engineer","fontSize":11,"fontFamily":5,"textAlign":"center","verticalAlign":"middle","strokeColor":"#2f9e44","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":631},
+
+    {"id":"s6-art-exec","type":"rectangle","x":10,"y":470,"width":195,"height":48,"strokeColor":"#adb5bd","backgroundColor":"#f8f9fa","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"roundness":{"type":3},"seed":632},
+    {"id":"s6-art-exect","type":"text","x":15,"y":487,"width":185,"height":18,"text":"→ Test Results JSON","fontSize":12,"fontFamily":5,"textAlign":"center","verticalAlign":"middle","strokeColor":"#495057","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":633},
+    {"id":"s6-arr-art2","type":"arrow","x":205,"y":494,"points":[[0,0],[185,0]],"strokeColor":"#adb5bd","strokeWidth":1,"roughness":0,"opacity":100,"seed":634,"startArrowhead":null,"endArrowhead":"arrow"},
+
+    {"id":"s6-a3","type":"arrow","x":650,"y":552,"points":[[0,0],[0,30]],"strokeColor":"#495057","strokeWidth":2,"roughness":0,"opacity":100,"seed":635,"startArrowhead":null,"endArrowhead":"arrow"},
+
+    {"id":"s6-rev","type":"rectangle","x":390,"y":582,"width":520,"height":110,"strokeColor":"#7950f2","backgroundColor":"#f3f0ff","fillStyle":"solid","strokeWidth":2,"roughness":0,"opacity":100,"roundness":{"type":3},"seed":636},
+    {"id":"s6-revt1","type":"text","x":400,"y":594,"width":380,"height":28,"text":"🔍  Reviewer Agent","fontSize":18,"fontFamily":5,"textAlign":"left","verticalAlign":"top","strokeColor":"#7950f2","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":637},
+    {"id":"s6-revt2","type":"text","x":400,"y":628,"width":500,"height":20,"text":"Kiểm tra coverage  ·  Phân loại bug  ·  Đánh giá severity","fontSize":13,"fontFamily":5,"textAlign":"left","verticalAlign":"top","strokeColor":"#495057","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":638},
+    {"id":"s6-rev-bdg","type":"rectangle","x":925,"y":613,"width":160,"height":40,"strokeColor":"#7950f2","backgroundColor":"#d0bfff","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"roundness":{"type":3},"seed":639},
+    {"id":"s6-rev-bdgt","type":"text","x":930,"y":625,"width":150,"height":18,"text":"= QA Reviewer","fontSize":12,"fontFamily":5,"textAlign":"center","verticalAlign":"middle","strokeColor":"#5c3bb4","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":640},
+
+    {"id":"s6-art-rev","type":"rectangle","x":10,"y":610,"width":195,"height":48,"strokeColor":"#adb5bd","backgroundColor":"#f8f9fa","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"roundness":{"type":3},"seed":641},
+    {"id":"s6-art-revt","type":"text","x":15,"y":627,"width":185,"height":18,"text":"→ Bug list + Severity","fontSize":12,"fontFamily":5,"textAlign":"center","verticalAlign":"middle","strokeColor":"#495057","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":642},
+    {"id":"s6-arr-art3","type":"arrow","x":205,"y":634,"points":[[0,0],[185,0]],"strokeColor":"#adb5bd","strokeWidth":1,"roughness":0,"opacity":100,"seed":643,"startArrowhead":null,"endArrowhead":"arrow"},
+
+    {"id":"s6-a4","type":"arrow","x":650,"y":692,"points":[[0,0],[0,30]],"strokeColor":"#495057","strokeWidth":2,"roughness":0,"opacity":100,"seed":644,"startArrowhead":null,"endArrowhead":"arrow"},
+
+    {"id":"s6-rep","type":"rectangle","x":390,"y":722,"width":520,"height":110,"strokeColor":"#c92a2a","backgroundColor":"#fff5f5","fillStyle":"solid","strokeWidth":2,"roughness":0,"opacity":100,"roundness":{"type":3},"seed":645},
+    {"id":"s6-rept1","type":"text","x":400,"y":734,"width":380,"height":28,"text":"📊  Reporter Agent","fontSize":18,"fontFamily":5,"textAlign":"left","verticalAlign":"top","strokeColor":"#c92a2a","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":646},
+    {"id":"s6-rept2","type":"text","x":400,"y":768,"width":500,"height":20,"text":"Slack notification  ·  HTML report  ·  Jira tickets tự động","fontSize":13,"fontFamily":5,"textAlign":"left","verticalAlign":"top","strokeColor":"#495057","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":647},
+    {"id":"s6-rep-bdg","type":"rectangle","x":925,"y":753,"width":160,"height":40,"strokeColor":"#c92a2a","backgroundColor":"#ffe3e3","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"roundness":{"type":3},"seed":648},
+    {"id":"s6-rep-bdgt","type":"text","x":930,"y":765,"width":150,"height":18,"text":"= Reporting Specialist","fontSize":11,"fontFamily":5,"textAlign":"center","verticalAlign":"middle","strokeColor":"#c92a2a","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":649},
+
+    {"id":"s6-art-rep","type":"rectangle","x":10,"y":750,"width":195,"height":48,"strokeColor":"#adb5bd","backgroundColor":"#f8f9fa","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"roundness":{"type":3},"seed":650},
+    {"id":"s6-art-rept","type":"text","x":15,"y":767,"width":185,"height":18,"text":"→ Markdown Report","fontSize":12,"fontFamily":5,"textAlign":"center","verticalAlign":"middle","strokeColor":"#495057","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":651},
+    {"id":"s6-arr-art4","type":"arrow","x":205,"y":774,"points":[[0,0],[185,0]],"strokeColor":"#adb5bd","strokeWidth":1,"roughness":0,"opacity":100,"seed":652,"startArrowhead":null,"endArrowhead":"arrow"},
+
+    {"id":"s6-a5","type":"arrow","x":650,"y":832,"points":[[0,0],[0,30]],"strokeColor":"#495057","strokeWidth":2,"roughness":0,"opacity":100,"seed":653,"startArrowhead":null,"endArrowhead":"arrow"},
+
+    {"id":"s6-hc","type":"rectangle","x":430,"y":862,"width":440,"height":90,"strokeColor":"#e67700","backgroundColor":"#fff9db","fillStyle":"solid","strokeWidth":3,"roughness":1,"opacity":100,"roundness":{"type":3},"seed":654},
+    {"id":"s6-hct1","type":"text","x":440,"y":874,"width":420,"height":28,"text":"👤  Human Checkpoint","fontSize":18,"fontFamily":5,"textAlign":"center","verticalAlign":"top","strokeColor":"#e67700","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":655},
+    {"id":"s6-hct2","type":"text","x":440,"y":908,"width":420,"height":18,"text":"QA Lead review BẮT BUỘC trước khi quyết định","fontSize":12,"fontFamily":5,"textAlign":"center","verticalAlign":"top","strokeColor":"#7c4d00","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":656},
+
+    {"id":"s6-apass","type":"arrow","x":610,"y":952,"points":[[0,0],[-145,40]],"strokeColor":"#2f9e44","strokeWidth":2,"roughness":0,"opacity":100,"seed":657,"startArrowhead":null,"endArrowhead":"arrow"},
+    {"id":"s6-afail","type":"arrow","x":690,"y":952,"points":[[0,0],[140,40]],"strokeColor":"#c92a2a","strokeWidth":2,"roughness":0,"opacity":100,"seed":658,"startArrowhead":null,"endArrowhead":"arrow"},
+
+    {"id":"s6-pass","type":"rectangle","x":390,"y":995,"width":215,"height":65,"strokeColor":"#2f9e44","backgroundColor":"#b2f2bb","fillStyle":"solid","strokeWidth":3,"roughness":0,"opacity":100,"roundness":{"type":3},"seed":659},
+    {"id":"s6-passt","type":"text","x":395,"y":1015,"width":205,"height":26,"text":"✅  PASS → Merge PR","fontSize":15,"fontFamily":5,"textAlign":"center","verticalAlign":"middle","strokeColor":"#2f9e44","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":660},
+
+    {"id":"s6-fail","type":"rectangle","x":700,"y":995,"width":215,"height":65,"strokeColor":"#c92a2a","backgroundColor":"#ffc9c9","fillStyle":"solid","strokeWidth":3,"roughness":0,"opacity":100,"roundness":{"type":3},"seed":661},
+    {"id":"s6-failt","type":"text","x":705,"y":1015,"width":205,"height":26,"text":"❌  FAIL → Block + Notify Dev","fontSize":13,"fontFamily":5,"textAlign":"center","verticalAlign":"middle","strokeColor":"#c92a2a","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":662},
+
+    {"id":"s6-forb","type":"rectangle","x":1105,"y":302,"width":270,"height":530,"strokeColor":"#c92a2a","backgroundColor":"#fff5f5","fillStyle":"solid","strokeWidth":2,"roughness":0,"opacity":100,"roundness":{"type":3},"seed":663},
+    {"id":"s6-forbt","type":"text","x":1115,"y":318,"width":250,"height":28,"text":"🚫 Agent KHÔNG được\ntự động làm:","fontSize":14,"fontFamily":5,"textAlign":"center","verticalAlign":"top","strokeColor":"#c92a2a","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":664},
+    {"id":"s6-forb1","type":"text","x":1120,"y":380,"width":245,"height":22,"text":"• Close bug Critical / WONT FIX","fontSize":12,"fontFamily":5,"textAlign":"left","verticalAlign":"top","strokeColor":"#495057","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":665},
+    {"id":"s6-forb2","type":"text","x":1120,"y":415,"width":245,"height":22,"text":"• Quyết định release / no-go","fontSize":12,"fontFamily":5,"textAlign":"left","verticalAlign":"top","strokeColor":"#495057","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":666},
+    {"id":"s6-forb3","type":"text","x":1120,"y":450,"width":245,"height":22,"text":"• Xóa test data production","fontSize":12,"fontFamily":5,"textAlign":"left","verticalAlign":"top","strokeColor":"#495057","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":667},
+    {"id":"s6-forb4","type":"text","x":1120,"y":485,"width":245,"height":22,"text":"• Thay đổi scope test plan","fontSize":12,"fontFamily":5,"textAlign":"left","verticalAlign":"top","strokeColor":"#495057","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":668},
+    {"id":"s6-forb5","type":"text","x":1120,"y":520,"width":245,"height":22,"text":"• Phê duyệt security issues","fontSize":12,"fontFamily":5,"textAlign":"left","verticalAlign":"top","strokeColor":"#495057","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":669},
+    {"id":"s6-forb-note","type":"text","x":1115,"y":600,"width":250,"height":60,"text":"Human judgment\nCHỈ con người mới\nđược quyết định!","fontSize":13,"fontFamily":5,"textAlign":"center","verticalAlign":"top","strokeColor":"#c92a2a","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":670}
+  ],
+  "appState": {"viewBackgroundColor":"#ffffff","gridSize":20},
+  "files": {}
+}

@@ -1,0 +1,76 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://excalidraw.com",
+  "elements": [
+    {"id":"s5-title","type":"text","x":270,"y":10,"width":960,"height":34,"text":"Session 5 — Từ Trợ Lý đến Tester Tự Động","fontSize":24,"fontFamily":5,"textAlign":"center","verticalAlign":"top","strokeColor":"#1a1a1a","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":501},
+
+    {"id":"s5-a1bg","type":"rectangle","x":15,"y":55,"width":365,"height":450,"strokeColor":"#adb5bd","backgroundColor":"#f1f3f5","fillStyle":"solid","strokeWidth":2,"roughness":1,"opacity":100,"roundness":{"type":3},"seed":502},
+    {"id":"s5-a1hdr","type":"text","x":25,"y":67,"width":340,"height":28,"text":"❶  Trước AI Agent","fontSize":16,"fontFamily":5,"textAlign":"left","verticalAlign":"top","strokeColor":"#868e96","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":503},
+    {"id":"s5-a1emoji","type":"text","x":155,"y":95,"width":85,"height":50,"text":"😓","fontSize":42,"fontFamily":5,"textAlign":"center","verticalAlign":"top","strokeColor":"#868e96","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":504},
+
+    {"id":"s5-b1","type":"rectangle","x":30,"y":155,"width":335,"height":70,"strokeColor":"#adb5bd","backgroundColor":"#dee2e6","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"roundness":{"type":3},"seed":505},
+    {"id":"s5-b1t1","type":"text","x":40,"y":163,"width":230,"height":24,"text":"Viết test case thủ công","fontSize":14,"fontFamily":5,"textAlign":"left","verticalAlign":"top","strokeColor":"#495057","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":506},
+    {"id":"s5-b1t2","type":"text","x":40,"y":192,"width":200,"height":20,"text":"⏰ 45 phút","fontSize":12,"fontFamily":5,"textAlign":"left","verticalAlign":"top","strokeColor":"#c92a2a","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":507},
+
+    {"id":"s5-b2","type":"rectangle","x":30,"y":240,"width":335,"height":70,"strokeColor":"#adb5bd","backgroundColor":"#dee2e6","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"roundness":{"type":3},"seed":508},
+    {"id":"s5-b2t1","type":"text","x":40,"y":248,"width":230,"height":24,"text":"So sánh tool thủ công","fontSize":14,"fontFamily":5,"textAlign":"left","verticalAlign":"top","strokeColor":"#495057","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":509},
+    {"id":"s5-b2t2","type":"text","x":40,"y":277,"width":200,"height":20,"text":"⏰ 20 phút","fontSize":12,"fontFamily":5,"textAlign":"left","verticalAlign":"top","strokeColor":"#c92a2a","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":510},
+
+    {"id":"s5-b3","type":"rectangle","x":30,"y":325,"width":335,"height":70,"strokeColor":"#adb5bd","backgroundColor":"#dee2e6","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"roundness":{"type":3},"seed":511},
+    {"id":"s5-b3t1","type":"text","x":40,"y":333,"width":240,"height":24,"text":"Viết bug report thủ công","fontSize":14,"fontFamily":5,"textAlign":"left","verticalAlign":"top","strokeColor":"#495057","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":512},
+    {"id":"s5-b3t2","type":"text","x":40,"y":362,"width":200,"height":20,"text":"⏰ 15 phút","fontSize":12,"fontFamily":5,"textAlign":"left","verticalAlign":"top","strokeColor":"#c92a2a","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":513},
+
+    {"id":"s5-btot","type":"rectangle","x":30,"y":410,"width":335,"height":68,"strokeColor":"#868e96","backgroundColor":"#ced4da","fillStyle":"solid","strokeWidth":2,"roughness":0,"opacity":100,"roundness":{"type":3},"seed":514},
+    {"id":"s5-btott","type":"text","x":40,"y":432,"width":310,"height":26,"text":"⏱️  Tổng: ~80 phút / ngày","fontSize":16,"fontFamily":5,"textAlign":"center","verticalAlign":"middle","strokeColor":"#343a40","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":515},
+
+    {"id":"s5-arrow","type":"arrow","x":388,"y":278,"points":[[0,0],[88,0]],"strokeColor":"#343a40","strokeWidth":10,"roughness":0,"opacity":100,"seed":516,"startArrowhead":null,"endArrowhead":"arrow"},
+    {"id":"s5-arrowlbl","type":"text","x":390,"y":252,"width":88,"height":22,"text":"🤖 AI Agent","fontSize":14,"fontFamily":5,"textAlign":"center","verticalAlign":"top","strokeColor":"#1971c2","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":517},
+
+    {"id":"s5-a2bg","type":"rectangle","x":482,"y":55,"width":608,"height":450,"strokeColor":"#1971c2","backgroundColor":"#e7f5ff","fillStyle":"solid","strokeWidth":3,"roughness":0,"opacity":100,"roundness":{"type":3},"seed":518},
+    {"id":"s5-a2hdr","type":"text","x":492,"y":67,"width":586,"height":28,"text":"❷  QA Automation Agent","fontSize":18,"fontFamily":5,"textAlign":"center","verticalAlign":"top","strokeColor":"#1971c2","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":519},
+
+    {"id":"s5-tools","type":"rectangle","x":497,"y":108,"width":578,"height":92,"strokeColor":"#e67700","backgroundColor":"#fff9db","fillStyle":"solid","strokeWidth":2,"roughness":0,"opacity":100,"roundness":{"type":3},"seed":520},
+    {"id":"s5-toolst1","type":"text","x":507,"y":116,"width":200,"height":24,"text":"🔧 TOOLS","fontSize":15,"fontFamily":5,"textAlign":"left","verticalAlign":"top","strokeColor":"#e67700","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":521},
+    {"id":"s5-toolst2","type":"text","x":507,"y":146,"width":558,"height":22,"text":"Browser  ·  API Caller  ·  Code Runner  ·  File I/O  ·  Reporting","fontSize":13,"fontFamily":5,"textAlign":"center","verticalAlign":"top","strokeColor":"#495057","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":522},
+
+    {"id":"s5-va1","type":"arrow","x":786,"y":200,"points":[[0,0],[0,28]],"strokeColor":"#495057","strokeWidth":2,"roughness":0,"opacity":100,"seed":523,"startArrowhead":null,"endArrowhead":"arrow"},
+
+    {"id":"s5-mem","type":"rectangle","x":497,"y":228,"width":578,"height":92,"strokeColor":"#2f9e44","backgroundColor":"#ebfbee","fillStyle":"solid","strokeWidth":2,"roughness":0,"opacity":100,"roundness":{"type":3},"seed":524},
+    {"id":"s5-memt1","type":"text","x":507,"y":236,"width":200,"height":24,"text":"🧠 MEMORY","fontSize":15,"fontFamily":5,"textAlign":"left","verticalAlign":"top","strokeColor":"#2f9e44","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":525},
+    {"id":"s5-memt2","type":"text","x":507,"y":266,"width":558,"height":22,"text":"Short-term: context window    |    Long-term: file / database","fontSize":13,"fontFamily":5,"textAlign":"center","verticalAlign":"top","strokeColor":"#495057","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":526},
+
+    {"id":"s5-va2","type":"arrow","x":786,"y":320,"points":[[0,0],[0,28]],"strokeColor":"#495057","strokeWidth":2,"roughness":0,"opacity":100,"seed":527,"startArrowhead":null,"endArrowhead":"arrow"},
+
+    {"id":"s5-plan","type":"rectangle","x":497,"y":348,"width":578,"height":120,"strokeColor":"#7950f2","backgroundColor":"#f3f0ff","fillStyle":"solid","strokeWidth":2,"roughness":0,"opacity":100,"roundness":{"type":3},"seed":528},
+    {"id":"s5-plant1","type":"text","x":507,"y":356,"width":200,"height":24,"text":"🗺️ PLANNING","fontSize":15,"fontFamily":5,"textAlign":"left","verticalAlign":"top","strokeColor":"#7950f2","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":529},
+    {"id":"s5-plant2","type":"text","x":507,"y":390,"width":558,"height":22,"text":"Phân tích  →  Thực hiện từng bước  →  Điều chỉnh  →  Báo cáo kết quả","fontSize":13,"fontFamily":5,"textAlign":"center","verticalAlign":"top","strokeColor":"#495057","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":530},
+
+    {"id":"s5-outarrow","type":"arrow","x":1090,"y":278,"points":[[0,0],[18,0]],"strokeColor":"#2f9e44","strokeWidth":6,"roughness":0,"opacity":100,"seed":531,"startArrowhead":null,"endArrowhead":"arrow"},
+
+    {"id":"s5-a3bg","type":"rectangle","x":1112,"y":55,"width":378,"height":450,"strokeColor":"#2f9e44","backgroundColor":"#ebfbee","fillStyle":"solid","strokeWidth":3,"roughness":0,"opacity":100,"roundness":{"type":3},"seed":532},
+    {"id":"s5-a3hdr","type":"text","x":1122,"y":67,"width":356,"height":28,"text":"❸  Sau AI Agent","fontSize":18,"fontFamily":5,"textAlign":"center","verticalAlign":"top","strokeColor":"#2f9e44","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":533},
+
+    {"id":"s5-r1","type":"rectangle","x":1127,"y":108,"width":348,"height":82,"strokeColor":"#2f9e44","backgroundColor":"#d3f9d8","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"roundness":{"type":3},"seed":534},
+    {"id":"s5-r1t1","type":"text","x":1137,"y":118,"width":328,"height":26,"text":"📋 Test cases:  3 phút ✅","fontSize":15,"fontFamily":5,"textAlign":"left","verticalAlign":"top","strokeColor":"#2f9e44","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":535},
+    {"id":"s5-r1t2","type":"text","x":1137,"y":150,"width":328,"height":20,"text":"(trước: 45 phút)","fontSize":12,"fontFamily":5,"textAlign":"left","verticalAlign":"top","strokeColor":"#868e96","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":536},
+
+    {"id":"s5-r2","type":"rectangle","x":1127,"y":205,"width":348,"height":82,"strokeColor":"#2f9e44","backgroundColor":"#d3f9d8","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"roundness":{"type":3},"seed":537},
+    {"id":"s5-r2t1","type":"text","x":1137,"y":215,"width":328,"height":26,"text":"🔍 Research tools:  2 phút ✅","fontSize":15,"fontFamily":5,"textAlign":"left","verticalAlign":"top","strokeColor":"#2f9e44","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":538},
+    {"id":"s5-r2t2","type":"text","x":1137,"y":247,"width":328,"height":20,"text":"(trước: 20 phút)","fontSize":12,"fontFamily":5,"textAlign":"left","verticalAlign":"top","strokeColor":"#868e96","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":539},
+
+    {"id":"s5-r3","type":"rectangle","x":1127,"y":302,"width":348,"height":82,"strokeColor":"#2f9e44","backgroundColor":"#d3f9d8","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"roundness":{"type":3},"seed":540},
+    {"id":"s5-r3t1","type":"text","x":1137,"y":312,"width":328,"height":26,"text":"🐛 Bug report:  1 phút ✅","fontSize":15,"fontFamily":5,"textAlign":"left","verticalAlign":"top","strokeColor":"#2f9e44","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":541},
+    {"id":"s5-r3t2","type":"text","x":1137,"y":344,"width":328,"height":20,"text":"(trước: 15 phút)","fontSize":12,"fontFamily":5,"textAlign":"left","verticalAlign":"top","strokeColor":"#868e96","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":542},
+
+    {"id":"s5-rtot","type":"rectangle","x":1127,"y":400,"width":348,"height":78,"strokeColor":"#2f9e44","backgroundColor":"#b2f2bb","fillStyle":"solid","strokeWidth":3,"roughness":0,"opacity":100,"roundness":{"type":3},"seed":543},
+    {"id":"s5-rtott","type":"text","x":1137,"y":426,"width":328,"height":28,"text":"⚡  Tổng: ~6 phút / ngày","fontSize":18,"fontFamily":5,"textAlign":"center","verticalAlign":"middle","strokeColor":"#2f9e44","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":544},
+
+    {"id":"s5-ban","type":"rectangle","x":15,"y":520,"width":1475,"height":72,"strokeColor":"#e67700","backgroundColor":"#fff9db","fillStyle":"solid","strokeWidth":2,"roughness":0,"opacity":100,"roundness":{"type":3},"seed":545},
+    {"id":"s5-bant1","type":"text","x":25,"y":532,"width":1455,"height":22,"text":"⚠️  Human-in-the-loop Checkpoint","fontSize":14,"fontFamily":5,"textAlign":"left","verticalAlign":"top","strokeColor":"#e67700","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":546},
+    {"id":"s5-bant2","type":"text","x":25,"y":558,"width":720,"height":20,"text":"✅  TỰ ĐỘNG: Chạy test · Tạo test data · Sinh bug draft · Gửi thông báo kết quả","fontSize":12,"fontFamily":5,"textAlign":"left","verticalAlign":"top","strokeColor":"#2f9e44","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":547},
+    {"id":"s5-bant3","type":"text","x":760,"y":558,"width":720,"height":20,"text":"⛔  CHỜ DUYỆT: Close bug · Quyết định release · Thay đổi test plan · Xóa test data","fontSize":12,"fontFamily":5,"textAlign":"left","verticalAlign":"top","strokeColor":"#c92a2a","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":1,"roughness":0,"opacity":100,"seed":548}
+  ],
+  "appState": {"viewBackgroundColor":"#ffffff","gridSize":20},
+  "files": {}
+}
