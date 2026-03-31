@@ -12,6 +12,12 @@
 
 ---
 
+![Session 5 — Từ Trợ Lý đến Tester Tự Động](../assets/diagrams/session-05-ai-agent-story.svg)
+
+> *Sơ đồ trên tóm tắt toàn bộ Session 5: hành trình từ làm thủ công 80 phút/ngày → AI Agent chỉ còn 6 phút.*
+
+---
+
 ## PHẦN 1 — LÝ THUYẾT
 
 ### 1.1 AI Agent là gì? Khác ChatGPT như thế nào?

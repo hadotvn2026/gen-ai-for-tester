@@ -12,6 +12,12 @@
 
 ---
 
+![Session 6 — QA Team Agent Pipeline](../assets/diagrams/session-06-agentic-ai-story.svg)
+
+> *Sơ đồ trên là toàn bộ kiến trúc bạn sẽ xây dựng trong Session 6: từ trigger CI/CD đến quyết định release.*
+
+---
+
 ## PHẦN 1 — LÝ THUYẾT
 
 ### 1.1 Agentic AI — Khi nhiều Agent làm việc cùng nhau
