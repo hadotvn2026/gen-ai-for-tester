@@ -27,12 +27,5 @@ Be selective: only include findings that meaningfully affect course accuracy or 
 Skip hype, skip already-covered topics, focus on actionable updates for QA testers.
 " 2>&1 | tee -a "$LOG"
 
-# Commit research output
-git add research/daily/$DATE.md research/changelog.md 2>/dev/null || true
-if git diff --cached --quiet; then
-  echo "[$(date)] Nothing new to commit." | tee -a "$LOG"
-else
-  git commit -m "research: daily findings $DATE" 2>&1 | tee -a "$LOG"
-  git push 2>&1 | tee -a "$LOG"
-  echo "[$(date)] Committed and pushed." | tee -a "$LOG"
-fi
+echo "[$(date)] Done. Findings saved locally to research/daily/$DATE.md" | tee -a "$LOG"
+echo "[$(date)] Run scripts/weekly-apply.sh to apply changes to session content." | tee -a "$LOG"

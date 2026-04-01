@@ -7,3 +7,6 @@ site/
 test-results/
 playwright-report/
 genai-for-tester/
+research/daily/
+research/logs/
+research/apply-*.md
