@@ -1,93 +1,93 @@
-# 🛠️ Workspace Setup
+# Thiết lập Workspace
 
-> Thiết lập môi trường làm việc trước buổi học — mất khoảng **15–20 phút**.
-
----
-
-## Tổng quan
-
-Workspace bao gồm:
-
-| Công cụ | Mục đích | Khi nào cần |
-|---------|----------|-------------|
-| **VS Code** | Editor chính, tích hợp mọi AI tool | Ngay từ đầu |
-| **GitHub Copilot** | AI pair programming trong editor | Session 4+ |
-| **Antigravity** | AI-assisted test automation | Session 4+ |
-| **Playwright** | Test framework thực hành | Session 4+ |
-| **Claude Code** | AI agent trong terminal | Session 5+ |
-| **MCP Jira** | Tạo Jira issue từ Claude Code | Session 5+ |
-| **MCP Playwright** | Điều khiển browser từ Claude Code | Session 5+ |
+> Hoàn thành trước buổi học đầu tiên — mất khoảng **10 phút**.
 
 ---
 
-## Bước 1 — Clone workspace
+## Yêu cầu tối thiểu
+
+| Công cụ | Phiên bản | Tải về |
+|---------|-----------|--------|
+| **Node.js** | 18 trở lên | [nodejs.org](https://nodejs.org) |
+| **VS Code** | Mới nhất | [code.visualstudio.com](https://code.visualstudio.com) |
+| **Git** | Bất kỳ | [git-scm.com](https://git-scm.com) |
+
+---
+
+## Bước 1 — Clone repo
 
 ```bash
-# Clone repo khóa học
 git clone https://github.com/hadotvn2026/gen-ai-for-tester.git
 cd gen-ai-for-tester/workspace
+```
 
-# Mở trong VS Code
+---
+
+## Bước 2 — Chạy script cài đặt
+
+```bash
+bash setup.sh
+```
+
+Script tự động: kiểm tra Node.js/Git → cài Playwright + Chromium → chạy 2 test mẫu.
+
+Kết quả mong đợi:
+
+```
+✅  Node.js v20.x.x
+✅  Git 2.x.x
+✅  npm packages installed
+✅  Chromium browser ready
+✅  All tests passed
+```
+
+---
+
+## Bước 3 — Mở trong VS Code
+
+```bash
 code .
 ```
 
 Khi VS Code hỏi **"Install recommended extensions?"** → chọn **Install All**.
 
+Extensions được cài tự động:
+
+- **GitHub Copilot** — AI pair programming *(Session 4+)*
+- **Playwright Test for VS Code** — chạy test ngay trong editor
+- **Markdown All in One** — xem preview notes và prompts
+
 ---
 
-## Bước 2 — Cài Playwright
+## Xong! Bạn đã sẵn sàng cho Session 1–4.
+
+---
+
+## Cài thêm cho Session 5–6
+
+Session 5 và 6 dùng **Claude Code** và **MCP Servers**. Cài khi đến session đó, không cần làm ngay.
+
+### Claude Code
 
 ```bash
-cd playwright-tests
-npm install
-npx playwright install --with-deps chromium
+npm install -g @anthropic-ai/claude-code
+claude
 ```
 
-Chạy test mẫu để kiểm tra:
+### MCP Playwright
+
 ```bash
-npm test
-# Xem HTML report:
-npm run report
+claude mcp add playwright -- npx -y @playwright/mcp@latest
 ```
 
-✅ Thành công khi thấy: `2 passed (Xms)`
+### MCP Jira
 
----
-
-## Bước 3 — Cài đặt Antigravity
-
-1. Cài extension **Antigravity** từ VS Code Marketplace
-   - Trong VS Code: `Ctrl+Shift+X` → tìm "Antigravity" → Install
-2. Tạo tài khoản miễn phí tại [antigravity.dev](https://antigravity.dev)
-3. Đăng nhập: `Ctrl+Shift+P` → **"Antigravity: Sign In"**
-4. Tạo project mới → liên kết với repo này
-
----
-
-## Bước 4 — Cài đặt MCP Servers *(Session 5+)*
-
-MCP cho phép Claude Code tích hợp trực tiếp với Jira và Playwright.
-
-### 4a. Tạo file biến môi trường
+Lấy API token tại [id.atlassian.com → Security → API tokens](https://id.atlassian.com/manage-profile/security/api-tokens), sau đó:
 
 ```bash
-# Từ thư mục workspace/
 cp .env.example .env
-```
+# Mở .env, điền JIRA_BASE_URL, JIRA_EMAIL, JIRA_API_TOKEN
 
-Mở `.env` và điền thông tin:
-
-```bash
-JIRA_BASE_URL=https://yourcompany.atlassian.net
-JIRA_EMAIL=your-email@company.com
-JIRA_API_TOKEN=<your-token>
-```
-
-> Lấy Jira API token tại: [id.atlassian.com/manage-profile/security/api-tokens](https://id.atlassian.com/manage-profile/security/api-tokens)
-
-### 4b. Đăng ký Jira MCP
-
-```bash
 claude mcp add jira \
   --env JIRA_BASE_URL \
   --env JIRA_EMAIL \
@@ -95,101 +95,32 @@ claude mcp add jira \
   -- npx -y @modelcontextprotocol/server-jira
 ```
 
-### 4c. Đăng ký Playwright MCP
-
-```bash
-claude mcp add playwright -- npx -y @playwright/mcp@latest
-```
-
-### Kiểm tra MCP
+Kiểm tra:
 
 ```bash
 claude mcp list
-# Kết quả mong đợi:
 # jira: npx -y @modelcontextprotocol/server-jira
 # playwright: npx -y @playwright/mcp@latest
 ```
 
 ---
 
-## Cấu trúc workspace
-
-```
-workspace/
-├── .vscode/                      # VS Code config (auto-applied)
-├── .claude/
-│   └── CLAUDE.md                 # Context cho Claude Code
-├── prompt-library/
-│   └── my-prompts.md             # Lưu prompt tích lũy theo khóa học
-├── context-cards/
-│   └── project-context-template.md
-├── session-artifacts/            # Output từ từng session
-│   ├── s1-mindset/
-│   ├── s2-technique/
-│   ├── s3-context/
-│   ├── s4-automation/            # Jira bug template có sẵn
-│   ├── s5-agent/
-│   └── s6-capstone/
-├── playwright-tests/
-│   ├── tests/example.spec.ts     # Starter test
-│   ├── pages/BasePage.ts         # Base POM
-│   ├── playwright.config.ts
-│   └── package.json
-└── .env.example                  # Template — copy thành .env
-```
-
----
-
-## Dùng Claude Code trong workspace
-
-```bash
-# Mở từ thư mục workspace/
-claude
-```
-
-Một số lệnh hay dùng:
-
-```
-"Generate Playwright tests cho login feature"
-"Tạo Jira bug report từ test failure này: [paste output]"
-"Review file playwright-tests/tests/example.spec.ts"
-"Chạy playwright test và tóm tắt kết quả"
-```
-
----
-
 ## Troubleshooting
+
+!!! tip "Node.js không đúng version"
+    Dùng [nvm](https://github.com/nvm-sh/nvm) để cài đúng version:
+    ```bash
+    nvm install 20 && nvm use 20
+    ```
 
 !!! tip "Playwright báo lỗi browser not found"
     ```bash
+    cd playwright-tests
     npx playwright install --with-deps chromium
     ```
 
-!!! tip "Claude Code không thấy MCP Jira"
-    Kiểm tra `.env` đã điền đủ 3 biến, sau đó re-add:
-
+!!! tip "MCP Jira không kết nối được"
     ```bash
-    cat .env
-    claude mcp remove jira
-    claude mcp add jira \
-      --env JIRA_BASE_URL \
-      --env JIRA_EMAIL \
-      --env JIRA_API_TOKEN \
-      -- npx -y @modelcontextprotocol/server-jira
+    cat .env        # kiểm tra đủ 3 biến JIRA_*
+    claude mcp list # kiểm tra jira có trong danh sách
     ```
-
-!!! tip "Antigravity extension không sign in được"
-    Restart VS Code sau khi cài extension. Nếu vẫn lỗi, thử uninstall → reinstall từ Marketplace.
-
-!!! tip "npm install lỗi permission trên macOS"
-    ```bash
-    sudo npm install
-    ```
-    Hoặc dùng **nvm** để tránh cần `sudo`: [github.com/nvm-sh/nvm](https://github.com/nvm-sh/nvm)
-
-!!! tip "Không thấy tab Playwright trong VS Code"
-    Cài extension **Playwright Test for VS Code** từ Marketplace, sau đó chạy:
-    ```bash
-    npx playwright install
-    ```
-    Mở Activity Bar → icon beaker (Testing) để thấy test explorer.
