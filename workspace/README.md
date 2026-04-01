@@ -1,11 +1,23 @@
 # GenAI for Testers — Workspace
 
 Workspace thực hành cho khóa học **Generative AI for Testers**.
-Mở folder này trong VS Code và bắt đầu ngay.
 
 ---
 
-## Cài đặt lần đầu
+## Cài đặt nhanh (1 lệnh)
+
+```bash
+bash setup.sh
+```
+
+Script tự động: kiểm tra Node.js/Git → cài Playwright → chạy smoke test để xác nhận.
+Xong trong ~2 phút. Không cần làm gì thêm cho Session 1–4.
+
+> **Cần thêm MCP / Claude Code / Antigravity?** → xem [docs/workspace-setup.md](../docs/workspace-setup.md)
+
+---
+
+## Cài đặt thủ công (nếu cần)
 
 ### Bước 1 — Mở workspace trong VS Code
 
